@@ -9,5 +9,15 @@ class userService {
       }
     });
   }
+
+  userLogin = (InfoLogin, callback) => {
+    userModel.loginModel(InfoLogin, (error, data) => {
+      if (data) {
+        return callback(null, data);
+      } else {
+        return callback(error, null);
+      }
+    });
+  }
 }
 module.exports = new userService();
