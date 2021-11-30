@@ -27,38 +27,33 @@ const user = mongoose.model('no', userSchema);
 
 class userModel {
 
-    registerUser = (userDetails,callback) => {
+    registerUser = (userDetails, callback) => {
         const newUser = new user();
-            newUser.firstName = userDetails.firstName;
-            newUser.lastName = userDetails.lastName;
-            newUser.email = userDetails.email;
-            newUser.password = userDetails.password;
+        newUser.firstName = userDetails.firstName;
+        newUser.lastName = userDetails.lastName;
+        newUser.email = userDetails.email;
+        newUser.password = userDetails.password;
 
-            newUser.save((err,data)=>{
-                if(err){
-                    callback({message:err},null);
-                }else{
-                    callback(null,data);
-                }
-            })
-            // .then(data=>{
-                // callback(null,data);
-            // })
-            // .catch(err=>{
-            //     callback({message:"Error while Storing User Details in DataBase"},null);
-            // })
-        };
-        loginModel = (loginData, callBack) => {
-            //To find a user email in the database
-            user.findOne({ email: loginData.email }, (error, data) => {
-                if (error) {
-                    return callBack(error, null);
-                } else if (!data) {
-                    return callBack("Invalid Credential", null);
-                } else {
-                    return callBack(null, data);
-                }
-            });
-        }
+        newUser.save((err, data) => {
+            if (err) {
+                callback({ message: err }, null);
+            } else {
+                callback(null, data);
+            }
+        })
+    };
+
+    loginModel = (loginData, callBack) => {
+        //To find a user email in the database
+        user.findOne({ email: loginData.email }, (error, data) => {
+            if (error) {
+                return callBack(error, null);
+            } else if (!data) {
+                return callBack("Invalid Credential", null);
+            } else {
+                return callBack(null, data);
+            }
+        });
     }
-    module.exports = new userModel();
+}
+module.exports = new userModel();

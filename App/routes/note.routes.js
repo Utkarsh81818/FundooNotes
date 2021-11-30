@@ -4,4 +4,4 @@ module.exports = (app) => {
   app.post('/register', controller.register);
   // api for login
   app.post('/login', controller.login);
-} 
+}
