@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const jwt=require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 class Helper {
   hashing = (password, callback) => {
@@ -11,6 +11,7 @@ class Helper {
       }
     });
   }
+
   token = (data) => {
     const dataForToken = {
       id: data._id,

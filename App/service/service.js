@@ -21,7 +21,7 @@ class userService {
             return callback(error + 'Invalid Password', null);
           } else {
             const token = utilities.token(data);
-              return callback(null, token);
+            return callback(null, token);
           }
         });
       } else {
