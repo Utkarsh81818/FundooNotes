@@ -52,7 +52,6 @@ class userModel {
             });
         }
         catch (error) {
-            logger.error('Find error in model');
             return callback('Internal Error', null)
         }
     }

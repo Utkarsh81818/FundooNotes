@@ -1,4 +1,5 @@
 const userModel = require('../models/note.model.js')
+const utilities = require('../utilities/helper.js');
 const bcrypt = require('bcryptjs');
 
 class userService {
@@ -19,7 +20,8 @@ class userService {
           if (!validate) {
             return callback(error + 'Invalid Password', null);
           } else {
-            return callback(null, data);
+            const token = utilities.token(data);
+              return callback(null, token);
           }
         });
       } else {
@@ -28,4 +30,5 @@ class userService {
     });
   }
 }
+
 module.exports = new userService();
