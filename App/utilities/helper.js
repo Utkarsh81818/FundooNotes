@@ -22,5 +22,4 @@ class Helper {
     return jwt.sign({ dataForToken }, process.env.JWT_SECRET, { expiresIn: '24H' });
   };
 }
-
 module.exports = new Helper();
