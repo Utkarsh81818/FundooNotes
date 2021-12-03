@@ -3,8 +3,8 @@
         "correctRegister": {
             "firstName": "Utkarsh",
             "lastName": "Mishra",
-            "email": "utkarsh097@gmail.com",
-            "password": "Utkarsh123@&"
+            "email": "utkarsh945@gmail.com",
+            "password": "Akash@12345"
         },
         "registrationWithImproperDetails": {
             "firstName": "Jaiswender",
@@ -20,6 +20,14 @@
             "lastName": "Sn",
             "email": "manis@gmail.com",
             "password": "srinivas$123"
+        },
+        "login": {
+            "email": "avinash987@gmail.com",
+            "password": "Avinash@1234"
+        },
+        "loginWithImproperDetails": {
+            "email": "ansh123@gmail.com",
+            "password": "Anshas12@$"
         }
     }
 }
