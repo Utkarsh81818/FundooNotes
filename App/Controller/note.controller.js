@@ -1,5 +1,6 @@
 const userService = require('../service/service.js')
 const validation = require('../utilities/validation');
+const { logger } = require('../../logger/logger')
 class Controller {
   register = (req, res) => {
     try {
@@ -12,6 +13,7 @@ class Controller {
 
       const registerValidation = validation.authRegister.validate(user)
       if (registerValidation.error) {
+        logger.error('Wrong Input Validations');
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -26,6 +28,7 @@ class Controller {
             message: 'User already exist',
           });
         } else {
+          logger.info('User registered');
           return res.status(200).json({
             success: true,
             message: "User Registered",
@@ -34,6 +37,7 @@ class Controller {
         }
       });
     } catch (error) {
+      logger.error('Internal server error');
       return res.status(500).json({
         success: false, message: "Error While Registering",
         data: null,
@@ -50,6 +54,7 @@ class Controller {
 
       const loginValidation = validation.authLogin.validate(userLoginInfo);
       if (loginValidation.error) {
+        logger.error(loginValidation.error);
         res.status(400).send({
           success: false,
           message: loginValidation.error.message

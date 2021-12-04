@@ -1,5 +1,6 @@
 const userModel = require('../models/note.model.js')
 const utilities = require('../utilities/helper.js');
+const { logger } = require('../../logger/logger');
 const bcrypt = require('bcryptjs');
 
 class userService {
@@ -18,13 +19,16 @@ class userService {
       if (data) {
         bcrypt.compare(InfoLogin.password, data.password, (error, validate) => {
           if (!validate) {
+            logger.error(error);
             return callback(error + 'Invalid Password', null);
           } else {
+            logger.info(' token generated ');
             const token = utilities.token(data);
             return callback(null, token);
           }
         });
       } else {
+        logger.error(error);
         return callback(error);
       }
     });

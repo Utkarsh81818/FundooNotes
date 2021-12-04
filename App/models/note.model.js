@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const utilities = require('../utilities/helper.js');
+const { logger } = require('../../logger/logger');
 
 const userSchema = mongoose.Schema({
     firstName: {
@@ -52,6 +53,7 @@ class userModel {
             });
         }
         catch (error) {
+            logger.error('Find error in model');
             return callback('Internal Error', null)
         }
     }
@@ -60,12 +62,15 @@ class userModel {
         //To find a user email in the database
         user.findOne({ email: loginData.email }, (error, data) => {
             if (error) {
-                return callBack(error, null);
-            } else if (!data) {
-                return callBack("Invalid Credential", null);
-            } else {
-                return callBack(null, data);
-            }
+                logger.error('Find error while loggin user');
+                  return callBack(error, null);           
+              } else if(!data){
+                logger.error('Invalid User');
+                  return callBack("Invalid Credential", null);
+              }else{
+                logger.info('Email id found');
+                  return callBack(null,data);
+              }
         });
     }
 }
