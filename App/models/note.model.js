@@ -41,7 +41,7 @@ class userModel {
                     newUser.password = hash;
                     newUser.save((error, data) => {
                         if (error) {
-                            callback(error, null);  
+                            callback(error, null);
                         } else {
                             callback(null, data);
                         }
@@ -55,7 +55,7 @@ class userModel {
             return callback('Internal Error', null)
         }
     }
-    
+
     loginUser = (loginData, callBack) => {
         //To find a user email in the database
         user.findOne({ email: loginData.email }, (error, data) => {

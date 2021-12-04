@@ -12,7 +12,7 @@ describe('registartion', () => {
   it('givenRegistrationDetails_whenProper_shouldSaveInDB', (done) => {
     // const registartionDetails = registrationData.user.correctRegister;
     const registerfaker = {
-      firstName: faker.name.findName(),
+      firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
       email: faker.internet.email(),
       password: faker.internet.password()
@@ -87,38 +87,38 @@ describe('registartion', () => {
   });
 });
 
-  describe('login', () => {
-    it('givenLoginDetails_whenProper_shouldAbleToLogin', (done) => {
-      const loginDetails = loginData.user.login;
-      chai
-        .request(server)
-        .post('/login')
-        .send(loginDetails)
-        .end((err, res) => {
-          if (err) {
-            return done(err);
-          }
-          res.should.have.status(200);
-          res.body.should.have.property('success').eql(true);
-          res.body.should.have.property('message').eql('User logged in successfully');
-          done();
-        });
-    });
-    
-    it('givenLoginDetails_whenImproper_shouldUnableToLogin', (done) => {
-      const loginDetails = loginData.user.loginWithImproperDetails;
-      chai
-        .request(server)
-        .post('/login')
-        .send(loginDetails)
-        .end((err, res) => {
-          if (err) {
-            return done(err);
-          }
-          res.should.have.status(400);
-          res.body.should.have.property('success').eql(false);
-          res.body.should.have.property('message').eql('Unable to login. Please enter correct info');
-          done();
-        });
-    });
+describe('login', () => {
+  it('givenLoginDetails_whenProper_shouldAbleToLogin', (done) => {
+    const loginDetails = loginData.user.login;
+    chai
+      .request(server)
+      .post('/login')
+      .send(loginDetails)
+      .end((err, res) => {
+        if (err) {
+          return done(err);
+        }
+        res.should.have.status(200);
+        res.body.should.have.property('success').eql(true);
+        res.body.should.have.property('message').eql('User logged in successfully');
+        done();
+      });
   });
+
+  it('givenLoginDetails_whenImproper_shouldUnableToLogin', (done) => {
+    const loginDetails = loginData.user.loginWithImproperDetails;
+    chai
+      .request(server)
+      .post('/login')
+      .send(loginDetails)
+      .end((err, res) => {
+        if (err) {
+          return done(err);
+        }
+        res.should.have.status(400);
+        res.body.should.have.property('success').eql(false);
+        res.body.should.have.property('message').eql('Unable to login. Please enter correct info');
+        done();
+      });
+  });
+});
