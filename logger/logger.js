@@ -10,7 +10,7 @@ module.exports.logger = winston.createLogger({
         winston.format.json())
     }),
     new winston.transports.File({
-      level: 'error',
+      level: 'error', 
       filename: 'error.log',
       json: true,
       format: winston.format.combine(winston.format.timestamp(),

@@ -1,3 +1,10 @@
+/**
+ * @module       utilities
+ * @file         helper.js
+ * @description  it contains the Hashing and Token
+ * @author       Utkarsh Mishra
+ */
+
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 

@@ -1,3 +1,9 @@
+/**
+ * @module      :  Models
+ * @file        :  User.model.js
+ * @description :  Taking the request from the client and gives the response
+ * @author      :  Utkarsh Mishra
+ */
 const mongoose = require('mongoose');
 const utilities = require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
@@ -28,6 +34,12 @@ const userSchema = mongoose.Schema({
 const user = mongoose.model('User', userSchema);
 
 class userModel {
+    
+    /**
+      * @description register User in the database
+      * @param User
+      * @param callback
+      */
 
     registerUser = (userDetails, callback) => {
         const newUser = new user({
@@ -57,6 +69,12 @@ class userModel {
             return callback('Internal Error', null)
         }
     }
+
+    /**
+      * @description login User from the database
+      * @param loginInfo
+      * @param callback for service
+      */
 
     loginUser = (loginData, callBack) => {
         //To find a user email in the database
