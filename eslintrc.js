@@ -1,3 +1,4 @@
+// Used eslint for defining set of rules 
 module.exports = {
     parser: "@babel/eslint-parser",
     env: {
