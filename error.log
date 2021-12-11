@@ -7,3 +7,7 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-09T13:09:07.510Z"}
 {"level":"error","message":"Invalid User","timestamp":"2021-12-09T13:09:08.020Z"}
 {"level":"error","message":"Invalid Credential","timestamp":"2021-12-09T13:09:08.026Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:51:46.145Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:52:08.261Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:53:08.890Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:58:05.108Z"}

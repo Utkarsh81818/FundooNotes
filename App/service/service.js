@@ -9,6 +9,7 @@ const userModel = require('../models/note.model.js')
 const utilities = require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('../utilities/nodeemailer.js');
 
 class userService {
 
@@ -53,6 +54,22 @@ class userService {
       }
     });
   }
+
+   /**
+     * @description sends the code to forgotPasswordAPI in the controller
+     * @method forgotPassword
+     * @param callback callback for controller
+     */ 
+    forgotPassword = (email, callback) => {
+      userModel.forgotPassword(email, (error, data) => {
+        if (error) {
+          logger.error(error);
+          return callback(error, null);
+        } else {
+          return callback(null, nodemailer.sendEmail(data));
+        }
+      });
+    };
 }
 
 module.exports = new userService();

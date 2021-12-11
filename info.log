@@ -23,3 +23,9 @@
 {"level":"info","message":"Email id found","timestamp":"2021-12-10T13:47:20.299Z"}
 {"level":"info","message":" token generated ","timestamp":"2021-12-10T13:47:20.605Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-10T13:47:20.612Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-11T06:42:29.381Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-11T06:50:47.077Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:51:46.144Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:52:08.260Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:53:08.883Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:58:05.107Z"}
