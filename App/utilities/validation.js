@@ -1,8 +1,8 @@
 /**
- * @module       utilities
- * @file         validation.js
- * @description  it contains the validation for register and login API
- * @author       Utkarsh Mishra
+ * @module       : utilities
+ * @file         : validation.js
+ * @description  : it contains the validation for register and login API
+ * @author       : Utkarsh Mishra
  */
 
 const Joi = require('joi');

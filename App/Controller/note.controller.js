@@ -62,7 +62,7 @@ class Controller {
      * @method login
      * @param req,res for service
      */
-    
+
   login = (req, res) => {
     try {
       const userLoginInfo = {
@@ -87,6 +87,7 @@ class Controller {
             error
           });
         }
+        logger.info('User logged in successfully');
         return res.status(200).json({
           success: true,
           message: 'User logged in successfully',

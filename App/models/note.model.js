@@ -55,7 +55,7 @@ class userModel {
                     newUser.save((error, data) => {
                         if (error) {
                             callback(error, null);
-                        } else {
+                        } else { 
                             callback(null, data);
                         }
                     });
