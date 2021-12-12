@@ -167,6 +167,16 @@ class Controller {
         code: req.body.code
       };
 
+      const resetVlaidation = validation.validateReset.validate(userData);
+      if (resetVlaidation.error) {
+        logger.error('Invalid password');
+        res.status(422).send({
+          success: false,
+          message: 'Invalid password'
+        });
+        return;
+      }
+
       userService.resetPassword(userData, (error, userData) => {
         if (error) {
           logger.error(error);
