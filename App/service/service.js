@@ -34,7 +34,7 @@ class userService {
      * @method userLogin
      * @param callback callback for controller
      */
-    
+
   userLogin = (InfoLogin, callback) => {
     userModel.loginUser(InfoLogin, (error, data) => {
       if (data) {
@@ -55,21 +55,38 @@ class userService {
     });
   }
 
-   /**
-     * @description sends the code to forgotPasswordAPI in the controller
-     * @method forgotPassword
-     * @param callback callback for controller
-     */ 
-    forgotPassword = (email, callback) => {
-      userModel.forgotPassword(email, (error, data) => {
-        if (error) {
-          logger.error(error);
-          return callback(error, null);
-        } else {
-          return callback(null, nodemailer.sendEmail(data));
-        }
-      });
-    };
-}
+  /**
+    * @description sends the code to forgotPasswordAPI in the controller
+    * @method forgotPassword
+    * @param callback callback for controller
+    */
+  forgotPassword = (email, callback) => {
+    userModel.forgotPassword(email, (error, data) => {
+      if (error) {
+        logger.error(error);
+        return callback(error, null);
+      } else {
+        return callback(null, nodemailer.sendEmail(data));
+      }
+    });
+  };
 
+
+  /**
+   * @description it acts as a middleware between controller and model for reset password
+   * @param {*} inputData
+   * @param {*} callback
+   * @returns
+   */
+  resetPassword = (userData, callback) => {
+    userModel.resetPassword(userData, (error, data) => {
+      if (error) {
+        logger.error(error);
+        return callback(error, null);
+      } else {
+        return callback(null, data);
+      }
+    });
+  }
+}
 module.exports = new userService();

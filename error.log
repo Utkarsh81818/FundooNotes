@@ -11,3 +11,15 @@
 {"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:52:08.261Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:53:08.890Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-11T06:58:05.108Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-12T13:30:14.051Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-12T13:30:14.052Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:33:52.373Z"}
+{"_original":{"email":"utkarshkr945@gmail.com"},"details":[{"context":{"key":"password","label":"password"},"message":"\"password\" is required","path":["password"],"type":"any.required"}],"level":"error","timestamp":"2021-12-12T13:42:41.932Z"}
+{"level":"error","timestamp":"2021-12-12T13:42:41.948Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:44:21.682Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:45:36.313Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:46:35.658Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:48:52.542Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:48:56.448Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T13:48:56.657Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T14:26:48.192Z"}

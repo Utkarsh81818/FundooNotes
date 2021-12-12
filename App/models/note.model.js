@@ -7,6 +7,7 @@
 const mongoose = require('mongoose');
 const utilities = require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
+const Otp = require('./otp.js');
 
 const userSchema = mongoose.Schema({
     firstName: {
@@ -34,7 +35,7 @@ const userSchema = mongoose.Schema({
 const user = mongoose.model('User', userSchema);
 
 class userModel {
-    
+
     /**
       * @description register User in the database
       * @param User
@@ -55,7 +56,7 @@ class userModel {
                     newUser.save((error, data) => {
                         if (error) {
                             callback(error, null);
-                        } else { 
+                        } else {
                             callback(null, data);
                         }
                     });
@@ -81,31 +82,65 @@ class userModel {
         user.findOne({ email: loginData.email }, (error, data) => {
             if (error) {
                 logger.error('Find error while loggin user');
-                  return callBack(error, null);           
-              } else if(!data){
+                return callBack(error, null);
+            } else if (!data) {
                 logger.error('Invalid User');
-                  return callBack("Invalid Credential", null);
-              }else{
+                return callBack("Invalid Credential", null);
+            } else {
                 logger.info('Email id found');
-                  return callBack(null,data);
-              }
+                return callBack(null, data);
+            }
         });
     }
 
-     /**
-     * @description mongoose function for forgot password
-     * @param {*} email
-     * @param {*} callback
-     */
-  forgotPassword = (data, callback) => {
-    user.findOne({ email: data.email }, (err, data) => {
-     if (data) {
-       return callback(null,data);
-     } else {
-       logger.error('User with email id does not  exists');
-       return callback(err,null);
-     }
-   });
- };
+    /**
+    * @description mongoose function for forgot password
+    * @param {*} email
+    * @param {*} callback
+    */
+    forgotPassword = (data, callback) => {
+        user.findOne({ email: data.email }, (err, data) => {
+            if (data) {
+                return callback(null, data);
+            } else {
+                logger.error('User with email id does not  exists');
+                return callback(err, null);
+            }
+        });
+    };
+
+    /**
+        * @description mongooose method for reseting the password
+        * @param {*} userData
+        * @param {*} callback
+        * @returns
+        */
+    resetPassword = (userData, callback) => {
+        Otp.findOne({ code: userData.code }, (error, data) => {
+            if (data) {
+                if (userData.code == data.code) {
+                    utilities.hashing(userData.newPassword, (err, hash) => {
+                        if (hash) {
+                            userData.newPassword = hash;
+                            user.updateOne({ "password": userData.newPassword }, (error, data) => {
+                                if (data) {
+                                    return callback(null, "Updated successfully")
+                                }
+                                else {
+                                    return callback("Error in updating", null)
+                                }
+                            })
+                        } else {
+                            return callback("Error in hash on password", null)
+                        }
+                    })
+                } else {
+                    return callback("User not found", null)
+                }
+            } else {
+                return callback("Otp doesnt match", null)
+            }
+        })
+    }
 }
 module.exports = new userModel();

@@ -5,7 +5,7 @@
 
 const userService = require('../service/service.js')
 const validation = require('../utilities/validation');
-const {logger} = require('../../logger/logger')
+const { logger } = require('../../logger/logger')
 class Controller {
 
   /**
@@ -105,51 +105,92 @@ class Controller {
     }
   };
 
-   /**
-     * description controller function for forgot password
-     * @param {*} req
-     * @param {*} res
-     * @returns
-     */ 
-    forgotPassword = (req, res) => {
-      try {
-        const userCredential = {
-          email: req.body.email
-        };
-        
-        const validationforgotPassword =
+  /**
+    * description controller function for forgot password
+    * @param {*} req
+    * @param {*} res
+    * @returns
+    */
+  forgotPassword = (req, res) => {
+    try {
+      const userCredential = {
+        email: req.body.email
+      };
+
+      const validationforgotPassword =
         validation.authenticateLogin.validate(userCredential);
-        if (validationforgotPassword.error) {
-          logger.error('Wrong Input Validations');
-          return res.status(400).send({
-            success: false,
-            message: 'Wrong Input Validations',
-            data: validationforgotPassword
-          });
-        }
-  
-        userService.forgotPassword(userCredential, (error, result) => {
-          if (error) {
-            return res.status(400).send({
-              success: false,
-              message: 'failed to send email'
-            });
-          } else {
-            return res.status(200).send({
-              success: true,
-              message: 'Email sent successfully'
-            });
-          }
-        });
-      } catch (error) {
-        console.log("Error", error);
-        logger.error('Internal server error');
-        return res.status(500).send({
+      if (validationforgotPassword.error) {
+        logger.error('Wrong Input Validations');
+        return res.status(400).send({
           success: false,
-          message: 'Internal server error',
-          result: null
+          message: 'Wrong Input Validations',
+          data: validationforgotPassword
         });
       }
-    };
+
+      userService.forgotPassword(userCredential, (error, result) => {
+        if (error) {
+          return res.status(400).send({
+            success: false,
+            message: 'failed to send email'
+          });
+        } else {
+          return res.status(200).send({
+            success: true,
+            message: 'Email sent successfully'
+          });
+        }
+      });
+    } catch (error) {
+      console.log("Error", error);
+      logger.error('Internal server error');
+      return res.status(500).send({
+        success: false,
+        message: 'Internal server error',
+        result: null
+      });
+    }
+  };
+
+  /**
+   * description controller function for reset password
+   * @param {*} req
+   * @param {*} res
+   * @returns
+   */
+
+  resetPassword = (req, res) => {
+    try {
+      const userData = {
+        email: req.body.email,
+        newPassword: req.body.newPassword,
+        code: req.body.code
+      };
+
+      userService.resetPassword(userData, (error, userData) => {
+        if (error) {
+          logger.error(error);
+          return res.status(400).send({
+            message: error,
+            success: false
+          });
+        } else {
+          logger.info('Password reset succesfully');
+          return res.status(200).json({
+            success: true,
+            message: 'Password reset succesfully',
+            data: userData
+          });
+        }
+      });
+    } catch (error) {
+      logger.error('Internal server error');
+      return res.status(500).send({
+        success: false,
+        message: 'Internal server error',
+        data: null
+      });
+    }
+  }
 }
 module.exports = new Controller();
