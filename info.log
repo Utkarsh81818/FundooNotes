@@ -69,3 +69,17 @@
 {"level":"info","message":"Email id found","timestamp":"2021-12-12T14:26:47.857Z"}
 {"level":"error","message":null,"timestamp":"2021-12-12T14:26:48.187Z"}
 {"level":"info","message":"Password reset succesfully","timestamp":"2021-12-12T15:05:22.731Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-12T15:53:17.439Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-12T15:53:17.449Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-12T15:53:29.192Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-12T15:54:04.550Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T15:54:05.568Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:58:10.972Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:58:30.378Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:58:38.809Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:59:54.452Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T16:00:55.923Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-12T16:10:03.667Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-12T16:11:33.443Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-12T16:11:35.933Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-12T16:11:36.127Z"}

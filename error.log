@@ -23,3 +23,11 @@
 {"level":"error","message":null,"timestamp":"2021-12-12T13:48:56.448Z"}
 {"level":"error","message":null,"timestamp":"2021-12-12T13:48:56.657Z"}
 {"level":"error","message":null,"timestamp":"2021-12-12T14:26:48.192Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-12T15:53:17.448Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-12T15:53:17.449Z"}
+{"level":"error","message":null,"timestamp":"2021-12-12T15:54:05.571Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:58:10.977Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:58:30.379Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:58:38.810Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T15:59:54.463Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-12T16:00:55.923Z"}

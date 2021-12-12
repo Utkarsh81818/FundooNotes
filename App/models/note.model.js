@@ -119,10 +119,10 @@ class userModel {
         Otp.findOne({ code: userData.code }, (error, data) => {
             if (data) {
                 if (userData.code == data.code) {
-                    utilities.hashing(userData.newPassword, (err, hash) => {
+                    utilities.hashing(userData.password, (err, hash) => {
                         if (hash) {
-                            userData.newPassword = hash;
-                            user.updateOne({ "password": userData.newPassword }, (error, data) => {
+                            userData.password = hash;
+                            user.updateOne({ "password": userData.password }, (error, data) => {
                                 if (data) {
                                     return callback(null, "Updated successfully")
                                 }

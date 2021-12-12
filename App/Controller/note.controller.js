@@ -163,14 +163,14 @@ class Controller {
     try {
       const userData = {
         email: req.body.email,
-        newPassword: req.body.newPassword,
+        password: req.body.password,
         code: req.body.code
       };
 
       const resetVlaidation = validation.validateReset.validate(userData);
       if (resetVlaidation.error) {
         logger.error('Invalid password');
-        res.status(422).send({
+        res.status(400).send({
           success: false,
           message: 'Invalid password'
         });
