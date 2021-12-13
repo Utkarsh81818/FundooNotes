@@ -406,3 +406,27 @@
 {"level":"error","message":"Invalid User","timestamp":"2021-12-13T16:57:28.345Z"}
 {"level":"error","message":"Invalid Credential","timestamp":"2021-12-13T16:57:28.347Z"}
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T16:57:28.701Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-13T16:59:24.119Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T16:59:24.266Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T16:59:24.378Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T16:59:24.458Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T16:59:24.612Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-13T16:59:25.030Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-13T16:59:25.042Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-13T16:59:25.131Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-13T16:59:25.132Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T16:59:25.732Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T16:59:26.343Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-13T16:59:26.374Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-13T17:01:45.479Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T17:01:45.647Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T17:01:45.723Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T17:01:45.792Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T17:01:46.010Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-13T17:01:46.430Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-13T17:01:46.442Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-13T17:01:46.532Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-13T17:01:46.534Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T17:01:46.810Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T17:01:47.539Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-13T17:01:47.641Z"}

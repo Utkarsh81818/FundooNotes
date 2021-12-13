@@ -34,6 +34,15 @@
         },
         "ForgotPasswordNegNonRegistered": {
             "email": "akashgmail.com"
-        }
+        },
+        "validDetails":{
+            "email":"utkarsh945@gmail.com",
+            "password":"Akash@1234",
+            "code":"6tyxabu96c"
+        },
+        "invalidDetails":{
+            "email":"utkarsh9@gmailcom",
+            "password":"Akash76727"
+        } 
     }
 }
