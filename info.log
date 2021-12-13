@@ -430,3 +430,9 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-13T17:01:46.810Z"}
 {"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T17:01:47.539Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-13T17:01:47.641Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T17:04:39.974Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T17:05:04.710Z"}
+{"level":"error","message":null,"timestamp":"2021-12-13T17:05:05.651Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T17:07:42.442Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T17:08:08.874Z"}
+{"level":"error","message":null,"timestamp":"2021-12-13T17:08:09.833Z"}

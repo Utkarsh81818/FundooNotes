@@ -122,7 +122,7 @@ class userModel {
                     utilities.hashing(userData.password, (err, hash) => {
                         if (hash) {
                             userData.password = hash;
-                            user.updateOne({ "password": userData.password }, (error, data) => {
+                            user.updateOne({ password: userData.password },{new:true}, (error, data) => {
                                 if (data) {
                                     return callback(null, "Updated successfully")
                                 }
