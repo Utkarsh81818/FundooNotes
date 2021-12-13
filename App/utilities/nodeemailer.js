@@ -7,7 +7,7 @@ exports.sendEmail = (mailMessage) => {
   let optData=new Otp({
     email:mailMessage.email,
     code:otpcode,
-    expireIn:new Date().getTime()+300*1000
+    expireIn:new Date().getTime()+30*1000
   })
   optData.save();
   const transporter = nodemailer.createTransport({

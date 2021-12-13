@@ -22,12 +22,18 @@
             "password": "srinivas$123"
         },
         "login": {
-            "email": "avinash987@gmail.com",
-            "password": "Avinash@1234"
+            "email": "utkarshkr94@gmail.com",
+            "password": "Bipin@123"
         },
         "loginWithImproperDetails": {
             "email": "ansh123@gmail.com",
             "password": "Anshas12@$"
+        },
+        "ForgotPasswordPos": {
+            "email": "utkarshkr945@gmail.com"
+        },
+        "ForgotPasswordNegNonRegistered": {
+            "email": "akashgmail.com"
         }
     }
 }
