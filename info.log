@@ -436,3 +436,14 @@
 {"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T17:07:42.442Z"}
 {"level":"info","message":"Email id found","timestamp":"2021-12-13T17:08:08.874Z"}
 {"level":"error","message":null,"timestamp":"2021-12-13T17:08:09.833Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-13T17:58:28.253Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T17:59:12.879Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-13T17:59:13.082Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-13T17:59:13.090Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-13T18:02:09.616Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T18:10:43.337Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-13T18:10:43.558Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-13T18:10:43.562Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-13T18:13:26.355Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-13T18:13:26.556Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-13T18:13:26.558Z"}
