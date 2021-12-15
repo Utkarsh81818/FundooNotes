@@ -100,11 +100,15 @@ class userModel {
     */
     forgotPassword = (data, callback) => {
         user.findOne({ email: data.email }, (err, data) => {
-            if (data) {
-                return callback(null, data);
-            } else {
-                logger.error('User with email id does not  exists');
+            if (err) {
+                logger.error('Some error in the query');
                 return callback(err, null);
+            } else {
+                if(!data){
+                    log.error('User Not Exist')
+                }else{
+                    return callback(null, data);
+                }
             }
         });
     };
@@ -122,7 +126,7 @@ class userModel {
                     utilities.hashing(userData.password, (err, hash) => {
                         if (hash) {
                             userData.password = hash;
-                            user.updateOne({ password: userData.password },{new:true}, (error, data) => {
+                            user.updateOne({email:userData.email},{'$set':{"password": userData.password}},{new : true}, (error, data) => {
                                 if (data) {
                                     return callback(null, "Updated successfully")
                                 }
