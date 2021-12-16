@@ -317,3 +317,18 @@
 {"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-15T18:07:50.281Z"}
 {"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-15T18:07:50.284Z"}
 {"level":"error","message":"failed to post note","timestamp":"2021-12-15T18:07:50.286Z"}
+{"level":"error","message":null,"timestamp":"2021-12-16T17:30:36.181Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:31:42.333Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:39:37.461Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:40:01.758Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:40:58.525Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:40:58.534Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-16T17:40:58.535Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:41:36.460Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:41:36.462Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-16T17:41:36.463Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:49:24.185Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:49:24.186Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-16T17:49:24.187Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:50:22.496Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:50:58.081Z"}

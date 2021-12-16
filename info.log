@@ -582,3 +582,37 @@
 {"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-15T18:07:50.282Z"}
 {"level":"error","message":"failed to post note","timestamp":"2021-12-15T18:07:50.286Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-15T18:08:53.666Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-16T03:49:59.510Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T03:50:28.973Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-16T03:50:29.315Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T03:50:29.344Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T17:30:35.870Z"}
+{"level":"error","message":null,"timestamp":"2021-12-16T17:30:36.175Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T17:30:52.919Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-16T17:30:53.157Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T17:30:53.165Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:31:42.332Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:39:37.460Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:40:01.757Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:40:58.521Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:40:58.533Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-16T17:40:58.535Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T17:41:06.901Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-16T17:41:07.203Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T17:41:07.219Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:41:36.458Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:41:36.461Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-16T17:41:36.463Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T17:48:58.116Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-16T17:48:58.395Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T17:48:58.409Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:49:24.184Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-16T17:49:24.186Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-16T17:49:24.187Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-16T17:49:34.877Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:50:22.493Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T17:50:32.136Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-16T17:50:32.483Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T17:50:32.493Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:50:58.080Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-16T17:52:12.050Z"}

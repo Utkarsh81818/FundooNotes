@@ -81,7 +81,7 @@ class userModel {
         //To find a user email in the database
         user.findOne({ email: loginData.email }, (error, data) => {
             if (error) {
-                logger.error('Find error while loggin user');
+                logger.error('Find error while login user');
                 return callBack(error, null);
             } else if (!data) {
                 logger.error('Invalid User');
@@ -126,7 +126,7 @@ class userModel {
                     utilities.hashing(userData.password, (err, hash) => {
                         if (hash) {
                             userData.password = hash;
-                            user.updateOne({email:userData.email},{'$set':{"password": userData.password}},{new : true}, (error, data) => {
+                            user.updateOne({email:userData.email},{'$set':{"password": userData.password}}, (error, data) => {
                                 if (data) {
                                     return callback(null, "Updated successfully")
                                 }

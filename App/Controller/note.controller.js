@@ -3,10 +3,10 @@
  * @author        : Utkarsh Mishra
 */
 
-const userService = require('../service/service.js')
-const validation = require('../utilities/validation');
-const { logger } = require('../../logger/logger')
-class Controller {
+      const userService = require('../service/service.js')
+      const validation = require('../utilities/validation');
+      const { logger } = require('../../logger/logger')
+      class Controller {
 
   /**
      * @description Create and save user and sending response to service
