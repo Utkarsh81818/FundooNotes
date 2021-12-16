@@ -616,3 +616,7 @@
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T17:50:32.493Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-16T17:50:58.080Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-16T17:52:12.050Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-16T18:04:30.231Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-16T18:04:30.585Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-16T18:04:30.596Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-16T18:05:01.848Z"}
