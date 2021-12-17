@@ -56,10 +56,13 @@ class Note {
   getNote = (req, res) => {
     try {
       const id = { id: req.user.dataForToken.id };
-      res.status(201).json({
-        message: 'Get All Notes successfully',
-        success: true
-      })
+      const resultOFFind = notes.findById(id, (error, data) => {
+        if (data)
+          res.status(201).json({
+            message: 'Get All Notes successfully',
+            success: true
+          })
+      });
     }
     catch {
       logger.error(error)

@@ -1,6 +1,7 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../server');
+const helper = require('../App/utilities/helper');
 const faker = require('faker');
 
 chai.use(chaiHttp);
@@ -71,3 +72,32 @@ describe('get notes api', () => {
         });
     });
   });
+
+  describe('get notes api by id ', () => {
+    it('get notes by id when ids not match with token id  ', (done) => {
+      const decodeToken = helper.validateToken;
+      const id = decodeToken.dataForToken.id;
+      const resultOFFind = notes.findById(id);
+      chai
+        .request(server)
+        .get('/getnotes')
+        .send(resultOFFind)
+        .end((err, res) => {
+          res.should.have.status(200);
+          done();
+        });
+    });
+  });
+
+ it('get notes by id when  ids match with token id ', (done) => {
+        const id = noteDB.notes.validToken.id;
+        const resultOFFind = notes.findById(id);
+        chai
+          .request(server)
+          .get('/getnotes')
+          .send(resultOFFind)
+          .end((err, res) => {
+            res.should.have.status(400);
+            done();
+          });
+      });

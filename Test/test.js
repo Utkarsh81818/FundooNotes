@@ -188,4 +188,29 @@ describe('reset Password API', () => {
   });
 });
 
-
+describe('get notes api by id ', () => {
+  it('get notes by id when  ids not match with token id  ', (done) => {
+    const id = req.user.dataForToken.id;
+    const resultOFFind = notes.findById(id);
+    chai
+      .request(server)
+      .get('/getnotes')
+      .send(resultOFFind)
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  });
+});
+it('get notes by id when  ids match with token id ', (done) => {
+      const id = noteDB.notes.validToken.id;
+      const resultOFFind = notes.findById(id);
+      chai
+        .request(server)
+        .get('/getnotes')
+        .send(resultOFFind)
+        .end((err, res) => {
+          res.should.have.status(400);
+          done();
+        });
+    });
