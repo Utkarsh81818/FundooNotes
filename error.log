@@ -367,3 +367,12 @@
 {"level":"error","message":"Invalid Credential","timestamp":"2021-12-16T18:27:02.604Z"}
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-16T18:27:03.058Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-16T18:27:04.123Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-17T18:07:29.648Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-17T18:07:29.742Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-17T18:07:29.801Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-17T18:07:30.165Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-17T18:07:30.166Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-17T18:07:30.570Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-17T18:07:30.793Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-17T18:07:30.803Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-17T18:07:31.271Z"}

@@ -20,7 +20,7 @@ class Note {
 
       const createNoteValidation = validation.notesCreationValidation.validate(note);
       if (createNoteValidation.error) {
-        console.log(createNoteValidation.error);
+        logger.error('Wrong Input Validations')
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
@@ -50,6 +50,23 @@ class Note {
         message: 'Error occured',
         success: false
       });
+    }
+  }
+
+  getNote = (req, res) => {
+    try {
+      const id = { id: req.user.dataForToken.id };
+      res.status(201).json({
+        message: 'Get All Notes successfully',
+        success: true
+      })
+    }
+    catch {
+      logger.error(error)
+      return res.status(400).send({
+        success: false,
+        message: 'Wrong Input Validations',
+      })
     }
   }
 }
