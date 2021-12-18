@@ -416,3 +416,10 @@
 {"level":"error","message":"Internal Error","timestamp":"2021-12-18T13:36:33.647Z"}
 {"level":"error","message":"Internal Error","timestamp":"2021-12-18T13:36:40.019Z"}
 {"level":"error","message":"Internal Error","timestamp":"2021-12-18T13:37:13.861Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-18T14:09:36.786Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-18T14:09:36.861Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-18T14:09:36.925Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-18T14:09:37.403Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-18T14:09:37.404Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-18T14:09:37.856Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-18T14:09:38.267Z"}
