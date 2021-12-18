@@ -789,3 +789,7 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-18T14:09:37.855Z"}
 {"level":"info","message":"Password reset succesfully","timestamp":"2021-12-18T14:09:38.227Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-18T14:09:38.267Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-18T14:16:17.037Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-18T14:16:17.377Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-18T14:16:17.398Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-18T14:16:38.488Z"}
