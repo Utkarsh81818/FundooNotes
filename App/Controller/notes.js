@@ -52,25 +52,39 @@ class Note {
       });
     }
   }
+  
+   /**
+   * @description function written to get all the notes from the database
+   * @param {*} req
+   * @param {*} res
+   * @returns response
+   */
+    getNote = (req, res) => {
+      try {
+        const id = { id: req.user.dataForToken.id };
 
-  getNote = (req, res) => {
-    try {
-      const id = { id: req.user.dataForToken.id };
-      const resultOFFind = notes.findById(id, (error, data) => {
-        if (data)
-          res.status(201).json({
+        noteService.getNote(id, resolve, reject);
+        function resolve(data) {
+          logger.info('Get All Notes successfully');
+          return res.status(201).json({
             message: 'Get All Notes successfully',
-            success: true
-          })
-      });
-    }
-    catch {
-      logger.error(error)
-      return res.status(400).send({
-        success: false,
-        message: 'Wrong Input Validations',
-      })
-    }
-  }
+            success: true,
+            data: data
+          });
+        }
+        function reject() {
+          logger.error('Failed to get all notes');
+          return res.status(400).json({
+            message: 'failed to get all notes',
+            success: false
+          });
+        }
+      } catch {
+        logger.error('Internal Error');
+        return res.status(500).json({
+          message: 'Internal Error'
+        });
+      }
+    };
 }
 module.exports = new Note();

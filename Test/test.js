@@ -5,7 +5,7 @@ chai.use(chaiHttp);
 const registrationData = require('./user.json');
 const loginData = require('./user.json');
 const userInputs = require('./user.json');
-const inputData=require('./user.json');
+const inputData = require('./user.json');
 const faker = require('faker');
 
 chai.should();
@@ -43,7 +43,6 @@ describe('registartion', () => {
       .send(registartionDetails)
       .end((err, res) => {
         if (err) {
-          // return done(err);
           console.log('Please check details again and re-enter the details with proper format');
           done();
         }
@@ -133,7 +132,7 @@ describe('forgotPassword', () => {
       .send(forgotPasswordDetails)
       .end((error, res) => {
         if (error) {
-          return done('Invalid details received instead of valid',error);
+          return done('Invalid details received instead of valid', error);
         }
         res.should.have.status(200);
         res.body.should.have.property('success').eql(true);
@@ -188,29 +187,3 @@ describe('reset Password API', () => {
   });
 });
 
-describe('get notes api by id ', () => {
-  it('get notes by id when  ids not match with token id  ', (done) => {
-    const id = req.user.dataForToken.id;
-    const resultOFFind = notes.findById(id);
-    chai
-      .request(server)
-      .get('/getnotes')
-      .send(resultOFFind)
-      .end((err, res) => {
-        res.should.have.status(200);
-        done();
-      });
-  });
-});
-it('get notes by id when  ids match with token id ', (done) => {
-      const id = noteDB.notes.validToken.id;
-      const resultOFFind = notes.findById(id);
-      chai
-        .request(server)
-        .get('/getnotes')
-        .send(resultOFFind)
-        .end((err, res) => {
-          res.should.have.status(400);
-          done();
-        });
-    });
