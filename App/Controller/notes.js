@@ -97,28 +97,28 @@ class Note {
     }
   };
 
-   /**
-     * @description function written to get  the notes by Id from the database
-     * @param {*} req
-     * @param {*} res
-     * @returns response
-     */
-    getNoteById = async (req, res) => {
-      try {
-        const noteId = req.params.id;
-        const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
-        
-        const getNoteValidation = validation.notesIdValidation.validate(id);
-        if (getNoteValidation.error) {
-          console.log(getNoteValidation.error);
-          return res.status(400).send({
-            success: false,
-            message: 'Wrong Input Validations',
-            data: getNoteValidation
-          });
-        }
+  /**
+    * @description function written to get  the notes by Id from the database
+    * @param {*} req
+    * @param {*} res
+    * @returns response
+    */
+  getNoteById = (req, res) => {
+    try {
+      const noteId = req.params.id;
+      const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
 
-        const data = await noteService.getNoteById(id);
+      const getNoteValidation = validation.notesIdValidation.validate(id);
+      if (getNoteValidation.error) {
+        console.log(getNoteValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: getNoteValidation
+        });
+      }
+
+      noteService.getNoteById(id, (err, data) => {
         if (data.message) {
           return res.status(404).json({
             message: 'Note not found',
@@ -129,15 +129,16 @@ class Note {
           message: 'Note retrieved succesfully',
           success: true,
           data: data
-  
+
         });
-      } catch (err) {
-        return res.status(500).json({
-          message: 'Internal Error',
-          success: false,
-          data: err
-        });
-      }
-    };
+      });
+    } catch (err) {
+      return res.status(500).json({
+        message: 'Internal Error',
+        success: false,
+        data: err
+      });
+    }
+  };
 }
 module.exports = new Note();

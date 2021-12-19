@@ -56,12 +56,13 @@ class Model {
   * @param {*} valid notesId is expected
   * @returns notes of particular Id or if any error return error
   */
-  getNoteById = async (id) => {
-    try {
-      return await NoteRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
-    } catch (err) {
-      return err;
-    }
+  getNoteById = (id, callback) => {
+    NoteRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] })
+      .then((data) => {
+        callback(null, data)
+      }).catch((err) => {
+        callback(err, null)
+      })
   };
 }
 

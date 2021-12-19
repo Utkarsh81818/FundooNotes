@@ -32,12 +32,14 @@ class Service {
      * @description this function is written to trigger or call the models function
      * @returns error if it has error else data
      */
-   getNoteById = async (id) => {
-    try {
-      return await noteModel.getNoteById(id);
-    } catch (err) {
-      return err;
-    }
+   getNoteById =  (id, callback) => {
+    noteModel.getNoteById(id, (err, data) => {
+      if(data){
+        return callback(null, data)
+      }else{
+        return callback(err, null)
+      }
+    });
   };
 }
 module.exports = new Service();

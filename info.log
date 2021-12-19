@@ -905,3 +905,7 @@
 {"level":"info","message":"Email id found","timestamp":"2021-12-19T17:52:27.799Z"}
 {"level":"info","message":" token generated ","timestamp":"2021-12-19T17:52:28.220Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-19T17:52:28.241Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-19T19:10:32.124Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-19T19:10:32.697Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-19T19:10:32.703Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-19T19:11:50.684Z"}
