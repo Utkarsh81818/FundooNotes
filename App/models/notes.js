@@ -14,7 +14,6 @@ const noteSchema = mongoose.Schema({
   }
 }, {
   timestamps: true
-
 });
 
 const NoteRegister = mongoose.model('NoteRegister', noteSchema);
@@ -50,6 +49,19 @@ class Model {
         .then((data) => resolve(data))
         .catch((err) => reject(err));
     });
+  };
+
+  /**
+  * @description function written to get notes by Id into database
+  * @param {*} valid notesId is expected
+  * @returns notes of particular Id or if any error return error
+  */
+  getNoteById = async (id) => {
+    try {
+      return await NoteRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
+    } catch (err) {
+      return err;
+    }
   };
 }
 
