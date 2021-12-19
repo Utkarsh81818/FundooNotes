@@ -104,9 +104,9 @@ class userModel {
                 logger.error('Some error in the query');
                 return callback(err, null);
             } else {
-                if(!data){
+                if (!data) {
                     log.error('User Not Exist')
-                }else{
+                } else {
                     return callback(null, data);
                 }
             }
@@ -119,58 +119,31 @@ class userModel {
         * @param {*} callback
         * @returns
         */
-    resetPassword = (userData, callback) => {
-        Otp.findOne({ code: userData.code }, (error, data) => {
-            if (data) {
-                if (userData.code == data.code) {
-                    utilities.hashing(userData.password, (err, hash) => {
-                        if (hash) {
-                            userData.password = hash;
-                            user.updateOne({email:userData.email},{'$set':{"password": userData.password}}, (error, data) => {
-                                if (data) {
-                                    return callback(null, "Updated successfully")
-                                }
-                                else {
-                                    return callback("Error in updating", null)
-                                }
+    resetPassword = (userData) => {
+        return new Promise((resolve, reject) => {
+            Otp.findOne({ code: userData.code })
+                .then((data) => {
+                    if (userData.code == data.code) {
+                        utilities.hashing(userData.password)
+                            .then((hash) => {
+                                userData.password = hash;
+                                user.updateOne({ email: userData.email }, { '$set': { "password": userData.password } })
+                                    .then((data) => {
+                                        resolve(data)
+                                    }).catch((error) => {
+                                        reject(error)
+                                    })
+                            }).catch((error) => {
+                                rejct(error)
                             })
-                        } else {
-                            return callback("Error in hash on password", null)
-                        }
-                    })
-                } else {
-                    return callback("User not found", null)
-                }
-            } else {
-                return callback("Otp doesnt match", null)
-            }
-        })
+                    } else {
+                        reject(null)
+                    }
+                }).catch((error) => {
+                    reject("Otp doesnt match", null)
+                });
+        });
     }
-
-    // resetPassword = (userData, callback) => {
-    //     Otp.findOne({ code: userData.code })
-    //     .then((data)=>{
-    //         if (userData.code == data.code) {
-    //             utilites.hashing(userData.password, (err, hash) => {
-    //                 if (hash) {
-    //                     userData.password = hash;
-    //                     user.updateOne({email:userData.email},{'$set':{"password": userData.password}})
-    //                     .then((data)=>{
-    //                         return callback(null, "Updated successfully")
-    //                     }).catch((error)=>{
-    //                         return callback("Error in updating", null)
-    //                     })  
-    //                 } else {
-    //                     return callback("Error in hash on password", null)
-    //                 }
-    //             })
-    //         } else {
-    //             return callback("User not found", null)
-    //         }
-    //     }).catch((error)=>{
-    //         return callback("Otp doesnt match", null)
-    //     })   
-    // }
 }
 
 module.exports = new userModel();

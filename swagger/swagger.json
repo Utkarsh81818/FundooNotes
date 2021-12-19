@@ -320,7 +320,6 @@
                 }
             }
         },
-
         "notes": {
             "type": "object",
             "properties": {

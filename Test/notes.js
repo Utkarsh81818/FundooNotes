@@ -70,3 +70,42 @@ describe('get notes api', () => {
       });
   });
 });
+
+// get data by id
+describe('Get notes by ID api', () => {
+  it('givenPoperDetails_ShouldGetNote', (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/6165357e39139e12b1b2986f')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  });
+
+  it('givenPoperDetails_WhenNotValid', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61bb7ccb5aa989f5b63a3bc9')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(404);
+        done();
+      });
+  });
+
+  it('givenPoperDetails_ShouldGetServerError', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61bb7ccb5aa989f5b63a3bc9')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(500);
+        done();
+      });
+  });
+});
