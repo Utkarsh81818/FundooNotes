@@ -198,17 +198,28 @@ class Note {
     * @param {*} res
     * @returns response
     */
-  deleteNoteById =  (req, res) => {
+  deleteNoteById = (req, res) => {
     try {
-     res.status(200).json({
-        message: 'Note Deleted succesfully',
-        success: true,
+      const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
+      const deleteNoteValidation = validation.validateLabel.validate(id);
+      if (deleteNoteValidation.error) {
+        console.log(deleteNoteValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: deleteNoteValidation
         });
       }
-      
+    
+      res.status(200).json({
+        message: 'Note Deleted succesfully',
+        success: true,
+      });
+    }
+    
     catch (err) {
       
-  };
-}
+    };
+  }
 }
 module.exports = new Note();

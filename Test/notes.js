@@ -132,4 +132,17 @@ describe('delete notes api', () => {
         done();
       });
   });
+
+  it('givenInvalidValidValidation_ShouldNotUpdateNote', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    chai
+      .request(server)
+      .delete('/deletenotes/:id')
+      .set({ authorization: token })
+      .end((err, res) => {
+        res.should.have.status(400);
+        res.body.should.have.property('success').eql(false);
+        done();
+      });
+  });
 });
