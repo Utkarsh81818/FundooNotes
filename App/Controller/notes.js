@@ -147,7 +147,7 @@ class Note {
      * @param {*} res
      * @returns response
      */
-   updateNoteById =(req, res) => {
+  updateNoteById = (req, res) => {
     try {
       const updateNote = {
         id: req.params.id,
@@ -165,7 +165,7 @@ class Note {
           data: updateNoteValidation
         });
       }
-      
+
       console.log('note for controller :: ' + updateNote);
       noteService.updateNoteById(updateNote, (error, data) => {
         if (error) {

@@ -87,17 +87,32 @@ describe('Get notes by ID api', () => {
 });
 
 
-// Update data by id
-describe('Update notes by ID api', () => {
-  it('givenPoperDetails_ShouldGetUpdatedNoteAPI', (done) => {
+// update note test cases
+describe('Update notes api', () => {
+  it('givenPoperDetails_ShouldUpdateNote', (done) => {
     const token = noteDB.notes.getNoteWithValidToken;
+    const note = noteDB.updateNote.validData;
     chai
       .request(server)
-      .get('/getnotes/:id')
+      .put('/updatenotes/61bb7ccb5aa989f5b63a3bc9')
       .set({ authorization: token })
+      .send(note)
       .end((err, res) => {
         res.should.have.status(201);
-        res.body.should.have.property('success').eql(true);
+        done();
+      });
+  });
+
+  it('givenInvalidToken_ShouldUpdateNote', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    const note = noteDB.updateNote.validData;
+    chai
+      .request(server)
+      .put('/updatenotes/61bb7ccb5aa989f5b63a3bc9')
+      .set({ authorization: token })
+      .send(note)
+      .end((err, res) => {
+        res.should.have.status(400);
         done();
       });
   });
