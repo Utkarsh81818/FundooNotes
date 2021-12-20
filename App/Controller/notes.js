@@ -155,7 +155,17 @@ class Note {
         title: req.body.title,
         description: req.body.description
       };
-    
+
+      const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
+      if (updateNoteValidation.error) {
+        console.log(updateNoteValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: updateNoteValidation
+        });
+      }
+      
       console.log('note for controller :: ' + updateNote);
       noteService.updateNoteById(updateNote, (error, data) => {
         if (error) {

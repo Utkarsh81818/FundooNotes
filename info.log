@@ -1316,3 +1316,4 @@
 {"level":"info","message":" token generated ","timestamp":"2021-12-20T17:13:35.750Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-20T17:13:35.764Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-20T17:17:00.562Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-20T17:23:24.315Z"}
