@@ -140,5 +140,25 @@ class Note {
       });
     }
   };
+
+  /**
+     * @description function written to update notes using ID from the database
+     * @param {*} req
+     * @param {*} res
+     * @returns response
+     */
+   updateNoteById =(req, res) => {
+    try{
+       res.status(201).send({
+
+        success: true
+      });
+    }
+    catch{
+
+    }
+      
+    
+  }
 }
 module.exports = new Note();
