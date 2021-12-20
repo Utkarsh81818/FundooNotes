@@ -41,5 +41,21 @@ class Service {
       }
     });
   };
+
+   /**
+     * @description this function is written to trigger or call the models function
+     * @returns error if it has error else data
+     */
+    updateNoteById = (updateNote, callback) => {
+      noteModel.updateNoteById(updateNote, (error, data) => {
+        if (error) {
+          logger.error(error);
+          return callback(error, null);
+        } else {
+          return callback(null, data);
+        }
+      }
+      );
+    };
 }
 module.exports = new Service();
