@@ -191,5 +191,24 @@ class Note {
       });
     }
   };
+
+  /**
+    * @description function written to delete note by ID
+    * @param {*} req
+    * @param {*} res
+    * @returns response
+    */
+  deleteNoteById =  (req, res) => {
+    try {
+     res.status(200).json({
+        message: 'Note Deleted succesfully',
+        success: true,
+        });
+      }
+      
+    catch (err) {
+      
+  };
+}
 }
 module.exports = new Note();
