@@ -4,7 +4,7 @@
             "firstName": "Utkarsh",
             "lastName": "Mishra",
             "email": "utkarsh945@gmail.com",
-            "password": "Akash@12345"
+            "password": "Akash@123"
         },
         "registrationWithImproperDetails": {
             "firstName": "Jaiswender",
