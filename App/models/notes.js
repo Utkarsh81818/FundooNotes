@@ -65,37 +65,37 @@ class Model {
       })
   };
 
-   /**
-   * @description function written to update notes by Id into database
-   * @returns notes of particular Id or if any error return error
-   */
-    updateNoteById = (updatedNote, callback) => {
-      try {
-        NoteRegister.findByIdAndUpdate(updatedNote.id, { title: updatedNote.title, description: updatedNote.description }, { new: true }, (err, data) => {
-          if (err) {
-            return callback(err, null);
-          } else {
-            return callback(null, data);
-          }
-        });
-      } catch (err) {
-        return callback(err, null);
-      }
-    };
-
-      /**
-   * @description function written to update isDeleted to true
-   * @param {*} notesId
-   * @param {*} userId
-   * @returns data else if error returns error
-   */
-       deleteNoteById = async (id) => {
-        try {
-          return await NoteRegister.findOneAndDelete({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
-        } catch (err) {
-          return err;
+  /**
+  * @description function written to update notes by Id into database
+  * @returns notes of particular Id or if any error return error
+  */
+  updateNoteById = (updatedNote, callback) => {
+    try {
+      NoteRegister.findByIdAndUpdate(updatedNote.id, { title: updatedNote.title, description: updatedNote.description }, { new: true }, (err, data) => {
+        if (err) {
+          return callback(err, null);
+        } else {
+          return callback(null, data);
         }
-      };
+      });
+    } catch (err) {
+      return callback(err, null);
+    }
+  };
+
+  /**
+* @description function written to update isDeleted to true
+* @param {*} notesId
+* @param {*} userId
+* @returns data else if error returns error
+*/
+  deleteNoteById = async (id) => {
+    try {
+      return await NoteRegister.findOneAndDelete({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
+    } catch (err) {
+      return err;
+    }
+  }
 }
 
 module.exports = new Model();

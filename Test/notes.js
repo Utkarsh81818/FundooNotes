@@ -121,14 +121,15 @@ describe('Update notes api', () => {
 
 // delete note test cases
 describe('delete notes api', () => {
-  it.only('givenInvalidToken_ShouldUpdateNote', (done) => {
-    const token = noteDB.notes.getNoteWithInValidToken;
+  it.only('givenValidValidation_ShouldNotUpdateNote', (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .delete('/deletenotes/61bf83f6581f8b6b141ac53a')
+      .delete('/deletenotes/61bf64718e2b3960aca547a3')
       .set({ authorization: token })
       .end((err, res) => {
-        res.should.have.status(400);
+        res.should.have.status(200);
+        res.body.should.have.property('success').eql(true);
         done();
       });
   });
@@ -154,7 +155,7 @@ describe('delete notes api', () => {
       .set({ authorization: token })
       .send({"id": "61bb7ccb5a89f5b63a3bc9"})
       .end((err, res) => {
-        res.should.have.status(500);
+        res.should.have.status(404);
         res.body.should.have.property('success').eql(false);
         done();
       });
