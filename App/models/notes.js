@@ -82,6 +82,20 @@ class Model {
         return callback(err, null);
       }
     };
+
+      /**
+   * @description function written to update isDeleted to true
+   * @param {*} notesId
+   * @param {*} userId
+   * @returns data else if error returns error
+   */
+       deleteNoteById = async (id) => {
+        try {
+          return await NoteRegister.findOneAndDelete({ $and: [{ _id: id.noteId }, { userId: id.userId }] });
+        } catch (err) {
+          return err;
+        }
+      };
 }
 
 module.exports = new Model();

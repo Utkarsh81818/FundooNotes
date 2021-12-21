@@ -57,5 +57,18 @@ class Service {
       }
       );
     };
+
+     /**
+     * @description deleting notes by id
+     * @param {*} notesId
+     * @returns
+     */
+      deleteNoteById = async (id) => {
+        try {
+          return await noteModel.deleteNoteById(id);
+        } catch (err) {
+          return err;
+        }
+      };
 }
 module.exports = new Service();

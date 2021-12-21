@@ -88,5 +88,6 @@
          return callback(error, null);
        });
    };
- }
- module.exports = new userService();
+}
+
+module.exports = new userService();

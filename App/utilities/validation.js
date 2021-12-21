@@ -87,5 +87,9 @@ class Validation {
       .required()
   });
 
+  notesdeleteValidation = Joi.object({
+    userId: Joi.string().required(),
+    noteId: Joi.string().required()
+  });
 }
 module.exports = new Validation();

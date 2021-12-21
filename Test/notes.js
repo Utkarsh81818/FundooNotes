@@ -121,19 +121,18 @@ describe('Update notes api', () => {
 
 // delete note test cases
 describe('delete notes api', () => {
-  it.only('givenValidToken_ShouldDeleteNote', (done) => {
-    const token = noteDB.notes.getNoteWithValidToken;
+  it.only('givenInvalidToken_ShouldUpdateNote', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
-      .delete('/deletenotes/:id')
+      .delete('/deletenotes/61bf83f6581f8b6b141ac53a')
       .set({ authorization: token })
-      // .send({"id": "61bb7ccb5aa989f5b63a3bc9"})
       .end((err, res) => {
-        res.should.have.status(200);
+        res.should.have.status(400);
         done();
       });
   });
-
+  
   it.only('givenValidValidation_ShouldNotUpdateNote', (done) => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
@@ -153,11 +152,12 @@ describe('delete notes api', () => {
       .request(server)
       .delete('/deletenotes/:id')
       .set({ authorization: token })
-      .send({"id": "61bb7ccb5aa989f5b63a3bc9"})
+      .send({"id": "61bb7ccb5a89f5b63a3bc9"})
       .end((err, res) => {
-        res.should.have.status(404);
+        res.should.have.status(500);
         res.body.should.have.property('success').eql(false);
         done();
       });
   });
 });
+
