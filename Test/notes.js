@@ -121,19 +121,20 @@ describe('Update notes api', () => {
 
 // delete note test cases
 describe('delete notes api', () => {
-  it('givenValidToken_ShouldUpdateNote', (done) => {
+  it.only('givenValidToken_ShouldDeleteNote', (done) => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
       .delete('/deletenotes/:id')
       .set({ authorization: token })
+      // .send({"id": "61bb7ccb5aa989f5b63a3bc9"})
       .end((err, res) => {
         res.should.have.status(200);
         done();
       });
   });
 
-  it('givenInvalidValidValidation_ShouldNotUpdateNote', (done) => {
+  it.only('givenValidValidation_ShouldNotUpdateNote', (done) => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
@@ -141,6 +142,20 @@ describe('delete notes api', () => {
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(400);
+        res.body.should.have.property('success').eql(false);
+        done();
+      });
+  });
+
+  it.only('givenInvalidValidValidation_ShouldNotUpdateNote', (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
+    chai
+      .request(server)
+      .delete('/deletenotes/:id')
+      .set({ authorization: token })
+      .send({"id": "61bb7ccb5aa989f5b63a3bc9"})
+      .end((err, res) => {
+        res.should.have.status(404);
         res.body.should.have.property('success').eql(false);
         done();
       });
