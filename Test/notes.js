@@ -133,7 +133,7 @@ describe('Get notes by ID api', () => {
         return done();
       });
   });
-  it.only("Should return false from GetNoteApi service, return appropriate response", (done) => {
+  it.only("Should return false from GetNoteApi model, return appropriate response", (done) => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
