@@ -842,3 +842,11 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-21T07:02:15.916Z"}
 {"level":"error","message":{"acknowledged":true,"matchedCount":0,"modifiedCount":0,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-21T07:02:16.328Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-21T07:02:16.362Z"}
+{"level":"error","message":"User Not Exist","timestamp":"2021-12-22T03:39:22.115Z"}
+{"level":"error","message":"User Not Exist","timestamp":"2021-12-22T03:40:35.060Z"}
+{"level":"error","message":"User Not Exist","timestamp":"2021-12-22T03:41:17.738Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T03:45:13.506Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-22T04:08:12.724Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-22T04:13:43.477Z"}
+{"level":"error","message":null,"timestamp":"2021-12-22T04:43:46.717Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T04:46:54.654Z"}

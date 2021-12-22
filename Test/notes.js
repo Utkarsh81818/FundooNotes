@@ -58,7 +58,7 @@ describe('get notes api', () => {
       });
   });
 
-  it('givenCreateNotes_whenInvalidToken_shouldNotbeGet', (done) => {
+  it('givenGetNotes_whenInvalidToken_shouldNotbeGet', (done) => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
@@ -73,15 +73,76 @@ describe('get notes api', () => {
 
 // get data by id
 describe('Get notes by ID api', () => {
-  it('givenPoperDetails_ShouldGetNote', (done) => {
+  it.only('given token should be valid token', (done) => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .get('/getnotes/6165357e39139e12b1b2986f')
+      .get('/getnotes/61bf662d2cc8f31afe6ebb41')
       .set({ authorization: token })
+      .send(token)
       .end((err, res) => {
         res.should.have.status(200);
         done();
+      });
+  });
+  it.only('given token should be valid token', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61bf662d2cc8f31afe6ebb41')
+      .set({ authorization: token })
+      .send(token)
+      .end((err, res) => {
+        res.should.have.status(400);
+        done();
+      });
+  });
+  it.only('givenPoperDetails_ShouldGetNote', (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61bf662d2cc8f31afe6ebb41')
+      .set({ authorization: token })
+      .send(token, '61bf662d2cc8f31afe6ebb41')
+      .end((err, res) => {
+        res.should.have.status(200);
+        done();
+      });
+  });
+  it.only('givenPoperDetails_ShouldGetNote', (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61c28a8516512bcec838cbbc')
+      .set({ authorization: token })
+      .send(token, '61c28a8516512bcec838cbbc')
+      .end((err, res) => {
+        res.should.have.status(400);
+        done();
+      });
+  });
+  it.only("Should return true , return appropriate response", (done) => {
+    const token = noteDB.notes.getNoteWithValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61c28a8516512bcec838cbbc')
+      .set({ authorization: token })
+      .send(token, '61c28a8516512bcec838cbbc')
+      .end((err, res) => {
+        res.should.have.status(200);
+        return done();
+      });
+  });
+  it.only("Should return false from GetNoteApi service, return appropriate response", (done) => {
+    const token = noteDB.notes.getNoteWithInValidToken;
+    chai
+      .request(server)
+      .get('/getnotes/61c28a8516512bcec838cbbc')
+      .set({ authorization: token })
+      .send(token, '61c28a8516512bcec838cbbc')
+      .end((err, res) => {
+        res.should.have.status(400);
+        return done();
       });
   });
 });
@@ -121,11 +182,11 @@ describe('Update notes api', () => {
 
 // delete note test cases
 describe('delete notes api', () => {
-  it.only('givenValidValidation_ShouldNotUpdateNote', (done) => {
+  it('givenValidValidation_ShouldNotUpdateNote', (done) => {
     const token = noteDB.notes.getNoteWithValidToken;
     chai
       .request(server)
-      .delete('/deletenotes/61bf64718e2b3960aca547a3')
+      .delete('/deletenotes/61bcd82dbe523da96f5f2717')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(200);
@@ -133,8 +194,8 @@ describe('delete notes api', () => {
         done();
       });
   });
-  
-  it.only('givenValidValidation_ShouldNotUpdateNote', (done) => {
+
+  it.only('givenInValidValidation_ShouldNotUpdateNote', (done) => {
     const token = noteDB.notes.getNoteWithInValidToken;
     chai
       .request(server)
@@ -153,7 +214,7 @@ describe('delete notes api', () => {
       .request(server)
       .delete('/deletenotes/:id')
       .set({ authorization: token })
-      .send({"id": "61bb7ccb5a89f5b63a3bc9"})
+      .send({ "id": "61bb7ccb5a89f5b63a3bc9" })
       .end((err, res) => {
         res.should.have.status(404);
         res.body.should.have.property('success').eql(false);
