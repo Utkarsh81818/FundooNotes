@@ -32,7 +32,7 @@ class Service {
      * @description this function is written to trigger or call the models function
      * @returns error if it has error else data
      */
-  getNoteById = (id, callback) => {
+   getNoteById = (id, callback) => {
     noteModel.getNoteById(id, (err, data) => {
       if (data) {
         return callback(null, data)
@@ -40,7 +40,7 @@ class Service {
         return callback(err, null)
       }
     });
-  };
+  }; 
 
   /**
     * @description this function is written to trigger or call the models function
