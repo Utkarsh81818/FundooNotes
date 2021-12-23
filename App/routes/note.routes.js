@@ -20,9 +20,5 @@ module.exports = (app) => {
   app.put('/reset-Password', controller.resetPassword);
 
   // api for CRUD
-  app.post('/createnotes', helper.validateToken, noteController.createNote);
-  app.get('/getnotes', helper.validateToken, noteController.getNote);
-  app.get('/getnotes/:id', helper.validateToken, noteController.getNoteById);
-  app.put('/updatenotes/:id', helper.validateToken, noteController.updateNoteById);
-  app.delete('/deletenotes/:id', helper.validateToken, noteController.deleteNoteById);
+ 
 }

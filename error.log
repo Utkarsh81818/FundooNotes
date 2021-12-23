@@ -850,3 +850,9 @@
 {"level":"error","message":"Internal server error","timestamp":"2021-12-22T04:13:43.477Z"}
 {"level":"error","message":null,"timestamp":"2021-12-22T04:43:46.717Z"}
 {"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T04:46:54.654Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-22T18:00:06.581Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T18:12:09.128Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-22T18:35:29.079Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T18:48:43.925Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T18:49:53.045Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-22T18:51:48.104Z"}

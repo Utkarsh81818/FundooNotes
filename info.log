@@ -1631,3 +1631,37 @@
 {"level":"info","message":"Email id found","timestamp":"2021-12-22T06:33:53.292Z"}
 {"level":"info","message":" token generated ","timestamp":"2021-12-22T06:33:54.013Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-22T06:33:54.022Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-22T08:30:11.951Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-22T08:31:45.853Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-22T08:34:10.648Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-22T08:34:11.261Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-22T08:34:11.280Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-22T08:34:30.780Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T17:51:54.739Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T17:54:33.359Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T17:54:48.700Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T17:56:07.032Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-22T17:56:59.995Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-22T17:57:00.874Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-22T17:57:00.921Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-22T18:00:06.580Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T18:12:09.097Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-22T18:12:09.133Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T18:29:09.883Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T18:30:24.077Z"}
+{"level":"info","message":"User registered","timestamp":"2021-12-22T18:30:46.569Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-22T18:33:25.124Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-22T18:33:26.291Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-22T18:33:26.337Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2021-12-22T18:35:29.079Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T18:48:43.891Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-22T18:48:43.937Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-22T18:49:53.043Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2021-12-22T18:49:53.046Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-22T18:51:20.700Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-22T18:51:21.696Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-22T18:51:21.730Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-22T18:51:48.103Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-22T18:52:22.130Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-22T18:52:54.608Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-22T18:54:11.677Z"}
