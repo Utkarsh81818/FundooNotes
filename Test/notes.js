@@ -33,6 +33,9 @@ describe('create notes api', () => {
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
+                if (err) {
+                    res.should.have.status(500)
+                }
                 res.should.have.status(400);
                 done();
             });
@@ -65,6 +68,9 @@ describe('create notes api', () => {
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
+                if (err) {
+                    res.should.have.status(500);
+                }
                 res.should.have.status(400);
                 done();
             });
