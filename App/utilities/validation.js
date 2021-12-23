@@ -64,7 +64,7 @@ class Validation {
     title: Joi.string().min(2)
       .required(),
 
-    description: Joi.string().min(5)
+    description: Joi.string().min(2)
   });
 }
 module.exports = new Validation();

@@ -1680,3 +1680,13 @@
 {"level":"info","message":"Email id found","timestamp":"2021-12-23T11:39:28.514Z"}
 {"level":"info","message":" token generated ","timestamp":"2021-12-23T11:39:29.730Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-23T11:39:29.759Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:18:46.313Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:18:46.909Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:18:47.652Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:53:41.048Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:53:41.371Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:53:42.082Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T14:57:09.344Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T14:57:09.619Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T14:57:09.753Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T14:57:09.956Z"}

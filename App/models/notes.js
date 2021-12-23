@@ -23,7 +23,9 @@ class Model {
    * @param {*} a valid info is expected
    * @returns saved data or if error returns error
    */
-  
+//    createNote = (note, callback) => 
+//    callback(null,note)
+//
 }
 
 module.exports = new Model();
