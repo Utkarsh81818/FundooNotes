@@ -9,11 +9,10 @@ const { logger } = require('../../logger/logger')
 class Controller {
 
   /**
-     * @description Create and save user and sending response to service
+  * @description Create and save user and sending response to service
      * @method register to save the user
      * @param req,res for service
-     */
-
+           */
   register = (req, res) => {
     try {
       const user = {

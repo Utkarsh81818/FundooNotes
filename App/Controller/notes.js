@@ -10,6 +10,20 @@ class Note {
     * @param {*} res
     * @returns response
     */
-  
+  createNote = (req, res) => {
+    const token = req.user
+    if (token) {
+      return res.status(201).send({
+        message: 'Found Token',
+        success: true,
+      });
+    }
+    else {
+      return res.status(400).send({
+        success: false,
+        message: 'Wrong Input Validations',
+      })
+    }
+  }
 }
 module.exports = new Note();

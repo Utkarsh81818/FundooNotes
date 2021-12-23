@@ -18,7 +18,8 @@ module.exports = (app) => {
   app.post('/forgotPassword', controller.forgotPassword);
   //api for reset-password
   app.put('/reset-Password', controller.resetPassword);
-
+  // api for Create Note 
+  app.post('/createnotes', helper.validateToken, noteController.createNote);
   // api for CRUD
  
 }
