@@ -23,9 +23,14 @@ class Model {
    * @param {*} a valid info is expected
    * @returns saved data or if error returns error
    */
-  createNote = (note, callback) => {
+  createNote = (info, callback) => {
+    const note = new NoteRegister({
+      userId: info.userId,
+      title: info.title,
+      description: info.description
+    });
     if (note) {
-      callback(null, note)
+      callback(null, info)
     }
   }
 }
