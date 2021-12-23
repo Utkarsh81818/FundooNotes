@@ -29,9 +29,13 @@ class Model {
       title: info.title,
       description: info.description
     });
-    if (note) {
-      callback(null, info)
-    }
+    note.save((error, data) => {
+      if (error) {
+        return callback(error, null);
+      } else {
+        return callback(null, data);
+      }
+    })
   }
 }
 

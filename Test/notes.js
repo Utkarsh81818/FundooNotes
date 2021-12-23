@@ -12,7 +12,8 @@ describe('create notes api', () => {
     it.only('givenNotes_validToken_is Authentic Request', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
-            title: faker.lorem.word()
+            title: faker.lorem.word(),
+            description: noteDB.notes.description
         };
         chai
             .request(server)
@@ -20,7 +21,7 @@ describe('create notes api', () => {
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
-                res.should.have.status(201);
+                res.should.have.status(400);
                 done();
             });
     });
@@ -39,7 +40,8 @@ describe('create notes api', () => {
     it.only('givenNotes_ValidToken_shouldCreated', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
-            title: faker.lorem.word()
+            title: noteDB.notes.title,
+            description: faker.lorem.word()
         };
         chai
             .request(server)
@@ -179,6 +181,38 @@ describe('create notes api', () => {
             });
     });
     it.only('Should return false from Model Layer noteisnotcreated, return appropriate response', (done) => {
+        const token = noteDB.notes.invalidToken;
+        const createNotes = {
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
+        };
+        chai
+            .request(server)
+            .post('/createnotes')
+            .set({ authorization: token })
+            .send(createNotes)
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    })
+    it.only('Should return true from Model Layer .save is saving data', (done) => {
+        const token = noteDB.notes.validToken;
+        const createNotes = {
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
+        }
+        chai
+            .request(server)
+            .post('/createnotes')
+            .set({ authorization: token })
+            .send(createNotes)
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
+    it.only('Should return false from Model Layer noteisnotcreated .save is getting error', (done) => {
         const token = noteDB.notes.invalidToken;
         const createNotes = {
             title: faker.lorem.word(),

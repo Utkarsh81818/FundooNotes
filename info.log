@@ -1706,3 +1706,23 @@
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T15:42:21.788Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T15:42:21.919Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T15:42:22.012Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-23T16:49:30.433Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-23T16:49:30.438Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-23T16:49:30.660Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-23T16:49:30.666Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:49:30.949Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:49:31.035Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:49:31.236Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:49:31.434Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:49:31.646Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:56:47.682Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:56:47.861Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:56:48.038Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:56:48.256Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:56:48.320Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.505Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.623Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.682Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.735Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.848Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.943Z"}

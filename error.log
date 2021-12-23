@@ -870,3 +870,7 @@
 {"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:53:41.060Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:53:41.372Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-23T14:53:42.083Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-23T16:49:30.437Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-23T16:49:30.438Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-23T16:49:30.665Z"}
+{"level":"error","message":"failed to post note","timestamp":"2021-12-23T16:49:30.666Z"}
