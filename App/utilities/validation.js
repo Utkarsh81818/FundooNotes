@@ -61,35 +61,7 @@ class Validation {
 
   notesCreationValidation = Joi.object({
     userId: Joi.string().required(),
-    title: Joi.string().min(2)
-      .required(),
-
-    description: Joi.string().min(5)
-      .required()
-  });
-
-  getNoteValidation = Joi.object({
-    id: Joi.string().required()
-  });
-
-  notesIdValidation = Joi.object({
-    userId: Joi.string().required(),
-    noteId: Joi.string().required()
-  });
-
-  notesUpdateValidation = Joi.object({
-    id: Joi.string().required(),
-    userId: Joi.string().required(),
-    title: Joi.string().min(5)
-      .required(),
-
-    description: Joi.string().min(5)
-      .required()
-  });
-
-  notesdelete = Joi.object({
-    userId: Joi.string().required(),
-    noteId: Joi.string().required()
+    title: Joi.string().min(2).required()
   });
 }
 module.exports = new Validation();

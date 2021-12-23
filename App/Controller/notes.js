@@ -10,19 +10,32 @@ class Note {
     * @param {*} res
     * @returns response
     */
+
   createNote = (req, res) => {
-    const token = req.user
-    if (token) {
+    try {
+      const note = {
+        userId: req.user.dataForToken.id,
+        title: req.body.title,
+      };
+      const createNoteValidation = validation.notesCreationValidation.validate(note);
+      if (createNoteValidation.error) {
+        console.log(createNoteValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: createNoteValidation
+        });
+      }
       return res.status(201).send({
         message: 'Found Token',
         success: true,
       });
-    }
-    else {
-      return res.status(400).send({
-        success: false,
-        message: 'Wrong Input Validations',
-      })
+    } catch (error) {
+      logger.error('Internal server error');
+      return res.status(500).json({
+        message: 'Error occured',
+        success: false
+      });
     }
   }
 }
