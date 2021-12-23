@@ -9,8 +9,20 @@ const { string } = require('joi');
 chai.should();
 
 describe('create notes api', () => {
-    it.only('givenNotes_validToken_is Authentic Request', (done) => {
-        const token = noteDB.notes.validToken;
+    it.only('givenCreateNotes_inValidToken_With_Undifined_Data', (done) => {
+        const token = noteDB.notes.invalidToken;
+        chai
+            .request(server)
+            .post('/createnotes')
+            .set({ authorization: token })
+            .send({})
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    });
+    it.only('givenNotes_InvalidToken_is Authentic Request', (done) => {
+        const token = noteDB.notes.invalidToken;
         const createNotes = {
             title: faker.lorem.word(),
             description: noteDB.notes.description
@@ -25,19 +37,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it.only('givenCreateNotes_inValidToken_shouldNotbeCreated', (done) => {
-        const token = noteDB.notes.invalidToken;
-        chai
-            .request(server)
-            .post('/createnotes')
-            .set({ authorization: token })
-            .send(token)
-            .end((err, res) => {
-                res.should.have.status(400);
-                done();
-            });
-    });
-    it.only('givenNotes_ValidToken_shouldCreated', (done) => {
+    it.only('givenNotes_ValidToken_Schema is validated or not_shouldCreated', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: noteDB.notes.title,
@@ -49,14 +49,15 @@ describe('create notes api', () => {
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
-                res.should.have.status(201);
+                res.should.have.status(400);
                 done();
             });
     });
-    it.only('givenNotes_InValidToken_shouldNotCreated', (done) => {
+    it.only('givenNotes_InValidToken_shouldNotCreated with Payload', (done) => {
         const token = noteDB.notes.invalidToken;
         const createNotes = {
-            title: faker.lorem.word()
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
         };
         chai
             .request(server)
@@ -84,22 +85,6 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it.only('givenNotes_InValidToken_shouldNotCreated with Payload', (done) => {
-        const token = noteDB.notes.invalidToken;
-        const createNotes = {
-            title: faker.lorem.word(),
-            description: faker.lorem.word()
-        };
-        chai
-            .request(server)
-            .post('/createnotes')
-            .set({ authorization: token })
-            .send(createNotes)
-            .end((err, res) => {
-                res.should.have.status(400);
-                done();
-            });
-    });
     it.only('Should return true from CreateNoteApi Service Layer', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
@@ -113,22 +98,6 @@ describe('create notes api', () => {
             .send(createNotes)
             .end((err, res) => {
                 res.should.have.status(201);
-                done();
-            });
-    });
-    it.only('Should return false from CreateNoteApi Service layer', (done) => {
-        const token = noteDB.notes.invalidToken;
-        const createNotes = {
-            title: faker.lorem.word(),
-            description: faker.lorem.word()
-        };
-        chai
-            .request(server)
-            .post('/createnotes')
-            .set({ authorization: token })
-            .send(createNotes)
-            .end((err, res) => {
-                res.should.have.status(400);
                 done();
             });
     });
@@ -148,22 +117,6 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it.only('Should return false from CreateNoteApi Model layer', (done) => {
-        const token = noteDB.notes.invalidToken;
-        const createNotes = {
-            title: faker.lorem.word(),
-            description: faker.lorem.word()
-        };
-        chai
-            .request(server)
-            .post('/createnotes')
-            .set({ authorization: token })
-            .send(createNotes)
-            .end((err, res) => {
-                res.should.have.status(400);
-                done();
-            });
-    })
     it.only('Should return true from Model Layer noteiscreated, return appropriate response', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
@@ -180,22 +133,6 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it.only('Should return false from Model Layer noteisnotcreated, return appropriate response', (done) => {
-        const token = noteDB.notes.invalidToken;
-        const createNotes = {
-            title: faker.lorem.word(),
-            description: faker.lorem.word()
-        };
-        chai
-            .request(server)
-            .post('/createnotes')
-            .set({ authorization: token })
-            .send(createNotes)
-            .end((err, res) => {
-                res.should.have.status(400);
-                done();
-            });
-    })
     it.only('Should return true from Model Layer .save is saving data', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
@@ -212,20 +149,4 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it.only('Should return false from Model Layer noteisnotcreated .save is getting error', (done) => {
-        const token = noteDB.notes.invalidToken;
-        const createNotes = {
-            title: faker.lorem.word(),
-            description: faker.lorem.word()
-        };
-        chai
-            .request(server)
-            .post('/createnotes')
-            .set({ authorization: token })
-            .send(createNotes)
-            .end((err, res) => {
-                res.should.have.status(400);
-                done();
-            });
-    })
 });

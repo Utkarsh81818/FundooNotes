@@ -29,15 +29,15 @@ class Note {
       }
       noteService.createNote(note, (error, data) => {
         if (error) {
-          logger.error('failed to post note');
+          logger.error('Error while creating note');
           return res.status(400).json({
-            message: 'failed to post note',
+            message: 'Error while creating note',
             success: false
           });
         } else {
-          logger.info('Successfully inserted note');
+          logger.info('Note inserted Successfully');
           return res.status(201).send({
-            message: 'Successfully inserted note',
+            message: 'Note inserted Successfully',
             success: true,
             data: data
           });

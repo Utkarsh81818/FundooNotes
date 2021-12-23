@@ -1726,3 +1726,39 @@
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.735Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.848Z"}
 {"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T16:57:45.943Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:05:42.162Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:05:42.237Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:05:42.307Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:05:42.374Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:05:42.434Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:05:42.537Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-23T17:16:13.375Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-23T17:16:13.775Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-23T17:16:13.785Z"}
+{"level":"info","message":"Successfully inserted note","timestamp":"2021-12-23T17:16:36.933Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:00:20.416Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:00:20.492Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:00:20.873Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:00:20.912Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:02:19.957Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:02:19.994Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:02:20.177Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:02:20.402Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:02:20.518Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:03:43.340Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:03:43.424Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:03:43.523Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:03:43.572Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:03:43.639Z"}
+{"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-23T18:06:26.172Z"}
+{"level":"error","message":"Error while creating note","timestamp":"2021-12-23T18:06:26.176Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:06:26.355Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:06:26.400Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:06:26.602Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:06:26.748Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:06:26.871Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:07:32.851Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:07:32.899Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:07:33.000Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:07:33.100Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-23T18:07:33.215Z"}
