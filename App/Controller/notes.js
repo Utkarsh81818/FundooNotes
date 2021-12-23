@@ -16,6 +16,7 @@ class Note {
       const note = {
         userId: req.user.dataForToken.id,
         title: req.body.title,
+        description: req.body.description
       };
       const createNoteValidation = validation.notesCreationValidation.validate(note);
       if (createNoteValidation.error) {
