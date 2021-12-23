@@ -22,14 +22,14 @@ describe('create notes api', () => {
         });
     });
     it.only('givenCreateNotes_inValidToken_shouldNotbeCreated', (done) => {
-        const token = noteDB.notes.validToken;
+        const token = noteDB.notes.invalidToken;
         chai
           .request(server)
           .post('/createnotes')
           .set({ authorization: token })
           .send(token)
           .end((err, res) => {
-            res.should.have.status(201);
+            res.should.have.status(400);
             done();
           });
       });
