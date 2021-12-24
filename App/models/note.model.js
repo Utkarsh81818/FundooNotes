@@ -41,8 +41,7 @@
        * @param User
        * @param callback
        */
- 
-     registerUser = (userDetails, callback) => {
+    registerUser = (userDetails, callback) => {
          const newUser = new user({
              firstName: userDetails.firstName,
              lastName: userDetails.lastName,
