@@ -158,16 +158,19 @@ describe('create notes api', () => {
 });
 
 describe('get note api', () => {
-    it.only('GetAll_notes_ApplyingInValidToken', (done) => {
+    it('GetAll_notes_ApplyingInValidToken', (done) => {
+        const token = noteDB.notes.invalidToken
         chai
             .request(server)
             .get('/getnotes')
+            .set({ authorization: token })
+            .send({})
             .end((err, res) => {
-                res.should.have.status(500);
+                res.should.have.status(400);
                 done();
             });
     });
-    it.only('GetAll_notes_Applying_ValidToken', (done) => {
+    it('GetAll_notes_Applying_ValidToken', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -178,7 +181,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('GetAllNotes_With_inValidToken_is not Authentic', (done) => {
+    it('GetAllNotes_With_inValidToken_is not Authentic', (done) => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
@@ -189,7 +192,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('GetAllNotes_validToken_is Authentic Request', (done) => {
+    it('GetAllNotes_validToken_is Authentic Request', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -203,7 +206,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('GetAllNotes_validToken_Checking Service Response', (done) => {
+    it('GetAllNotes_validToken_Checking Service Response', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -214,7 +217,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('GetALLNotes_validToken_Checking from Model Layer Response', (done) => {
+    it('GetALLNotes_validToken_Checking from Model Layer Response', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -225,7 +228,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('gettinganotes_validToken_Checking Response .find', (done) => {
+    it('gettinganotes_validToken_Checking Response .find', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
