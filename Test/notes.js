@@ -178,4 +178,15 @@ describe('get note api', () => {
                 done();
             });
     });
+    it.only('GetAllNotes_With_inValidToken_is not Authentic', (done) => {
+        const token = noteDB.notes.invalidToken;
+        chai
+            .request(server)
+            .get('/getnotes')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    });
 });

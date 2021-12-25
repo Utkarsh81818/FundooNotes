@@ -46,7 +46,7 @@ class Note {
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
-        message: 'Error occured',
+        message: 'Internal server error',
         success: false
       });
     }
@@ -60,15 +60,24 @@ class Note {
    */
    getNote = (req, res) =>{
     try {
-      logger.info('Note inserted Successfully');
+      if(req.user){
+      logger.info('Note fetched Successfully');
       return res.status(201).send({
-        message: 'Note inserted Successfully',
+        message: 'Note fetched Successfully',
         success: true
       });
+    }
+      else{
+        logger.error('Error while getting note');
+        return res.status(400).json({
+            message: 'Error while getting note',
+            success: false
+        });
+      }
     }catch(error){
       logger.error('Internal server error');
       return res.status(500).json({
-          message: 'Internal Server Error',
+          message: 'Internal server error',
           success: false
       });
     }
