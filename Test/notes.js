@@ -189,4 +189,18 @@ describe('get note api', () => {
                 done();
             });
     });
+    it.only('gettingNotes_validToken_is Authentic Request', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .get('/getnotes')
+            .set({ authorization: token })
+            .end((err, res) => {
+                if (err) {
+                    res.should.have.status(400);
+                }
+                res.should.have.status(201);
+                done();
+            });
+    });
 });

@@ -66,5 +66,9 @@ class Validation {
 
     description: Joi.string().min(2)
   });
+
+  noteValidation = Joi.object({
+    id: Joi.string().required()
+  });
 }
 module.exports = new Validation();

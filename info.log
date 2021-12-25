@@ -1795,3 +1795,8 @@
 {"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T11:10:38.156Z"}
 {"level":"info","message":"Note fetched Successfully","timestamp":"2021-12-25T11:31:30.985Z"}
 {"level":"info","message":"Note fetched Successfully","timestamp":"2021-12-25T11:48:22.759Z"}
+{"level":"info","message":"Note fetched Successfully","timestamp":"2021-12-25T12:07:58.183Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T12:33:59.611Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T12:33:59.919Z"}
+{"level":"info","message":"Notes retrieve Successfully","timestamp":"2021-12-25T12:38:21.839Z"}
+{"level":"info","message":"Notes retrieve Successfully","timestamp":"2021-12-25T12:38:22.492Z"}
