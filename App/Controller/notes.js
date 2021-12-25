@@ -51,5 +51,27 @@ class Note {
       });
     }
   }
+
+  /**
+   * @description function written to get all the notes from the database
+   * @param {*} req
+   * @param {*} res
+   * @returns response
+   */
+   getNote = (req, res) =>{
+    try {
+      logger.info('Note inserted Successfully');
+      return res.status(201).send({
+        message: 'Note inserted Successfully',
+        success: true
+      });
+    }catch(error){
+      logger.error('Internal server error');
+      return res.status(500).json({
+          message: 'Internal Server Error',
+          success: false
+      });
+    }
+  }
 }
 module.exports = new Note();

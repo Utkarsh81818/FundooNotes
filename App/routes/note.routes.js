@@ -20,4 +20,6 @@ module.exports = (app) => {
   app.put('/reset-Password', controller.resetPassword);
   // api for Create Note 
   app.post('/createnotes', helper.validateToken, noteController.createNote);
+  // api for getnote
+  app.get('/getnotes', helper.validateToken, noteController.getNote);
 }

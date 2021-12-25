@@ -876,3 +876,8 @@
 {"level":"error","message":"failed to post note","timestamp":"2021-12-23T16:49:30.666Z"}
 {"_message":"NoteRegister validation failed","errors":{"description":{"kind":"required","message":"Path `description` is required.","name":"ValidatorError","path":"description","properties":{"message":"Path `description` is required.","path":"description","type":"required"}}},"level":"error","timestamp":"2021-12-23T18:06:26.175Z"}
 {"level":"error","message":"Error while creating note","timestamp":"2021-12-23T18:06:26.176Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T09:58:45.227Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T09:59:31.177Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T10:00:39.750Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T10:05:24.454Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T10:06:35.822Z"}

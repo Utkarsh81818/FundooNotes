@@ -1771,3 +1771,26 @@
 {"level":"info","message":" token generated ","timestamp":"2021-12-24T06:16:09.230Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-24T06:16:09.241Z"}
 {"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-24T06:16:40.629Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-25T09:49:19.527Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-25T09:49:19.858Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-25T09:49:19.906Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:51:15.372Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:51:15.417Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:51:15.483Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:51:15.523Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:51:15.565Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:58:45.221Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T09:58:45.227Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T09:59:31.170Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T09:59:31.176Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T10:00:39.743Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T10:00:39.749Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T10:05:24.449Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T10:05:24.454Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T10:06:35.816Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T10:06:35.822Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-25T10:20:11.575Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-25T10:20:12.066Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-25T10:20:12.077Z"}
+{"level":"info","message":"Note inserted Successfully","timestamp":"2021-12-25T11:10:38.156Z"}
+{"level":"info","message":"Note fetched Successfully","timestamp":"2021-12-25T11:31:30.985Z"}
