@@ -39,15 +39,19 @@ class Model {
   }
 
   /**
-   * @description function written to get all notes from database
-   * @returns retrieved notes or if error returns error
-   */
+  * @description this function is written to trigger or call the models function
+  * @returns error if it has error else data
+  */
   getNote = (id, callback) => {
-    if (id) {
-      callback(null, id.data);
-    }
-    callback("data is not found", error)
-  };
+    NoteRegister.find({ userId: id.id }, (error, data) => {
+      if (data) {
+        callback(null, data);
+      }
+      else {
+        callback(error, null);
+      }
+    });
+  }
 }
 
 module.exports = new Model();
