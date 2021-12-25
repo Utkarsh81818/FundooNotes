@@ -189,7 +189,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('gettingNotes_validToken_is Authentic Request', (done) => {
+    it.only('GetAllNotes_validToken_is Authentic Request', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -203,7 +203,7 @@ describe('get note api', () => {
                 done();
             });
     });
-    it.only('gettinganotes_validToken_Checking Service Response', (done) => {
+    it.only('GetAllNotes_validToken_Checking Service Response', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
