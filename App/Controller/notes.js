@@ -70,11 +70,23 @@ class Note {
           data: getNoteValidation
         });
       }
-      logger.info('Notes retrieve Successfully')
-      return res.status(201).json({
-        message: 'Notes retrieve Successfully',
-        success: true
-      });
+      noteService.getNote(id, (error, data) => {
+        if (error) {
+          logger.error('Failed to get all notes');
+          return res.status(400).json({
+            message: 'failed to get all notes',
+            success: false
+          })
+        }
+        else {
+          logger.info('Get All Notes successfully');
+          return res.status(201).json({
+            message: 'Get All Notes successfully',
+            success: true,
+            data: data
+          })
+        }
+      })
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({

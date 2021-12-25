@@ -1800,3 +1800,9 @@
 {"level":"error","message":"Internal server error","timestamp":"2021-12-25T12:33:59.919Z"}
 {"level":"info","message":"Notes retrieve Successfully","timestamp":"2021-12-25T12:38:21.839Z"}
 {"level":"info","message":"Notes retrieve Successfully","timestamp":"2021-12-25T12:38:22.492Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:19:16.799Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:19:16.844Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:19:17.214Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:19:17.220Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:19:17.443Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:19:17.455Z"}
