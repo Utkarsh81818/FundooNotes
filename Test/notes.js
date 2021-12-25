@@ -214,4 +214,15 @@ describe('get note api', () => {
                 done();
             });
     });
+    it.only('GetALLNotes_validToken_Checking from Model Layer Response', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .get('/getnotes')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
 });

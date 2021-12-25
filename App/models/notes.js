@@ -35,8 +35,19 @@ class Model {
       } else {
         return callback(null, data);
       }
-    })
+    });
   }
+
+  /**
+   * @description function written to get all notes from database
+   * @returns retrieved notes or if error returns error
+   */
+  getNote = (id, callback) => {
+    if (id) {
+      callback(null, id.data);
+    }
+    callback("data is not found", error)
+  };
 }
 
 module.exports = new Model();

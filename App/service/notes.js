@@ -22,10 +22,14 @@ class Service {
     * @returns error if it has error else data
     */
     getNote = (id, callback) => {
-        if (id) {
-            callback(null, id.data);
-        }
-        callback("data is not found", error)
+        noteModel.getNote(id, (error, data) => {
+            if (data) {
+                callback(null, data);
+            }
+            else {
+                callback(error, null);
+            }
+        });
     };
 }
 module.exports = new Service();

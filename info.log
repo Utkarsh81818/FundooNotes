@@ -1806,3 +1806,11 @@
 {"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:19:17.220Z"}
 {"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:19:17.443Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:19:17.455Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:40:28.669Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:40:28.695Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:40:29.069Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:40:29.073Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:40:29.279Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:40:29.283Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T13:40:29.561Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-25T13:40:29.570Z"}
