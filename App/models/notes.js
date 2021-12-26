@@ -58,10 +58,14 @@ class Model {
   * @returns error if it has error else data
   */
   getNoteById = (id, callback) => {
-    if (!id) {
-      return callback("id is not found", null)
-    }
-    return callback(null, id);
+    NoteRegister.find({ userId: id.UserId }, (error, data) => {
+      if (data) {
+        callback(null, data);
+      }
+      else {
+        callback(error, null);
+      }
+    });
   }
 }
 

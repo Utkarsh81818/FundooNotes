@@ -307,4 +307,15 @@ describe('Get Note By Id API', () => {
                 done();
             });
     });
+    it.only('Checking the UserID from Collection using .findOne Method', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .get('/getnotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
 });
