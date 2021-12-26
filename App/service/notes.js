@@ -48,5 +48,18 @@ class Service {
             }
         });
     };
+
+    /**
+   * @description it acts as a middleware between controller and model for getnotebyid 
+   * @param {*} inputData
+   * @param {*} callback
+   * @returns
+   */
+    updateNoteById = (id, callback) => {
+        if (!id) {
+            return callback("id is not found", null)
+        }
+        return callback(null, id)
+    }
 }
 module.exports = new Service();

@@ -380,4 +380,20 @@ describe('Update notes API', () => {
                 done();
             });
     });
+    it.only('Should return true from UpdateNote Service Layer, return appropriate response', (done) => {
+        const token = noteDB.notes.validToken;
+        const createNotes = {
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
+        };
+        chai
+            .request(server)
+            .put('/updatenotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .send(createNotes)
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
 });
