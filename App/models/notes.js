@@ -71,10 +71,12 @@ class Model {
   * @returns error if it has error else data
   */
   updateNoteById = (id, callback) => {
-    if (!id) {
-      return callback("id is not found", null)
-    }
-    return callback(null, id)
+    NoteRegister.find({ userId: id.id }, (error, data) => {
+      if (error) {
+        return callback(error, null)
+      }
+      return callback(null, data)
+    });
   }
 }
 

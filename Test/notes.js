@@ -337,6 +337,7 @@ describe('Update notes API', () => {
             .request(server)
             .put('/updatenotes/:id')
             .set({ authorization: token })
+            .send({})
             .end((err, res) => {
                 res.should.have.status(201);
                 done();
@@ -397,6 +398,22 @@ describe('Update notes API', () => {
             });
     });
     it.only('Should return true from UpdateNote Model Layer, return appropriate response', (done) => {
+        const token = noteDB.notes.validToken;
+        const createNotes = {
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
+        };
+        chai
+            .request(server)
+            .put('/updatenotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .send(createNotes)
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
+    it.only('When id is matched, Should return true', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),

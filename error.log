@@ -1016,3 +1016,9 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T12:17:31.713Z"}
 {"level":"error","message":{"acknowledged":true,"matchedCount":0,"modifiedCount":0,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-26T12:17:32.040Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-26T12:17:32.054Z"}
+{"kind":"ObjectId","level":"error","path":"userId","reason":{},"stringValue":"\":id\"","timestamp":"2021-12-26T17:19:22.474Z","value":":id","valueType":"string"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:19:22.556Z"}
+{"kind":"ObjectId","level":"error","path":"userId","reason":{},"stringValue":"\":id\"","timestamp":"2021-12-26T17:28:50.860Z","value":":id","valueType":"string"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:28:50.863Z"}
+{"kind":"ObjectId","level":"error","path":"userId","reason":{},"stringValue":"\":id\"","timestamp":"2021-12-26T17:29:49.342Z","value":":id","valueType":"string"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:29:49.344Z"}
