@@ -89,10 +89,14 @@ class Model {
  * @returns error if it has error else data
  */
   deleteNoteById = (id, callback) => {
-    if (!id) {
-      return callback("Id is not found", null);
+    NoteRegister.find({ userId: id.id }, (error, data) => {
+      if (error) {
+        return callback(error, null);
+      }
+      return callback(null, data);
     }
-    return callback(null, id);
+    )
   };
 }
+
 module.exports = new Model();
