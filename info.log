@@ -2263,3 +2263,6 @@
 {"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-26T18:24:01.715Z"}
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:24:28.994Z"}
 {"level":"info","message":"Token is valid","timestamp":"2021-12-26T18:45:03.646Z"}
+{"level":"info","message":"Token is valid","timestamp":"2021-12-26T18:49:21.639Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T18:52:52.925Z"}
+{"level":"info","message":"Token validated successfully","timestamp":"2021-12-26T18:56:00.036Z"}

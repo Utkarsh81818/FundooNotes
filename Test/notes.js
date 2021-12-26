@@ -468,4 +468,15 @@ describe('Delete notes API', () => {
                 done();
             });
     });
+    it.only('InvalidToken_should return false when it is invalid entry of token', (done) => {
+        const token = noteDB.notes.invalidToken;
+        chai
+            .request(server)
+            .delete('/deletenotes/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    });
 });

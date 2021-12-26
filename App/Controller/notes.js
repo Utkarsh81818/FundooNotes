@@ -190,20 +190,28 @@ class Note {
   * @param {*} res
   * @returns res
   * */
-   deleteNoteById = (req, res) => {
-     try{
-      logger.info('Token is valid');
-      return res.status(201).send({
-        message: 'Successfully id is found',
-        success: true
-      });
-     }catch{
+  deleteNoteById = (req, res) => {
+    try {
+      if (!req.user) {
+        logger.error('Error in validate token');
+        return res.status(400).json({
+          message: 'Error in validate token',
+          success: false
+        });
+      } else {
+        logger.info('Token validated successfully');
+        return res.status(201).send({
+          message: 'Token validated successfully',
+          success: true,
+        });
+      }
+    } catch {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
         success: false
       });
-     }
-   }
+    }
+  }
 }
 module.exports = new Note();

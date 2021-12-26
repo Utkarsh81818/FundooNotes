@@ -1073,3 +1073,4 @@
 {"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:24.601Z"}
 {"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\":id\"","timestamp":"2021-12-26T18:00:37.531Z","value":":id","valueType":"string"}
 {"level":"error","message":"failed to update note","timestamp":"2021-12-26T18:00:37.534Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T18:52:52.928Z"}
