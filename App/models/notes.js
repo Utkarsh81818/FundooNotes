@@ -83,5 +83,16 @@ class Model {
       return callback(err, null);
     }
   };
+
+  /**
+ * @description this function is written to trigger or call the models function
+ * @returns error if it has error else data
+ */
+  deleteNoteById = (id, callback) => {
+    if (!id) {
+      return callback("Id is not found", null);
+    }
+    return callback(null, id);
+  };
 }
 module.exports = new Model();

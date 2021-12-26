@@ -67,11 +67,19 @@ class Service {
         );
     };
 
-    deleteNoteById =(id,callback) => {
-          if(!id){
-            return callback("Id is not found",null);
-          }
-          return callback(null,id);
-      };
+    /**
+    * @description it acts as a middleware between controller and model for getnotebyid 
+    * @param {*} inputData
+    * @param {*} callback
+    * @returns
+    */
+    deleteNoteById = (id, callback) => {
+        noteModel.deleteNoteById(id, (error, data) => {
+            if (error) {
+                return callback(error, null);
+            }
+            return callback(null, data);
+        });
+    };
 }
 module.exports = new Service();
