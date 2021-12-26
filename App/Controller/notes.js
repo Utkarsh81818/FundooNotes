@@ -96,18 +96,24 @@ class Note {
   }
 
   /**
-   * @description function written to get all the notes from the database
+   * @description function written to getNotesById from the database
    * @param {*} req
    * @param {*} res
    * @returns response
    */
-  getNoteById = (req, res) => {
+   getNoteById = (req, res) => {
     try {
-      logger.info('Notes retrieve successfully');
-      return res.status(200).json({
-        message: 'Notes retrieve successfully',
-        success: true
-      })
+      if (req.user) {
+        return res.status(200).send({
+          success: true,
+          message: 'Note reterive Successfully'
+        });
+      } else {
+        return res.status(400).json({
+          message: 'Invalid Token of Entry',
+          success: false
+        })
+      }
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({

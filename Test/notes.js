@@ -252,7 +252,7 @@ describe('Get Note By Id API', () => {
                 done();
             });
     });
-    it.only('GivenToken Should return True When it is a Valid Token ', (done) => {
+    it.only('Should return True When it is a Valid Token ', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -260,6 +260,17 @@ describe('Get Note By Id API', () => {
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
+                done();
+            });
+    });
+    it.only('Should return false When it is invalid Token', (done) => {
+        const token = noteDB.notes.invalidToken;
+        chai
+            .request(server)
+            .get('/getnotes/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
                 done();
             });
     });
