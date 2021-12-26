@@ -70,14 +70,18 @@ class Model {
   * @description this function is written to trigger or call the models function
   * @returns error if it has error else data
   */
-  updateNoteById = (id, callback) => {
-    NoteRegister.find({ userId: id.id }, (error, data) => {
-      if (error) {
-        return callback(error, null)
-      }
-      return callback(null, data)
-    });
-  }
+  updateNoteById = (updatedNote, callback) => {
+    try {
+      NoteRegister.findByIdAndUpdate(updatedNote.id, { title: updatedNote.title, description: updatedNote.description }, { new: true }, (err, data) => {
+        if (err) {
+          return callback(err, null);
+        } else {
+          return callback(null, data);
+        }
+      });
+    } catch (err) {
+      return callback(err, null);
+    }
+  };
 }
-
 module.exports = new Model();

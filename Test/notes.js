@@ -429,4 +429,20 @@ describe('Update notes API', () => {
                 done();
             });
     });
+    it.only('When note is updated, Should return true', (done) => {
+        const token = noteDB.notes.validToken;
+        const createNotes = {
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
+        };
+        chai
+            .request(server)
+            .put('/updatenotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .send(createNotes)
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
 });

@@ -2196,3 +2196,69 @@
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T17:29:50.044Z"}
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T17:29:50.199Z"}
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T17:29:50.349Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:32.414Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:32.653Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:32.766Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:32.892Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:33.082Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:33.217Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:39:33.447Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-26T17:43:38.490Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-26T17:43:42.662Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-26T17:43:43.993Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-26T17:43:44.017Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:01.422Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:02.025Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:02.286Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:02.397Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:02.535Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:02.643Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T17:45:02.824Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:32.169Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:32.424Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:32.539Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:32.656Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:32.816Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:32.974Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:48:33.185Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:53.573Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:53.893Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:54.112Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:54.295Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:54.456Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:54.654Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:49:55.000Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:19.433Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:19.655Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:19.776Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:19.897Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:20.053Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:20.222Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:51:20.399Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:23.446Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:23.499Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:23.786Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:23.792Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:23.900Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:23.904Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:24.014Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:24.017Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:24.238Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:24.239Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:24.431Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:24.442Z"}
+{"level":"error","timestamp":"2021-12-26T17:57:24.600Z"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T17:57:24.601Z"}
+{"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\":id\"","timestamp":"2021-12-26T18:00:37.492Z","value":":id","valueType":"string"}
+{"level":"error","message":"failed to update note","timestamp":"2021-12-26T18:00:37.532Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:00:37.864Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:00:37.973Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:00:38.116Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:00:38.213Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:00:38.298Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:00:38.367Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-26T18:23:15.701Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-26T18:23:17.058Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-26T18:23:17.255Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-26T18:24:01.715Z"}
+{"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:24:28.994Z"}
