@@ -66,5 +66,12 @@ class Service {
         }
         );
     };
+
+    deleteNoteById =(id,callback) => {
+          if(!id){
+            return callback("Id is not found",null);
+          }
+          return callback(null,id);
+      };
 }
 module.exports = new Service();

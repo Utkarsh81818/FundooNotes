@@ -490,4 +490,15 @@ describe('Delete notes API', () => {
                 done();
             });
         });
+        it.only('Should return true from UpdateNote Service Layer', (done) => {
+            const token = noteDB.notes.validToken;
+            chai
+                .request(server)
+                .put('/updatenotes/61ba2f35d2b53902124786b1')
+                .set({ authorization: token })
+                .end((err, res) => {
+                    res.should.have.status(201);
+                    done();
+                });
+        });
 });

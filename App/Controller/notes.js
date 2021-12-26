@@ -202,12 +202,20 @@ class Note {
           data: deleteNoteValidation
         });
       }
-        logger.info('Validation successfully');
+      noteService.deleteNoteById(id, (error, data) => {
+        if (error) {
+          return res.status(400).json({
+            message: 'Note not found',
+            success: false
+          });
+        }
         return res.status(201).send({
-          message: 'Token validated successfully',
+          message: 'Successfully Deleted note',
           success: true,
+          data: data
         });
-      } catch {
+      });
+    } catch {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
