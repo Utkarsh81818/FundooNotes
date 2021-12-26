@@ -10,9 +10,9 @@ class Controller {
 
   /**
   * @description Create and save user and sending response to service
-     * @method register to save the user
-     * @param req,res for service
-           */
+  * @method register to save the user
+  * @param req,res for service
+  */
   register = (req, res) => {
     try {
       const user = {

@@ -58,15 +58,13 @@ class Model {
   * @returns error if it has error else data
   */
   getNoteById = (id, callback) => {
-    NoteRegister.find({ userId: id.UserId }, (error, data) => {
-      if (data) {
-        callback(null, data);
-      }
-      else {
-        callback(error, null);
-      }
-    });
-  }
+    NoteRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] })
+      .then((data) => {
+        callback(null, data)
+      }).catch((err) => {
+        callback(err, null)
+      })
+  };
 }
 
 module.exports = new Model();

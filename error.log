@@ -983,3 +983,11 @@
 {"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:11:04.959Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:11:56.282Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:14:20.901Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T11:59:16.338Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T11:59:16.398Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T11:59:16.446Z"}
+{"level":"error","message":"Invalid User","timestamp":"2021-12-26T11:59:16.934Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2021-12-26T11:59:16.934Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2021-12-26T11:59:17.190Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":0,"modifiedCount":0,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-26T11:59:17.644Z"}
+{"level":"error","message":"Invalid password","timestamp":"2021-12-26T11:59:17.658Z"}
