@@ -2266,3 +2266,5 @@
 {"level":"info","message":"Token is valid","timestamp":"2021-12-26T18:49:21.639Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-26T18:52:52.925Z"}
 {"level":"info","message":"Token validated successfully","timestamp":"2021-12-26T18:56:00.036Z"}
+{"level":"info","message":"Validation successfully","timestamp":"2021-12-26T19:21:00.069Z"}
+{"level":"info","message":"Validation successfully","timestamp":"2021-12-26T19:21:00.286Z"}

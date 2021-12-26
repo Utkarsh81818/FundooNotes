@@ -479,4 +479,15 @@ describe('Delete notes API', () => {
                 done();
             });
     });
+    it.only('Should give true when it is validate with the given id', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .delete('/deletenotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+        });
 });

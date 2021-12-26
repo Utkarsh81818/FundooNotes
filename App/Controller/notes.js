@@ -192,20 +192,22 @@ class Note {
   * */
   deleteNoteById = (req, res) => {
     try {
-      if (!req.user) {
-        logger.error('Error in validate token');
-        return res.status(400).json({
-          message: 'Error in validate token',
-          success: false
+      const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
+      const deleteNoteValidation = validation.validateDeleteNote.validate(id);
+      if (deleteNoteValidation.error) {
+        console.log(deleteNoteValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: deleteNoteValidation
         });
-      } else {
-        logger.info('Token validated successfully');
+      }
+        logger.info('Validation successfully');
         return res.status(201).send({
           message: 'Token validated successfully',
           success: true,
         });
-      }
-    } catch {
+      } catch {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',

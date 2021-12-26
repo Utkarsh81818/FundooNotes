@@ -80,5 +80,11 @@ class Validation {
     title: Joi.string().min(2),
     description: Joi.string().min(2)
   });
+
+  validateDeleteNote = Joi.object({
+    id:Joi.string(),
+    noteId: Joi.string(),
+    userId: Joi.string()
+  });
 }
 module.exports = new Validation();
