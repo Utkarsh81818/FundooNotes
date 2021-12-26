@@ -2067,3 +2067,4 @@
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-26T08:12:56.040Z"}
 {"level":"info","message":"Notes retrieve successfully","timestamp":"2021-12-26T08:14:20.883Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:14:20.901Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-26T09:00:59.753Z"}

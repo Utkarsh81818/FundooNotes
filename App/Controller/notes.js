@@ -101,19 +101,22 @@ class Note {
    * @param {*} res
    * @returns response
    */
-   getNoteById = (req, res) => {
+  getNoteById = (req, res) => {
     try {
-      if (req.user) {
-        return res.status(200).send({
-          success: true,
-          message: 'Note reterive Successfully'
+      const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
+      const getNoteValidation = validation.getNoteValidation.validate(id);
+      if (getNoteValidation.error) {
+        console.log(getNoteValidation.error);
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: getNoteValidation
         });
-      } else {
-        return res.status(400).json({
-          message: 'Invalid Token of Entry',
-          success: false
-        })
       }
+      return res.status(200).send({
+        success: true,
+        message: 'Retrieve Note Successfully'
+      });
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({

@@ -242,7 +242,7 @@ describe('get note api', () => {
 });
 
 describe('Get Note By Id API', () => {
-    it.only('GettingNotebyId_ApplyingInValidToken', (done) => {
+    it.only('Not_GettingNotebyId_By_ApplyingInValidToken', (done) => {
         const token = noteDB.notes.invalidToken
         chai
             .request(server)
@@ -252,7 +252,7 @@ describe('Get Note By Id API', () => {
                 done();
             });
     });
-    it.only('Should return True When it is a Valid Token ', (done) => {
+    it.only('Should return true when it is a valid Token ', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -271,6 +271,17 @@ describe('Get Note By Id API', () => {
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
+                done();
+            });
+    });
+    it.only('If token is verified then given id should be validated', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .get('/getnotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
                 done();
             });
     });
