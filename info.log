@@ -2262,3 +2262,4 @@
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-26T18:23:17.255Z"}
 {"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-26T18:24:01.715Z"}
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T18:24:28.994Z"}
+{"level":"info","message":"Token is valid","timestamp":"2021-12-26T18:45:03.646Z"}
