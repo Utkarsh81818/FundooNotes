@@ -320,3 +320,26 @@ describe('Get Note By Id API', () => {
             });
     });
 });
+
+describe('Update notes API', () => {
+    it.only('UpdateNotesById_by_checking_server_error', (done) => {
+        chai
+            .request(server)
+            .put('/updatenotes/:id')
+            .end((err, res) => {
+                res.should.have.status(500);
+                done();
+            });
+    });
+    it.only('UpdateNotesById_by_checking_server_error', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .put('/updatenotes/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
+});
