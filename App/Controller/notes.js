@@ -147,6 +147,9 @@ class Note {
     try {
       const updateNote = {
         id: req.params.id,
+        userId: req.user.dataForToken.id,
+        title: req.body.title,
+        description: req.body.description
       };
       const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
       if (updateNoteValidation.error) {

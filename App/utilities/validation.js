@@ -75,7 +75,10 @@ class Validation {
   });
 
   notesUpdateValidation = Joi.object({
-    id: Joi.string().required()
+    id: Joi.string().required(),
+    userId: Joi.string().required(),
+    title: Joi.string().min(3),
+    description: Joi.string().min(3)
   });
 }
 module.exports = new Validation();

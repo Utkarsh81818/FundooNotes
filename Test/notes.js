@@ -354,13 +354,29 @@ describe('Update notes API', () => {
             });
     });
     it.only('Should give true when it is validate with the given id', (done) => {
-        const token = noteDB.notes.invalidToken;
+        const token = noteDB.notes.validToken;
         chai
             .request(server)
             .put('/updatenotes/61ba2f35d2b53902124786b1')
             .set({ authorization: token })
             .end((err, res) => {
-                res.should.have.status(400);
+                res.should.have.status(201);
+                done();
+            });
+    });
+    it.only('ShouldUpdateNote Using Fake Data, when givenPoperDetails_', (done) => {
+        const token = noteDB.notes.validToken;
+        const createNotes = {
+            title: faker.lorem.word(),
+            description: faker.lorem.word()
+        };
+        chai
+            .request(server)
+            .put('/updatenotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .send(createNotes)
+            .end((err, res) => {
+                res.should.have.status(201);
                 done();
             });
     });
