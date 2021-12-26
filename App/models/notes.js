@@ -52,6 +52,17 @@ class Model {
       }
     });
   }
+
+  /**
+  * @description this function is written to trigger or call the models function
+  * @returns error if it has error else data
+  */
+  getNoteById = (id, callback) => {
+    if (!id) {
+      return callback("id is not found", null)
+    }
+    return callback(null, id);
+  }
 }
 
 module.exports = new Model();
