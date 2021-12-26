@@ -331,7 +331,7 @@ describe('Update notes API', () => {
                 done();
             });
     });
-    it.only('UpdateNotesById_by_checking_server_error', (done) => {
+    it.only('validToken_should give true when it is valid entry of token', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -339,6 +339,17 @@ describe('Update notes API', () => {
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
+                done();
+            });
+    });
+    it.only('InvalidToken_should give false when it is invalid entry of token', (done) => {
+        const token = noteDB.notes.invalidToken;
+        chai
+            .request(server)
+            .put('/updatenotes/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
                 done();
             });
     });

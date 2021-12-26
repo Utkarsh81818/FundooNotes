@@ -145,17 +145,25 @@ class Note {
   * */
   updateNoteById = (req, res) => {
     try {
-      return res.status(201).json({
-        message: 'Note retrieved succesfully',
-        success: true
-      });
+      if (req.user) {
+        return res.status(201).json({
+          message: 'Getting Appropriate response from token',
+          success: true
+        });
+      } else {
+        logger.error('Decoded Invalid Token')
+        return res.status(400).json({
+          message: 'Decoded Invalid Token',
+          success: false
+        });
+      }
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
         success: false
       });
-    } 
+    }
   }
 }
 module.exports = new Note();
