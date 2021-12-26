@@ -353,4 +353,15 @@ describe('Update notes API', () => {
                 done();
             });
     });
+    it.only('Should give true when it is validate with the given id', (done) => {
+        const token = noteDB.notes.invalidToken;
+        chai
+            .request(server)
+            .put('/updatenotes/61ba2f35d2b53902124786b1')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    });
 });

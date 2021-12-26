@@ -145,19 +145,23 @@ class Note {
   * */
   updateNoteById = (req, res) => {
     try {
-      if (req.user) {
-        return res.status(201).json({
-          message: 'Getting Appropriate response from token',
-          success: true
-        });
-      } else {
-        logger.error('Decoded Invalid Token')
-        return res.status(400).json({
-          message: 'Decoded Invalid Token',
-          success: false
+      const updateNote = {
+        id: req.params.id,
+      };
+      const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
+      if (updateNoteValidation.error) {
+        return res.status(400).send({
+          success: false,
+          message: 'Wrong Input Validations',
+          data: updateNoteValidation
         });
       }
-    } catch (error) {
+      return res.status(201).json({
+        message: 'Getting Appropriate response from token',
+        success: true
+      });
+    }
+    catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
