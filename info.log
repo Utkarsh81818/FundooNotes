@@ -2058,3 +2058,12 @@
 {"level":"info","message":"Password reset succesfully","timestamp":"2021-12-25T15:12:15.874Z"}
 {"level":"error","message":"Invalid password","timestamp":"2021-12-25T15:12:15.895Z"}
 {"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-25T15:36:57.969Z"}
+{"level":"info","message":"Notes retrieve successfully","timestamp":"2021-12-26T08:11:04.953Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:11:04.958Z"}
+{"level":"info","message":"Notes retrieve successfully","timestamp":"2021-12-26T08:11:56.268Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:11:56.281Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-26T08:12:55.206Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-26T08:12:56.010Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-26T08:12:56.040Z"}
+{"level":"info","message":"Notes retrieve successfully","timestamp":"2021-12-26T08:14:20.883Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-26T08:14:20.901Z"}

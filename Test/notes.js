@@ -240,3 +240,27 @@ describe('get note api', () => {
             });
     });
 });
+
+describe('Get Note By Id API', () => {
+    it.only('GettingNotebyId_ApplyingInValidToken', (done) => {
+        const token = noteDB.notes.invalidToken
+        chai
+            .request(server)
+            .get('/getnotes/:id')
+            .end((err, res) => {
+                res.should.have.status(500);
+                done();
+            });
+    });
+    it.only('GivenToken Should return True When it is a Valid Token ', (done) => {
+        const token = noteDB.notes.validToken;
+        chai
+            .request(server)
+            .get('/getnotes/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
+});

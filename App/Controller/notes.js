@@ -94,5 +94,27 @@ class Note {
       });
     }
   }
+
+  /**
+   * @description function written to get all the notes from the database
+   * @param {*} req
+   * @param {*} res
+   * @returns response
+   */
+  getNoteById = (req, res) => {
+    try {
+      logger.info('Notes retrieve successfully');
+      return res.status(200).json({
+        message: 'Notes retrieve successfully',
+        success: true
+      })
+    } catch (error) {
+      logger.error('Internal server error');
+      return res.status(500).json({
+        message: 'Internal server error',
+        success: false
+      });
+    }
+  }
 }
 module.exports = new Note();
