@@ -101,7 +101,7 @@ class Note {
    * @param {*} res
    * @returns response
    */
-  getNoteById = (req, res) => {
+   getNoteById = (req, res) => {
     try {
       const id = { userId: req.user.dataForToken.id, noteId: req.params.id };
       const getNoteValidation = validation.getNoteValidation.validate(id);
@@ -113,17 +113,29 @@ class Note {
           data: getNoteValidation
         });
       }
-      return res.status(200).send({
-        success: true,
-        message: 'Retrieve Note Successfully'
+      noteService.getNoteById(id, (err, data) => {
+        if (err) {
+          logger.error('Note is Found')
+          return res.status(404).json({
+            message: 'Note not found',
+            success: false
+          });
+        }
+        logger.info('Note retrieved succesfully');
+        return res.status(200).json({
+          message: 'Note retrieved succesfully',
+          success: true,
+          data: data
+
+        });
       });
-    } catch (error) {
-      logger.error('Internal server error');
+    } catch (err) {
       return res.status(500).json({
-        message: 'Internal server error',
-        success: false
+        message: 'Internal Error',
+        success: false,
+        data: err
       });
     }
-  }
+  };
 }
 module.exports = new Note();
