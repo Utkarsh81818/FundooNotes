@@ -2271,3 +2271,11 @@
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T19:33:40.510Z"}
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T19:41:20.452Z"}
 {"level":"info","message":"Successfully id is found","timestamp":"2021-12-26T19:41:20.554Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-27T03:14:01.945Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-27T03:14:51.266Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-27T03:14:51.590Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-27T03:14:51.600Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-27T05:15:10.233Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-27T05:15:46.382Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-27T05:15:46.828Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-27T05:15:46.839Z"}
