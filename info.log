@@ -2279,3 +2279,6 @@
 {"level":"info","message":"Email id found","timestamp":"2021-12-27T05:15:46.382Z"}
 {"level":"info","message":" token generated ","timestamp":"2021-12-27T05:15:46.828Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-27T05:15:46.839Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-27T09:31:25.159Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-27T09:31:25.511Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-27T09:31:25.532Z"}

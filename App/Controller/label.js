@@ -8,7 +8,7 @@ class Label {
      addLabelById = (req, res) => {
         try {
             return res.status(201).json({
-              message: 'Valid ENtry of Token'
+              message: 'Token is Valid'
             });
           }catch(err) {
             logger.error('Internal Error');
