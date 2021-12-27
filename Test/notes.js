@@ -448,7 +448,7 @@ describe('Update notes API', () => {
 });
 
 describe('Delete notes API', () => {
-    it.only('DeleteNotesById_by_checking_server_error', (done) => {
+    it('DeleteNotesById_by_checking_server_error', (done) => {
         chai
             .request(server)
             .delete('/deletenotes/:id')
@@ -457,7 +457,7 @@ describe('Delete notes API', () => {
                 done();
             });
     });
-    it.only('validToken_should give true when it is valid entry of token', (done) => {
+    it('validToken_should give true when it is valid entry of token', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -468,7 +468,7 @@ describe('Delete notes API', () => {
                 done();
             });
     });
-    it.only('InvalidToken_should return false when it is invalid entry of token', (done) => {
+    it('InvalidToken_should return false when it is invalid entry of token', (done) => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
@@ -479,7 +479,7 @@ describe('Delete notes API', () => {
                 done();
             });
     });
-    it.only('Should give true when it is validate with the given id', (done) => {
+    it('Should give true when it is validate with the given id', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -490,7 +490,7 @@ describe('Delete notes API', () => {
                 done();
             });
     });
-    it.only('Should give true when,return appropriate response from Service layer ', (done) => {
+    it('Should give true when,return appropriate response from Service layer ', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -501,7 +501,7 @@ describe('Delete notes API', () => {
                 done();
             });
     })
-    it.only('Should give true when,return appropriate response from Model layer ', (done) => {
+    it('Should give true when,return appropriate response from Model layer ', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -512,7 +512,7 @@ describe('Delete notes API', () => {
                 done();
             });
     })
-    it.only('Should return true when id is found', (done) => {
+    it('Should return true when id is found', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
@@ -523,7 +523,7 @@ describe('Delete notes API', () => {
                 done();
             });
     })
-    it.only('Should deleted noteById when the userId and noteId matched', (done) => {
+    it('Should deleted noteById when the userId and noteId matched', (done) => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
