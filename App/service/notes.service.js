@@ -1,5 +1,5 @@
 const { logger } = require('../../logger/logger');
-const noteModel = require('../models/notes');
+const noteModel = require('../models/notes.model');
 
 class Service {
     /**

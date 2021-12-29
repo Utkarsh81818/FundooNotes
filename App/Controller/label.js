@@ -1,4 +1,11 @@
+/**
+ Purpose : to recieve request from routes and forward it to service laye
+* @file : label.js
+* @author : Utkarsh Mishra
+* @version : 1.0
+ */
 const validation = require('../utilities/validation')
+const service = require('../service/label')
 
 class Label {
     /**
@@ -16,20 +23,28 @@ class Label {
                     const response = { sucess: false, message: "Wrong Input Vaidation" }
                     return res.status(422).json(response)
                 }
-                return res.status(201).json({
-                    message: 'Valid Token'
-                });
-            } else {
-                return res.status(400).json({
-                    message: 'Entry of token is false'
-                });
+                const label = {
+                    labelName: req.body.labelName,
+                    userId: req.user.dataForToken.id,
+                    noteId: req.params.id
+                }
+                service.addLabelById(label, (error, data) => {
+                    if (error) {
+                        const response = { sucess: true, message: error.message }
+                        return res.status(401).send(response)
+                    }
+                    else {
+                        return res.status(201).json({
+                            message: 'Valid Token'
+                        })
+                    }
+                })
             }
         } catch (err) {
             logger.error('Internal Server Error');
             return res.status(500).json({
                 message: 'Internal Server Error'
-            }
-            )
+            })
         }
     }
 }

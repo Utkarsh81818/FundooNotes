@@ -5,8 +5,8 @@
  * @author       Utkarsh Mishra
  */
 
-const userController = require('../Controller/note.controller.js');
-const noteController = require('../Controller/notes')
+const userController = require('../Controller/user.controller.js');
+const noteController = require('../Controller/notes.controller')
 const helperValidation = require('../utilities/helper');
 const label = require('../Controller/label')
 

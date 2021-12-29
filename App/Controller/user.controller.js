@@ -3,7 +3,7 @@
  * @author        : Utkarsh Mishra
 */
 
-const userService = require('../service/service.js')
+const userService = require('../service/user.service.js')
 const validation = require('../utilities/validation');
 const { logger } = require('../../logger/logger')
 class Controller {
