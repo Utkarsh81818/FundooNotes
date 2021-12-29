@@ -28,7 +28,7 @@ describe('Add label by id api ', () => {
                 done();
             });
     });
-    it.only('Should Give true when token is not verify', (done) => {
+    it.only('Should Give false when token is not verify', (done) => {
         const token = labelDB.label.invalidToken
         chai
             .request(server)
@@ -38,5 +38,20 @@ describe('Add label by id api ', () => {
                 res.should.have.status(400);
                 done();
             });
+    });
+    it.only('If payload of data is validated then it should give true', (done) => {
+        const token = labelDB.label.validToken;
+        const labelName = {
+            labelname: faker.lorem.word()
+        }
+        chai
+            .request(server)
+            .post('/addlabel/:id')
+            .set({ authorization: token })
+            .send(labelName)
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            })
     })
 });

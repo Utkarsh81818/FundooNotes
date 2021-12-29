@@ -1074,3 +1074,5 @@
 {"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\":id\"","timestamp":"2021-12-26T18:00:37.531Z","value":":id","valueType":"string"}
 {"level":"error","message":"failed to update note","timestamp":"2021-12-26T18:00:37.534Z"}
 {"level":"error","message":"Internal server error","timestamp":"2021-12-26T18:52:52.928Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-29T06:49:02.786Z"}
+{"level":"error","message":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2021-12-29T06:49:55.435Z"}

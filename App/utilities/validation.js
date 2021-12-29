@@ -7,7 +7,7 @@
 
 const Joi = require('joi');
 class Validation {
-  authRegister =
+  registerValidation =
     Joi.object({
       firstName: Joi.string()
         .min(3)
@@ -85,6 +85,11 @@ class Validation {
     id:Joi.string(),
     noteId: Joi.string(),
     userId: Joi.string()
+  });
+
+  labelValidation = Joi.object({
+    labelName: Joi.string()
+      .required()
   });
 }
 module.exports = new Validation();

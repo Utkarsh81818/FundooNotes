@@ -22,7 +22,7 @@ class Controller {
         password: req.body.password
       };
 
-      const registerValidation = validation.authRegister.validate(user)
+      const registerValidation = validation.registerValidation.validate(user)
       if (registerValidation.error) {
         logger.error('Wrong Input Validations');
         return res.status(400).send({
@@ -61,7 +61,6 @@ class Controller {
      * @method login
      * @param req,res for service
      */
-
   login = (req, res) => {
     try {
       const userLoginInfo = {
@@ -71,10 +70,10 @@ class Controller {
 
       const loginValidation = validation.authLogin.validate(userLoginInfo);
       if (loginValidation.error) {
-        logger.error(loginValidation.error);
+        logger.error('Wrong Input Validations');
         res.status(400).send({
           success: false,
-          message: loginValidation.error.message
+          message: 'Wrong Input Validations'
         });
       }
 
@@ -83,7 +82,6 @@ class Controller {
           return res.status(400).json({
             success: false,
             message: 'Unable to login. Please enter correct info',
-            error
           });
         }
         logger.info('User logged in successfully');
@@ -141,7 +139,6 @@ class Controller {
         }
       });
     } catch (error) {
-      console.log("Error", error);
       logger.error('Internal server error');
       return res.status(500).send({
         success: false,
@@ -157,7 +154,6 @@ class Controller {
    * @param {*} res
    * @returns
    */
-
   resetPassword = (req, res) => {
     try {
       const userData = {

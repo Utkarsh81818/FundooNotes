@@ -1,3 +1,5 @@
+const validation = require('../utilities/validation')
+
 class Label {
     /**
      * @description function written to Added Label into the database
@@ -8,12 +10,18 @@ class Label {
     addLabelById = (req, res) => {
         try {
             if (req.user) {
+                const labelName = req.body.labelName
+                const validateResult = validation.labelValidation.validate(labelName);
+                if (validateResult.error) {
+                    const response = { sucess: false, message: "Wrong Input Vaidation" }
+                    return res.status(422).json(response)
+                }
                 return res.status(201).json({
-                    message: 'Token is Valid'
+                    message: 'Valid Token'
                 });
             } else {
                 return res.status(400).json({
-                    message: 'InValid Entry of Token'
+                    message: 'Entry of token is false'
                 });
             }
         } catch (err) {

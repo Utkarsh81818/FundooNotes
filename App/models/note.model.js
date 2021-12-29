@@ -104,7 +104,7 @@
                  return callback(err, null);
              } else {
                  if (!data) {
-                     log.error('User Not Exist')
+                     logger.error('User Not Exist')
                  } else {
                      return callback(null, data);
                  }

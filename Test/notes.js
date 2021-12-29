@@ -15,7 +15,6 @@ describe('create notes api', () => {
             .request(server)
             .post('/createnotes')
             .set({ authorization: token })
-            .send({})
             .end((err, res) => {
                 res.should.have.status(400);
                 done();
@@ -123,7 +122,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('Should return true from Model Layer noteiscreated, return appropriate response', (done) => {
+    it('Should return true when note is created, return appropriate response', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -139,7 +138,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('Should return true from Model Layer .save is saving data', (done) => {
+    it('Should return true when note is save, in database', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),
