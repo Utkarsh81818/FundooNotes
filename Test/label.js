@@ -68,5 +68,20 @@ describe('Add label by id api ', () => {
                 res.should.have.status(201);
                 done();
             })
-    })
+    });
+    it.only('When model layer is giving response, should return true', (done) => {
+        const token = labelDbs.label.validToken;
+        const labelName = {
+            labelname: faker.lorem.word()
+        }
+        chai
+            .request(server)
+            .post('/addlabel/61bb7ccb5aa989f5b63a3bc9')
+            .set({ authorization: token })
+            .send(labelName)
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            })
+    });
 });

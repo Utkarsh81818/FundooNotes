@@ -2320,3 +2320,7 @@
 {"level":"info","message":" token generated ","timestamp":"2021-12-29T17:15:04.691Z"}
 {"level":"info","message":"User logged in successfully","timestamp":"2021-12-29T17:15:04.804Z"}
 {"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-29T17:15:28.648Z"}
+{"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:05.353Z"}
+{"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:06.080Z"}
+{"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:06.388Z"}
+{"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:06.542Z"}

@@ -6,6 +6,7 @@
  */
 const validation = require('../utilities/validation')
 const service = require('../service/label')
+const {logger} = require('../../logger/logger')
 
 class Label {
     /**
