@@ -31,7 +31,17 @@ class labelModel {
         }
         const checklabel = noteLabel.find({ userId: label.id, labelName: label.labelName });
         if (checklabel.length !== 0) {
-            return callback("the fetched userId is match with label", label.userId)
+            noteLabel.findOneAndUpdate({ labelName:label.labelName },{ $addToSet: { noteId: label.noteId } },(error,data)=>{
+                if(error){
+                    callback("Unauthorised Error",null)
+                }
+                else if(!data){
+                    callback("label is not found",data)
+                }
+                else{
+                    return callback(null,data)
+                }
+            })
         }
     }
 }

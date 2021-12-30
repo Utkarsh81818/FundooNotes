@@ -33,7 +33,7 @@ class Label {
                 service.addLabelById(label, (error, data) => {
                     if (error) {
                         const response = { sucess: true, message: error.message }
-                        return res.status(401).send(response)
+                        return res.status(201).send(response)
                     }
                     else {
                         return res.status(201).json({
