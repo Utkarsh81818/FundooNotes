@@ -18,18 +18,21 @@ const labelSchema = mongoose.Schema({
     timestamps: true
 })
 
-const label = mongoose.model('noteLabel', labelSchema);
+const noteLabel = mongoose.model('noteLabel', labelSchema);
 
 class labelModel {
     /**
      * @description Create a new label
      */
     addLabelById = (label, callback) => {
-        const findNotes = NoteRegister.find({ email: label.email, id: label.noteId })
-        if (findNotes.length === 0) {
+        const checkNotes = NoteRegister.find({ email: label.email, id: label.noteId })
+        if (checkNotes.length === 0) {
             return callback('This note is not exist or this belongs to another user', null);
         }
-        return callback('This note belongs to same user', label.noteId)
+        const checklabel = noteLabel.find({ userId: label.id, labelName: label.labelName });
+        if (checklabel.length !== 0) {
+            return callback("the fetched userId is match with label", label.userId)
+        }
     }
 }
 module.exports = new labelModel();
