@@ -3,10 +3,10 @@
 * @file : label.js
 * @author : Utkarsh Mishra
 * @version : 1.0
- */
+*/
 const validation = require('../utilities/validation')
 const service = require('../service/label')
-const {logger} = require('../../logger/logger')
+const { logger } = require('../../logger/logger')
 
 class Label {
     /**
@@ -18,7 +18,7 @@ class Label {
     addLabelById = (req, res) => {
         try {
             if (req.user) {
-                const labelName = req.body.labelName
+                const labelName = { labelName: req.body.labelName }
                 const validateResult = validation.labelValidation.validate(labelName);
                 if (validateResult.error) {
                     const response = { sucess: false, message: "Wrong Input Vaidation" }
@@ -27,7 +27,8 @@ class Label {
                 const label = {
                     labelName: req.body.labelName,
                     userId: req.user.dataForToken.id,
-                    noteId: req.params.id
+                    noteId: req.params.id,
+                    email: req.user.dataForToken.email
                 }
                 service.addLabelById(label, (error, data) => {
                     if (error) {

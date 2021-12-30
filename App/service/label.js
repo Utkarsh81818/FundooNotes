@@ -1,4 +1,4 @@
-const model =  require('../models/label')
+const model = require('../models/label')
 
 class labelService {
     /**
@@ -6,7 +6,7 @@ class labelService {
      * @method labelModel.create calls model class method
      */
     addLabelById = (label, callback) => {
-        model.addLabelById(label, (error, data) => {
+        model.addLabelById(label, (error, label) => {
             if (!label) {
                 return callback("Undefined Label", null)
             }

@@ -2324,3 +2324,13 @@
 {"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:06.080Z"}
 {"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:06.388Z"}
 {"level":"error","message":"Internal Server Error","timestamp":"2021-12-29T18:20:06.542Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-30T08:28:52.300Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-30T08:28:52.646Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-30T08:28:52.655Z"}
+{"level":"info","message":"Email id found","timestamp":"2021-12-30T08:39:51.430Z"}
+{"level":"info","message":" token generated ","timestamp":"2021-12-30T08:39:53.074Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2021-12-30T08:39:53.103Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-30T08:40:42.020Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-30T08:40:55.815Z"}
+{"level":"error","message":"Internal server error","timestamp":"2021-12-30T08:40:58.342Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2021-12-30T08:43:08.543Z"}

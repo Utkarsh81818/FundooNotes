@@ -17,7 +17,7 @@ const noteSchema = mongoose.Schema({
 });
 
 const NoteRegister = mongoose.model('NoteRegister', noteSchema);
-class Model {
+class NoteModel {
   /**
    * @description function written to create notes into database
    * @param {*} a valid info is expected
@@ -98,4 +98,7 @@ class Model {
   }
 }
 
-module.exports = new Model();
+module.exports = {
+  NoteModel : new NoteModel(),
+  NoteRegister : NoteRegister
+};
