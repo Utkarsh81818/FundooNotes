@@ -6,11 +6,11 @@ class labelService {
      * @method labelModel.create calls model class method
      */
     addLabelById = (label, callback) => {
-        model.addLabelById(label, (error, label) => {
-            if (!label) {
+        model.addLabelById(label, (error, labeldata) => {
+            if (!labeldata) {
                 return callback("Undefined Label", null)
             }
-            return callback(null, label);
+            return callback(null, labeldata);
         })
     }
 }

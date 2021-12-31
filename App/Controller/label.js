@@ -32,12 +32,13 @@ class Label {
                 }
                 service.addLabelById(label, (error, data) => {
                     if (error) {
-                        const response = { sucess: true, message: error.message }
+                        const response = { sucess: false, message: error.message ,}
                         return res.status(201).send(response)
                     }
                     else {
                         return res.status(201).json({
-                            message: 'Valid Token'
+                            message: 'Valid Token',
+                            data : data
                         })
                     }
                 })
