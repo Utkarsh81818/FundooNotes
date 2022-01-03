@@ -48,7 +48,7 @@ class labelModel {
         }
         else if (findlabel != 0 || !findlabel) {
             noteLabel.
-                findOneAndUpdate({ labelName: label.labelName },{$addToSet:{noteId:[label.noteId]}},
+                findOneAndUpdate({ labelName: label.labelName }, { $addToSet: { noteId: [label.noteId] } },
                     (error, data) => {
                         if (data) {
                             return callback(null, data);
@@ -58,6 +58,13 @@ class labelModel {
                         }
                     })
         }
+    }
+
+    getLabel = (label, callback) => {
+        if (!label) {
+            return callback("Label not found", null)
+        }
+        return callback(null, label);
     }
 }
 module.exports = new labelModel();

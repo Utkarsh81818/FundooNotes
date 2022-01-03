@@ -63,12 +63,12 @@ class Label {
                 }
                 service.getLabel(userId, (error, data) => {
                     if (error) {
-                        return res.status(200).json({
+                        return res.status(400).json({
                             message: 'Error in getting data'
                         });
                     } else {
                         return res.status(200).json({
-                            message: 'Validation is Successful',
+                            message: 'Label is retrieved Successful',
                             data: data
                         });
                     };
