@@ -1155,3 +1155,7 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T09:00:46.444Z"}
 {"level":"error","message":{"acknowledged":true,"matchedCount":0,"modifiedCount":0,"upsertedCount":0,"upsertedId":null},"timestamp":"2022-01-03T09:00:47.079Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-03T09:00:47.103Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2022-01-03T10:03:57.243Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:06:02.381Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:07:57.284Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:16:16.347Z"}

@@ -9,14 +9,13 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 class Helper {
-  hashing = (password) => {
-    return new Promise((resolve, reject) => {
-      bcrypt.hash(password, 10)
-        .then((hash) => {
-          resolve(hash);
-        }).catch((err) => {
-          reject(err);
-        });
+  hashing = (password, callback) => {
+    bcrypt.hash(password, 10, function (err, hash) {
+      if (err) {
+        return callback(err, null);
+      } else {
+        return callback(null, hash);
+      }
     });
   }
 

@@ -60,6 +60,11 @@ class labelModel {
         }
     }
 
+    /**
+    * @description Create a new label
+    * @param {*} data
+    * @returns data else if returns error
+    */
     getLabel = (label, callback) => {
         noteLabel.find({ userId: label.id }, (error, data) => {
             if (error) {
@@ -68,6 +73,5 @@ class labelModel {
             return callback(null, data);
         })
     }
-
 }
 module.exports = new labelModel();

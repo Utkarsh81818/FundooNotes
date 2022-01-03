@@ -2443,3 +2443,16 @@
 {"level":"error","message":{"acknowledged":true,"matchedCount":0,"modifiedCount":0,"upsertedCount":0,"upsertedId":null},"timestamp":"2022-01-03T09:00:47.079Z"}
 {"level":"info","message":"Password reset succesfully","timestamp":"2022-01-03T09:00:47.080Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-03T09:00:47.102Z"}
+{"level":"info","message":"User registered","timestamp":"2022-01-03T10:01:33.759Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-03T10:02:05.035Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-03T10:02:05.603Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2022-01-03T10:02:05.615Z"}
+{"level":"error","message":"Otp doesnt match","timestamp":"2022-01-03T10:03:57.242Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:06:02.349Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:07:57.281Z"}
+{"level":"info","message":"Email id found","timestamp":"2022-01-03T10:10:41.885Z"}
+{"level":"info","message":" token generated ","timestamp":"2022-01-03T10:10:42.415Z"}
+{"level":"info","message":"User logged in successfully","timestamp":"2022-01-03T10:10:42.431Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-03T10:12:29.802Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:16:16.343Z"}
+{"level":"info","message":"Password reset succesfully","timestamp":"2022-01-03T10:42:47.864Z"}

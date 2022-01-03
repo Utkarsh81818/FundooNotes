@@ -37,7 +37,7 @@ class Label {
                     }
                     else {
                         return res.status(201).json({
-                            message: 'Valid Token',
+                            message: 'Label Added Successfully',
                             data: data
                         })
                     }
@@ -51,6 +51,12 @@ class Label {
         }
     }
 
+    /**
+     * @description function written to Get Label into the database
+     * @param {*} a valid req body is expected
+     * @param {*} res
+     * @returns response
+     */
     getLabel = (req, res) => {
         try {
             if (req.user) {
@@ -80,6 +86,12 @@ class Label {
         }
     }
 
+    /**
+     * @description function written to GetLabelById into the database
+     * @param {*} a valid req body is expected
+     * @param {*} res
+     * @returns response
+     */
     getLabelById = (req,res) =>{
         try{
             console.log("checking response from the server");
