@@ -177,5 +177,21 @@ class Label {
             })
         }
     }
+
+    /**
+     * @description function written to deleteLabelById into the database
+     * @param {*} a valid req body is expected
+     * @param {*} res
+     * @returns response
+     */
+     deletelabelById = (req, res) => {
+        try {
+            console.log("checking response from the server");
+        } catch {
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            })
+        }
+    }
 }
 module.exports = new Label();

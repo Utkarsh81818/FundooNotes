@@ -303,16 +303,16 @@ describe('get labelById API ', () => {
 });
 
 describe('Update labelById API ', () => {
-    it.only('updateLabelByID_checking_server', (done) => {
+    it('updateLabelByID_checking_server', (done) => {
         chai
             .request(server)
-            .get('/getlabel/:id')
+            .put('/updatelabel/:id')
             .end((err, res) => {
                 res.should.have.status(500);
                 done();
             });
     });
-    it.only('Gives true when token is verify', (done) => {
+    it('Gives true when token is verify', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -323,7 +323,7 @@ describe('Update labelById API ', () => {
                 done();
             });
     });
-    it.only('Gives false when token is not verify', (done) => {
+    it('Gives false when token is not verify', (done) => {
         const token = labelDbs.label.invalidToken
         chai
             .request(server)
@@ -334,7 +334,7 @@ describe('Update labelById API ', () => {
                 done();
             });
     });
-    it.only('If payload of data is validated then it should give true', (done) => {
+    it('If payload of data is validated then it should give true', (done) => {
         const token = labelDbs.label.validToken
         const labelName = {
             labeldata: faker.lorem.word()
@@ -348,7 +348,7 @@ describe('Update labelById API ', () => {
                 done();
             });
     });
-    it.only('When service layer is giving response, should return true', (done) => {
+    it('When service layer is giving response, should return true', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -360,7 +360,7 @@ describe('Update labelById API ', () => {
                 done();
             });
     });
-    it.only('When model layer is giving response, should return true', (done) => {
+    it('When model layer is giving response, should return true', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -372,7 +372,7 @@ describe('Update labelById API ', () => {
                 done();
             });
     });
-    it.only('When label is updated, should return true', (done) => {
+    it('When label is updated, should return true', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -381,6 +381,18 @@ describe('Update labelById API ', () => {
             .send({ labelName: "Utkarsh" })
             .end((err, res) => {
                 res.should.have.status(201);
+                done();
+            });
+    });
+});
+
+describe('Delete labelById API ', () => {
+    it.only('deleteLabelByID_checking_server', (done) => {
+        chai
+            .request(server)
+            .delete('/deletelabel/:id')
+            .end((err, res) => {
+                res.should.have.status(500);
                 done();
             });
     });
