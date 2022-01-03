@@ -147,7 +147,7 @@ describe('Add label by id api ', () => {
 });
 
 describe('get label api ', () => {
-    it.only('getLabel_checking_server', (done) => {
+    it('getLabel_checking_server', (done) => {
         chai
             .request(server)
             .get('/getlabel')
@@ -156,7 +156,7 @@ describe('get label api ', () => {
                 done();
             });
     });
-    it.only('Should give true, when token is verified', (done) => {
+    it('Should give true, when token is verified', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -167,7 +167,7 @@ describe('get label api ', () => {
                 done();
             });
     });
-    it.only('Should give false, when token is not verified', (done) => {
+    it('Should give false, when token is not verified', (done) => {
         const token = labelDbs.label.invalidToken
         chai
             .request(server)
@@ -178,7 +178,7 @@ describe('get label api ', () => {
                 done();
             });
     });
-    it.only('If payload of data is validated then it should give true', (done) => {
+    it('If payload of data is validated then it should give true', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -189,7 +189,7 @@ describe('get label api ', () => {
                 done();
             });
     });
-    it.only('When service layer is giving response, should return true', (done) => {
+    it('When service layer is giving response, should return true', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)
@@ -200,7 +200,18 @@ describe('get label api ', () => {
                 done();
             });
     });
-    it.only('When model layer is giving response, should return true', (done) => {
+    it('When model layer is giving response, should return true', (done) => {
+        const token = labelDbs.label.validToken
+        chai
+            .request(server)
+            .get('/getlabel')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
+    it('When label is fetched successfully, then it should return true', (done) => {
         const token = labelDbs.label.validToken
         chai
             .request(server)

@@ -61,10 +61,13 @@ class labelModel {
     }
 
     getLabel = (label, callback) => {
-        if (!label) {
-            return callback("Label not found", null)
-        }
-        return callback(null, label);
+        noteLabel.find({ userId: label.id }, (error, data) => {
+            if (error) {
+                return callback("Label not found", null)
+            }
+            return callback(null, data);
+        })
     }
+
 }
 module.exports = new labelModel();

@@ -15,11 +15,11 @@ class labelService {
     }
 
     getLabel = (label, callback) => {
-        model.getLabel(label, (error, label) => {
-            if (!label) {
+        model.getLabel(label, (error, data) => {
+            if (error) {
                 return callback("Undefined Label", null)
             }
-            return callback(null, label);
+            return callback(null, data);
         })
     }
 }
