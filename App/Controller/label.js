@@ -54,19 +54,25 @@ class Label {
     getLabel = (req, res) => {
         try {
             if (req.user) {
-                const labelName = req.body.labelName
+                const userId = { id: req.user.dataForToken.id }
+                const labelName = { labelName: req.body.labelName }
                 const validateResult = validation.getLabel.validate(labelName);
                 if (validateResult.error) {
                     const response = { sucess: false, message: "Wrong Input Vaidation" }
                     return res.status(422).json(response)
                 }
-                return res.status(200).json({
-                    message: 'Token is Valid'
-                });
-            } else {
-                return res.status(400).json({
-                    message: 'Token is invalid'
-                });
+                service.getLabel(userId, (error, data) => {
+                    if (error) {
+                        return res.status(200).json({
+                            message: 'Error in getting data'
+                        });
+                    } else {
+                        return res.status(200).json({
+                            message: 'Validation is Successful',
+                            data: data
+                        });
+                    };
+                })
             }
         } catch {
             logger.error('Internal Server Error');

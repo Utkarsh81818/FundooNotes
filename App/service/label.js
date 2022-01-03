@@ -13,6 +13,13 @@ class labelService {
             return callback(null, labeldata);
         })
     }
+
+    getLabel = (label, callback) => {
+        if (!label) {
+            return callback("Label not found", null)
+        }
+        return callback(null, label);
+    }
 }
 
 module.exports = new labelService();

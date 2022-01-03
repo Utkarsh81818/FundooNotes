@@ -92,7 +92,7 @@ class Validation {
   });
 
   getLabel = Joi.object({
-    id: Joi.string()
+    labelName: Joi.string()
   })
 }
 module.exports = new Validation();

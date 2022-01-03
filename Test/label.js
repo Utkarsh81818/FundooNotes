@@ -189,4 +189,15 @@ describe('get label api ', () => {
                 done();
             });
     });
+    it.only('When service layer is giving response, should return true', (done) => {
+        const token = labelDbs.label.validToken
+        chai
+            .request(server)
+            .get('/getlabel')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
 })
