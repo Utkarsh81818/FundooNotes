@@ -186,6 +186,14 @@ class Label {
      */
     deletelabelById = (req, res) => {
         try {
+            const delLabel = {
+                id: req.params.id
+            }
+            const validateResult = validation.updateLabel.validate(delLabel);
+            if (validateResult.error) {
+                const response = { sucess: false, message: "Wrong Input Vaidation" }
+                return res.status(422).json(response)
+            }
             return res.status(201).json({
                 message: 'Token is Valid'
             });

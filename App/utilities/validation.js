@@ -105,5 +105,9 @@ class Validation {
     id: Joi.string(),
     labelName: Joi.string()
   })
+
+  deletinglabel =Joi.object({
+    id:Joi.string()
+  })
 }
 module.exports = new Validation();
