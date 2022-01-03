@@ -79,5 +79,15 @@ class Label {
             return res.status(500).json(response)
         }
     }
+
+    getLabelById = (req,res) =>{
+        try{
+            console.log("checking response from the server");
+        }catch{
+            return res.status(500).json({
+                message: 'Internal Server Error'
+            })
+        }
+    }
 }
 module.exports = new Label();
