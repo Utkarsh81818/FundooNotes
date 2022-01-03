@@ -94,13 +94,15 @@ class Label {
      */
     getLabelById = (req, res) => {
         try {
-            if (req.user) {
-                const labelName = req.body.labelName
-                const validateResult = validation.getLabel.validate(labelName);
-                if (validateResult.error) {
-                    const response = { sucess: false, message: "Wrong Input Vaidation" }
-                    return res.status(422).json(response)
-                }
+            const labelDetails = {
+                userId: req.user.dataForToken.id,
+                labelId: req.params.id
+            };
+            const labelName = req.body.labelName
+            const validateResult = validation.getLabelById.validate(labelDetails);
+            if (validateResult.error) {
+                const response = { sucess: false, message: "Wrong Input Vaidation" }
+                return res.status(422).json(response)
             }
             return res.status(200).json({
                 message: 'Validation is successful'

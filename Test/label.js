@@ -260,7 +260,7 @@ describe('get labelById API ', () => {
         const token = labelDbs.label.validToken;
         chai
             .request(server)
-            .get('/getlabel/:id')
+            .get('/getlabel/61c2e271a2aa33d1c97253e3')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);

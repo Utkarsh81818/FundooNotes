@@ -2456,3 +2456,4 @@
 {"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-03T10:12:29.802Z"}
 {"level":"error","message":"Internal server error","timestamp":"2022-01-03T10:16:16.343Z"}
 {"level":"info","message":"Password reset succesfully","timestamp":"2022-01-03T10:42:47.864Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-03T11:39:20.300Z"}
