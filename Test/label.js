@@ -234,7 +234,7 @@ describe('get labelById API ', () => {
                 done();
             });
     });
-    it.only('Gives true when token is verify', (done) => {
+    it.only('Should Gives true when token is verify', (done) => {
         const token = labelDbs.label.validToken;
         chai
             .request(server)
@@ -245,7 +245,7 @@ describe('get labelById API ', () => {
                 done();
             });
     });
-    it.only('Gives false when token is not verified', (done) => {
+    it.only('Should Gives false when token is not verified', (done) => {
         const token = labelDbs.label.invalidToken;
         chai
             .request(server)
