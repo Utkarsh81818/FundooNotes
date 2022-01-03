@@ -53,12 +53,18 @@ class Label {
 
     getLabel = (req, res) => {
         try {
-            return res.status(200).json({
-              message: 'Token is Valid'
-            });
+            if (req.user) {
+                return res.status(200).json({
+                    message: 'Token is Valid'
+                });
+            } else {
+                return res.status(400).json({
+                    message: 'Token is invalid'
+                });
+            }
         } catch {
             logger.error('Internal Server Error');
-            return res.status(500).json(response)   
+            return res.status(500).json(response)
         }
     }
 }

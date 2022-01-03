@@ -167,4 +167,15 @@ describe('get label api ', () => {
                 done();
             });
     });
+    it.only('Should give false, when token is not verified', (done) => {
+        const token = labelDbs.label.invalidToken
+        chai
+            .request(server)
+            .get('/getlabel')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    });
 })
