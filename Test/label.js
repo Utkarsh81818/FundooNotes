@@ -256,4 +256,15 @@ describe('get labelById API ', () => {
                 done();
             });
     });
+    it.only('If payload of data is validated then it should give true', (done) => {
+        const token = labelDbs.label.validToken;
+        chai
+            .request(server)
+            .get('/getlabel/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
 });
