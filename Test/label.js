@@ -396,4 +396,15 @@ describe('Delete labelById API ', () => {
                 done();
             });
     });
+    it.only('Gives true when token is verify', (done) => {
+        const token = labelDbs.label.validToken
+        chai
+            .request(server)
+            .delete('/deletelabel/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
 });

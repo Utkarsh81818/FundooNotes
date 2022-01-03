@@ -184,9 +184,11 @@ class Label {
      * @param {*} res
      * @returns response
      */
-     deletelabelById = (req, res) => {
+    deletelabelById = (req, res) => {
         try {
-            console.log("checking response from the server");
+            return res.status(201).json({
+                message: 'Token is Valid'
+            });
         } catch {
             return res.status(500).json({
                 message: 'Internal Server Error'
