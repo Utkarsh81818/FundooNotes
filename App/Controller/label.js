@@ -136,10 +136,13 @@ class Label {
      * @param {*} res
      * @returns response
      */
-    updateLabelById = (req, res) => {
+     updatelabelById = (req, res) => {
         try {
-            console.log("checking response from the server");
+            return res.status(200).json({
+                message: 'Token is Valid'
+            });
         } catch {
+            logger.error('Internal Server Error');
             return res.status(500).json({
                 message: 'Internal Server Error'
             })
