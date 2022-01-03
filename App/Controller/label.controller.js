@@ -194,10 +194,26 @@ class Label {
                 const response = { sucess: false, message: "Wrong Input Vaidation" }
                 return res.status(422).json(response)
             }
+            service.deletelabelById(delLabel, (error, data) => {
+                if (error) {
+                    return res.status(400).json({
+                        error: error.message,
+                        message: 'Error in deleting '
+                    })
+                }
+                else if (!data) {
+                    return res.status(401).json({
+                        error: error.message,
+                        data: data,
+                        message: 'Invalid Deletion'
+                    })
+                }
+            })
             return res.status(201).json({
-                message: 'Token is Valid'
+                message: 'Label deleted Successfully'
             });
         } catch {
+            logger.error('Internal Server Error');
             return res.status(500).json({
                 message: 'Internal Server Error'
             })

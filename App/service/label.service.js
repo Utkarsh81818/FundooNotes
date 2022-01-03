@@ -55,6 +55,17 @@ class labelService {
             return callback(null, data)
         })
     }
+
+    /**
+     * @description Delete labelByID
+     * @method labelModel.delete calls model class method
+     */
+    deletelabelById = (delLabel, callback) => {
+        if(!delLabel){
+            return callback("Invalid data", null)
+        }
+        return callback(null, delLabel)
+    }
 }
 
 module.exports = new labelService();
