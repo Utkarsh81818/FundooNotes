@@ -407,6 +407,39 @@
                     }
                 }
             }
+        },
+        "/getlabel": {
+            "get": {
+                "tags": [
+                    "get labels"
+                ],
+                "description": "Gets all labels",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "authorization",
+                        "description": "Token for validation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "labels retrieved"
+                    },
+                    "400": {
+                        "description": "Couldnt retrieve labels"
+                    },
+                    "500": {
+                        "description": "Some error Occured"
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -488,13 +521,13 @@
             "example": {
                 "title": "Write a title here.....",
                 "description": "Write a description here....."
-            },
-            "addlabel": {
-                "type": "object",
-                "properties": {
-                    "labelName": {
-                        "type": "string"
-                    }
+            }
+        },
+        "addlabel": {
+            "type": "object",
+            "properties": {
+                "labelName": {
+                    "type": "string"
                 }
             }
         }
