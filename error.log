@@ -1178,3 +1178,12 @@
 {"level":"error","message":"Invalid Credential","timestamp":"2022-01-03T14:06:54.679Z"}
 {"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T14:06:54.970Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-03T14:06:55.835Z"}
+{"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\":id\"","timestamp":"2022-01-03T14:43:22.714Z","value":":id","valueType":"string"}
+{"level":"error","message":"failed to update note","timestamp":"2022-01-03T14:43:22.718Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T14:43:24.410Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T14:43:24.422Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T14:43:24.439Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-03T14:43:24.877Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-03T14:43:24.878Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T14:43:25.164Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-03T14:43:25.586Z"}

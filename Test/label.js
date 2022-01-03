@@ -301,3 +301,15 @@ describe('get labelById API ', () => {
             });
     });
 });
+
+describe('Update labelById API ', () => {
+    it.only('updateLabelByID_checking_server', (done) => {
+        chai
+            .request(server)
+            .get('/getlabel/:id')
+            .end((err, res) => {
+                res.should.have.status(500);
+                done();
+            });
+    });
+});
