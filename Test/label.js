@@ -245,4 +245,15 @@ describe('get labelById API ', () => {
                 done();
             });
     });
+    it.only('Gives false when token is not verified', (done) => {
+        const token = labelDbs.label.invalidToken;
+        chai
+            .request(server)
+            .get('/getlabel/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(400);
+                done();
+            });
+    });
 });
