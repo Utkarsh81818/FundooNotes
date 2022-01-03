@@ -104,8 +104,24 @@ class Label {
                 const response = { sucess: false, message: "Wrong Input Vaidation" }
                 return res.status(422).json(response)
             }
-            return res.status(200).json({
-                message: 'Validation is successful'
+            service.getlabelById(labelCredential, (error, data) => {
+                if (error) {
+                    return res.status(400).json({
+                        error: error.message,
+                        message: 'Error in fetching ',
+                        data: CredentialValidation.error
+                    })
+                }
+                else if (!data) {
+                    return res.status(401).json({
+                        error: error.message,
+                        data: data,
+                        message: 'Invalid data, data not found'
+                    })
+                }
+                return res.status(200).json({
+                    message: 'Validation is successful'
+                });
             });
         } catch {
             logger.error('Internal Server Error');
