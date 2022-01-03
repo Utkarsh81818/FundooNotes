@@ -31,12 +31,15 @@ class labelService {
      * @description Get labelByID
      * @method labelModel.create calls model class method
      */
-    getlabelById = (labelCredential, callback) => {
-        if (!labelDetails) {
+     getlabelById = (labelDetails, callback) => {
+        model.getlabelById(labelDetails, (error, data) => {
+        if (error) {
             return callback(error, null);
         }
-        return callback(null, labelDetails);
-    }
+        return callback(null, data);
+    })
 }
+}
+
 
 module.exports = new labelService();

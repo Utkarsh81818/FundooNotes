@@ -61,7 +61,7 @@ class labelModel {
     }
 
     /**
-    * @description Create a new label
+    * @description Get All label
     * @param {*} data
     * @returns data else if returns error
     */
@@ -72,6 +72,18 @@ class labelModel {
             }
             return callback(null, data);
         })
+    }
+
+    /**
+    * @description Get Label By ID
+    * @param {*} data
+    * @returns data else if returns error
+    */
+    getlabelById = (labelDetails, callback) => {
+        if (!labelDetails) {
+            return callback(error, null);
+        }
+        return callback(null, labelDetails);
     }
 }
 module.exports = new labelModel();

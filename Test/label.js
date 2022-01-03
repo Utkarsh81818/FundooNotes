@@ -278,4 +278,15 @@ describe('get labelById API ', () => {
                 done();
             });
     });
+    it.only('When model layer is giving response, should return true', (done) => {
+        const token = labelDbs.label.validToken;
+        chai
+            .request(server)
+            .get('/getlabel/61c2e271a2aa33d1c97253e3')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(200);
+                done();
+            });
+    });
 });
