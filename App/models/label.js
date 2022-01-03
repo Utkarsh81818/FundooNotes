@@ -80,10 +80,12 @@ class labelModel {
     * @returns data else if returns error
     */
     getlabelById = (labelDetails, callback) => {
-        if (!labelDetails) {
-            return callback(error, null);
-        }
-        return callback(null, labelDetails);
+        noteLabel.find({ userId: labelDetails.id }, (error, data) => {
+            if (!labelDetails) {
+                return callback(error, null);
+            }
+            return callback(null, data);
+        })
     }
 }
 module.exports = new labelModel();
