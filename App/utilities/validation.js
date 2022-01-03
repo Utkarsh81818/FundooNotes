@@ -82,7 +82,7 @@ class Validation {
   });
 
   validateDeleteNote = Joi.object({
-    id:Joi.string(),
+    id: Joi.string(),
     noteId: Joi.string(),
     userId: Joi.string()
   });
@@ -90,5 +90,9 @@ class Validation {
   labelValidation = Joi.object({
     labelName: Joi.string()
   });
+
+  getLabel = Joi.object({
+    id: Joi.string()
+  })
 }
 module.exports = new Validation();
