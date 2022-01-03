@@ -32,13 +32,13 @@ class Label {
                 }
                 service.addLabelById(label, (error, data) => {
                     if (error) {
-                        const response = { sucess: false, message: error.message ,}
+                        const response = { sucess: false, message: error.message, }
                         return res.status(201).send(response)
                     }
                     else {
                         return res.status(201).json({
                             message: 'Valid Token',
-                            data : data
+                            data: data
                         })
                     }
                 })
@@ -51,13 +51,14 @@ class Label {
         }
     }
 
-    getLabel = (req,res) =>{
-        try{
-            console.log("checking response");
-        }catch{
-            return res.status(500).json({
-                message: 'Internal Server Error'
-            })
+    getLabel = (req, res) => {
+        try {
+            return res.status(200).json({
+              message: 'Token is Valid'
+            });
+        } catch {
+            logger.error('Internal Server Error');
+            return res.status(500).json(response)   
         }
     }
 }
