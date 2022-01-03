@@ -96,8 +96,14 @@ class Validation {
   })
 
   getLabelById = Joi.object({
-    userId:Joi.string(),
-    labelId:Joi.string()
+    userId: Joi.string(),
+    labelId: Joi.string()
+  })
+
+  updateLabel = Joi.object({
+    userId: Joi.string(),
+    id: Joi.string(),
+    labelName: Joi.string()
   })
 }
 module.exports = new Validation();

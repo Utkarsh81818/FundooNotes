@@ -136,10 +136,18 @@ class Label {
      * @param {*} res
      * @returns response
      */
-     updatelabelById = (req, res) => {
+    updatelabelById = (req, res) => {
         try {
-            return res.status(200).json({
-                message: 'Token is Valid'
+            if (req.user) {
+                const labelName = req.body.labelName
+                const validateResult = validation.updateLabel.validate(labelName);
+                if (validateResult.error) {
+                    const response = { sucess: false, message: "Wrong Input Vaidation" }
+                    return res.status(422).json(response)
+                }
+            }
+            return res.status(201).json({
+                message: 'Validation Passes Successfully'
             });
         } catch {
             logger.error('Internal Server Error');

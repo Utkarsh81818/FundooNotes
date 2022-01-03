@@ -2561,3 +2561,5 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-03T14:43:25.164Z"}
 {"level":"info","message":"Password reset succesfully","timestamp":"2022-01-03T14:43:25.562Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-03T14:43:25.586Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-03T15:37:34.376Z"}
+{"level":"info","message":"Get All Notes successfully","timestamp":"2022-01-03T15:38:39.895Z"}

@@ -319,7 +319,7 @@ describe('Update labelById API ', () => {
             .put('/updatelabel/:id')
             .set({ authorization: token })
             .end((err, res) => {
-                res.should.have.status(200);
+                res.should.have.status(201);
                 done();
             });
     });
@@ -331,6 +331,20 @@ describe('Update labelById API ', () => {
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
+                done();
+            });
+    });
+    it.only('If payload of data is validated then it should give true', (done) => {
+        const token = labelDbs.label.validToken
+        const labelName = {
+            labelname: faker.lorem.word()
+        }
+        chai
+            .request(server)
+            .put('/updatelabel/:id')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
                 done();
             });
     });
