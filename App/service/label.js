@@ -16,7 +16,7 @@ class labelService {
 
     /**
      * @description Get all labels
-     * @method labelModel.create calls model class method
+     * @method labelModel.get calls model class method
      */
     getLabel = (label, callback) => {
         model.getLabel(label, (error, data) => {
@@ -29,7 +29,7 @@ class labelService {
 
     /**
      * @description Get labelByID
-     * @method labelModel.create calls model class method
+     * @method labelModel.getById calls model class method
      */
     getlabelById = (labelDetails, callback) => {
         model.getlabelById(labelDetails, (error, data) => {
@@ -38,6 +38,17 @@ class labelService {
             }
             return callback(null, data);
         })
+    }
+
+    /**
+     * @description Update labelByID
+     * @method labelModel.update calls model class method
+     */
+    updatelabelById = (labeldata, callback) => {
+        if (!labeldata) {
+            return callback(error, null);
+        }
+        return callback(null, labeldata)
     }
 }
 

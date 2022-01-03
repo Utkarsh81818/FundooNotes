@@ -337,12 +337,24 @@ describe('Update labelById API ', () => {
     it.only('If payload of data is validated then it should give true', (done) => {
         const token = labelDbs.label.validToken
         const labelName = {
-            labelname: faker.lorem.word()
+            labeldata: faker.lorem.word()
         }
         chai
             .request(server)
             .put('/updatelabel/:id')
             .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
+    it.only('When service layer is giving response, should return true', (done) => {
+        const token = labelDbs.label.validToken
+        chai
+            .request(server)
+            .put('/updatelabel/:id')
+            .set({ authorization: token })
+            .send({ labelName: "Utkarsh" })
             .end((err, res) => {
                 res.should.have.status(201);
                 done();
