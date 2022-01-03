@@ -95,10 +95,12 @@ class labelModel {
     * @returns data else if returns error
     */
     updatelabelById = (labeldata, callback) => {
+        noteLabel.findByIdAndUpdate(labeldata.id, { labelName: labeldata.labelName }, { new: true }, (error, data) => {
         if (!labeldata) {
             return callback(error, null);
         }
-        return callback(null, labeldata)
-    }
+        return callback(null, data)
+    })
+}
 }
 module.exports = new labelModel();

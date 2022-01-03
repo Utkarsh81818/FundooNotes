@@ -372,4 +372,16 @@ describe('Update labelById API ', () => {
                 done();
             });
     });
+    it.only('When label is updated, should return true', (done) => {
+        const token = labelDbs.label.validToken
+        chai
+            .request(server)
+            .put('/updatelabel/:id')
+            .set({ authorization: token })
+            .send({ labelName: "Utkarsh" })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
 });
