@@ -80,12 +80,13 @@ class labelModel {
     * @returns data else if returns error
     */
     getlabelById = (labelDetails, callback) => {
-        noteLabel.find({ userId: labelDetails.id }, (error, data) => {
-            if (!labelDetails) {
-                return callback(error, null);
-            }
-            return callback(null, data);
-        })
+        noteLabel.find({ $and: [{ _id: labelDetails.labelId }, { userId: labelDetails.userId }] })
+        if (error) {
+            return callback(error, null);
+        } else if (!data) {
+            return callback("Data not found", null)
+        }
+        return callback(null, data);
     }
 }
 module.exports = new labelModel();
