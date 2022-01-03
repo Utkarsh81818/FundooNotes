@@ -5,7 +5,7 @@
 * @version : 1.0
 */
 const validation = require('../utilities/validation')
-const service = require('../service/label')
+const service = require('../service/label.service')
 const { logger } = require('../../logger/logger')
 
 class Label {
@@ -146,6 +146,7 @@ class Label {
                 }
                 const validateResult = validation.updateLabel.validate(labeldata);
                 if (validateResult.error) {
+                    console.log("11", error);
                     const response = { sucess: false, message: "Wrong Input Vaidation" }
                     return res.status(422).json(response)
                 }

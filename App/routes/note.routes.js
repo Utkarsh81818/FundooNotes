@@ -8,7 +8,7 @@
 const userController = require('../Controller/user.controller.js');
 const noteController = require('../Controller/notes.controller')
 const helperValidation = require('../utilities/helper');
-const label = require('../Controller/label')
+const label = require('../Controller/label.controller')
 
 module.exports = (app) => {
   // api for registration

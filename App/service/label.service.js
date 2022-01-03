@@ -1,4 +1,4 @@
-const model = require('../models/label')
+const model = require('../models/label.model')
 
 class labelService {
     /**
@@ -45,10 +45,15 @@ class labelService {
      * @method labelModel.update calls model class method
      */
     updatelabelById = (labeldata, callback) => {
-        if (!labeldata) {
-            return callback(error, null);
-        }
-        return callback(null, labeldata)
+        model.updatelabelById(labeldata, (error, data) => {
+            if(error){
+                return callback(error, null)
+            }
+            else if (!labeldata) {
+                return callback("data is empty", null);
+            }
+            return callback(null, data)
+        })
     }
 }
 

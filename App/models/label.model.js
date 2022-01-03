@@ -88,5 +88,17 @@ class labelModel {
         }
         return callback(null, data);
     }
+
+    /**
+    * @description Update Label By ID
+    * @param {*} data
+    * @returns data else if returns error
+    */
+    updatelabelById = (labeldata, callback) => {
+        if (!labeldata) {
+            return callback(error, null);
+        }
+        return callback(null, labeldata)
+    }
 }
 module.exports = new labelModel();
