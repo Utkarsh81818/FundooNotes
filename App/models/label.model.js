@@ -102,5 +102,17 @@ class labelModel {
             return callback(null, data)
         })
     }
+
+    /**
+    * @description Update Label By ID
+    * @param {*} data
+    * @returns data else if returns error
+    */
+    deletelabelById = (delLabel, callback) => {
+        if (!delLabel) {
+            return callback("Invalid Data", null)
+        }
+        return callback(null, delLabel)
+    }
 }
 module.exports = new labelModel();

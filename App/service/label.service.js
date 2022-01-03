@@ -46,7 +46,7 @@ class labelService {
      */
     updatelabelById = (labeldata, callback) => {
         model.updatelabelById(labeldata, (error, data) => {
-            if(error){
+            if (error) {
                 return callback(error, null)
             }
             else if (!labeldata) {
@@ -61,10 +61,15 @@ class labelService {
      * @method labelModel.delete calls model class method
      */
     deletelabelById = (delLabel, callback) => {
-        if(!delLabel){
-            return callback("Invalid data", null)
-        }
-        return callback(null, delLabel)
+        model.deletelabelById(delLabel, (error, data) => {
+            if (error) {
+                return callback(error, null)
+            }
+            else if (!delLabel) {
+                return callback("Invalid data", null)
+            }
+            return callback(null, data)
+        })
     }
 }
 

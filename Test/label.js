@@ -440,4 +440,15 @@ describe('Delete labelById API ', () => {
                 done();
             });
     });
+    it.only('When model layer is giving response, it should return true', (done) => {
+        const token = labelDbs.label.validToken
+        chai
+            .request(server)
+            .delete('/deletelabel/61d318dfcaf2d357e301d193')
+            .set({ authorization: token })
+            .end((err, res) => {
+                res.should.have.status(201);
+                done();
+            });
+    });
 });
