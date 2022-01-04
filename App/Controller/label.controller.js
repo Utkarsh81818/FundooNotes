@@ -187,9 +187,10 @@ class Label {
     deletelabelById = (req, res) => {
         try {
             const delLabel = {
+                userId: req.user.dataForToken.id,
                 id: req.params.id
             }
-            const validateResult = validation.updateLabel.validate(delLabel);
+            const validateResult = validation.deletelabel.validate(delLabel);
             if (validateResult.error) {
                 const response = { sucess: false, message: "Wrong Input Vaidation" }
                 return res.status(422).json(response)
@@ -208,11 +209,12 @@ class Label {
                         message: 'Invalid Deletion'
                     })
                 }
-            })
-            return res.status(201).json({
-                message: 'Label deleted Successfully'
-            });
-        } catch {
+                return res.status(201).json({
+                    message: 'Label deleted Successfully',
+                    data: data
+                });
+            })  
+        } catch(error) {
             logger.error('Internal Server Error');
             return res.status(500).json({
                 message: 'Internal Server Error'

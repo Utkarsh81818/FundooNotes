@@ -12,6 +12,7 @@ const labelSchema = mongoose.Schema({
     }],
     labelName: {
         type: String,
+        unique: true,
         required: true
     },
 }, {
@@ -104,15 +105,19 @@ class labelModel {
     }
 
     /**
-    * @description Update Label By ID
+    * @description Delete Label By ID
     * @param {*} data
     * @returns data else if returns error
     */
     deletelabelById = (delLabel, callback) => {
-        if (!delLabel) {
-            return callback("Invalid Data", null)
-        }
-        return callback(null, delLabel)
+        noteLabel.findOneAndDelete({ $and: [{ _id: delLabel.id }, { userId: delLabel.userId }] }, (error, data) => {
+            if (error) {
+                return callback(error, null)
+            } else if (!data) {
+                return callback("data is not found", null)
+            }
+            return callback(null, data)
+        })
     }
 }
 module.exports = new labelModel();

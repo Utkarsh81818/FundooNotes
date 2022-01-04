@@ -65,7 +65,7 @@ class labelService {
             if (error) {
                 return callback(error, null)
             }
-            else if (!delLabel) {
+            else if (!data) {
                 return callback("Invalid data", null)
             }
             return callback(null, data)

@@ -106,7 +106,8 @@ class Validation {
     labelName: Joi.string()
   })
 
-  deletinglabel =Joi.object({
+  deletelabel =Joi.object({
+    userId: Joi.string(),
     id:Joi.string()
   })
 }
