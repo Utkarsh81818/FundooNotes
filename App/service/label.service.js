@@ -1,4 +1,6 @@
 const model = require('../models/label.model')
+const { logger } = require('../../logger/logger')
+const redisConnection = require('../connection/redis.connection')
 
 class labelService {
     /**
@@ -36,6 +38,7 @@ class labelService {
             if (error) {
                 return callback(error, null);
             }
+            redisConnection.setData('fetchRedisById',60,JSON.stringify(data))
             return callback(null, data);
         })
     }
