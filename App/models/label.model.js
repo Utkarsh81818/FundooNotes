@@ -97,7 +97,7 @@ class labelModel {
     */
     updatelabelById = (labeldata, callback) => {
         noteLabel.findByIdAndUpdate(labeldata.id, { labelName: labeldata.labelName }, { new: true }, (error, data) => {
-            if (!labeldata) {
+            if (error) {
                 return callback(error, null);
             }
             return callback(null, data)

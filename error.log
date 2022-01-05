@@ -1245,3 +1245,23 @@
 {"level":"error","message":"Internal Server Error","timestamp":"2022-01-04T05:22:16.329Z"}
 {"level":"error","message":"Internal Server Error","timestamp":"2022-01-04T05:27:32.851Z"}
 {"level":"error","message":"Internal Server Error","timestamp":"2022-01-04T05:31:22.601Z"}
+{"kind":"ObjectId","level":"error","path":"_id","reason":{},"stringValue":"\":id\"","timestamp":"2022-01-04T12:27:42.289Z","value":":id","valueType":"string"}
+{"level":"error","message":"failed to update note","timestamp":"2022-01-04T12:27:42.290Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T12:27:43.367Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T12:27:43.400Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T12:27:43.416Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-04T12:27:43.710Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-04T12:27:43.710Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-04T12:27:43.871Z"}
+{"level":"error","message":"Invalid password","timestamp":"2022-01-04T12:27:44.226Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-05T03:15:51.835Z"}
+{"level":"error","message":"Invalid Credential","timestamp":"2022-01-05T03:15:51.837Z"}
+{"level":"error","message":null,"timestamp":"2022-01-05T03:18:21.489Z"}
+{"level":"error","message":null,"timestamp":"2022-01-05T03:20:02.059Z"}
+{"level":"error","message":null,"timestamp":"2022-01-05T04:52:09.141Z"}
+{"level":"error","message":null,"timestamp":"2022-01-05T04:54:49.488Z"}
+{"level":"error","message":"Error in hash on password","timestamp":"2022-01-05T04:55:42.298Z"}
+{"level":"error","message":"Error in hash on password","timestamp":"2022-01-05T04:55:42.299Z"}
+{"level":"error","message":"Error in hash on password","timestamp":"2022-01-05T04:56:01.545Z"}
+{"level":"error","message":"Error in hash on password","timestamp":"2022-01-05T04:56:01.546Z"}
+{"level":"error","message":null,"timestamp":"2022-01-05T04:57:15.880Z"}

@@ -138,37 +138,35 @@ class Label {
      */
     updatelabelById = (req, res) => {
         try {
-            if (req.user) {
-                const labeldata = {
-                    userId: req.user.dataForToken.id,
-                    id: req.params.id,
-                    labelName: req.body.labelName
-                }
-                const validateResult = validation.updateLabel.validate(labeldata);
-                if (validateResult.error) {
-                    const response = { sucess: false, message: "Wrong Input Vaidation" }
-                    return res.status(422).json(response)
-                }
-                service.updatelabelById(labeldata, (error, data) => {
-                    if (error) {
-                        return res.status(400).json({
-                            error: error.message,
-                            message: 'Error in updating '
-                        })
-                    }
-                    else if (!data) {
-                        return res.status(401).json({
-                            error: error.message,
-                            data: data,
-                            message: 'Invalid Updation'
-                        })
-                    }
-                    return res.status(201).json({
-                        message: 'Label Updated Successfully',
-                        data: data
-                    });
-                });
+            const labeldata = {
+                userId: req.user.dataForToken.id,
+                id: req.params.id,
+                labelName: req.body.labelName
             }
+            const validateResult = validation.updateLabel.validate(labeldata);
+            if (validateResult.error) {
+                const response = { sucess: false, message: "Wrong Input Vaidation" }
+                return res.status(422).json(response)
+            }
+            service.updatelabelById(labeldata, (error, data) => {
+                if (error) {
+                    return res.status(400).json({
+                        error: error.message,
+                        message: 'Error in updating '
+                    })
+                }
+                else if (!data) {
+                    return res.status(401).json({
+                        error: error.message,
+                        data: data,
+                        message: 'Invalid Updation'
+                    })
+                }
+                return res.status(201).json({
+                    message: 'Label Updated Successfully',
+                    data: data
+                });
+            });
         }
         catch (error) {
             logger.error('Internal Server Error');
@@ -213,8 +211,8 @@ class Label {
                     message: 'Label deleted Successfully',
                     data: data
                 });
-            })  
-        } catch(error) {
+            })
+        } catch (error) {
             logger.error('Internal Server Error');
             return res.status(500).json({
                 message: 'Internal Server Error'

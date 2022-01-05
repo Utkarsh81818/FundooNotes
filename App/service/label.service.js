@@ -49,7 +49,7 @@ class labelService {
             if (error) {
                 return callback(error, null)
             }
-            else if (!labeldata) {
+            else if (!data) {
                 return callback("data is empty", null);
             }
             return callback(null, data)

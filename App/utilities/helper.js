@@ -8,6 +8,7 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+// Used Bycrypt for the password 
 class Helper {
   hashing = (password, callback) => {
     bcrypt.hash(password, 10, function (err, hash) {
@@ -19,6 +20,7 @@ class Helper {
     });
   }
 
+  // Implementing JWT Token 
   token = (data) => {
     const dataForToken = {
       id: data._id,
@@ -29,7 +31,8 @@ class Helper {
     return jwt.sign({ dataForToken }, process.env.JWT_SECRET, { expiresIn: '24H' });
   };
 
-  validateToken = (req, res, next) => {
+  // For validating the token 
+  tokenValidation = (req, res, next) => {
     const header = req.headers.authorization;
     const myArr = header.split(" ");
     const token = myArr[1];

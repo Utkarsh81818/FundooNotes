@@ -125,13 +125,14 @@ class userModel {
                     utilities.hashing(userData.password, (err, hash) => {
                         if (hash) {
                             userData.password = hash;
-                            user.updateOne({ email: userData.email }, { '$set': { "password": userData.password } })
-                            if (data) {
-                                return callback(null, "Password updated successfully")
-                            }
-                            else {
-                                return callback("Error in updating", null)
-                            }
+                            user.updateOne({ email: userData.email }, { '$set': { "password": userData.password } }, (error, data) => {
+                                if (data) {
+                                    return callback(null, "Password updated successfully")
+                                }
+                                else {
+                                    return callback("Error in updating", null)
+                                }
+                            })
                         } else {
                             return callback("Error in hash on password", null)
                         }
