@@ -34,11 +34,12 @@ class labelService {
      * @method labelModel.getById calls model class method
      */
     getlabelById = (labelDetails, callback) => {
+        redisConnection.fetchData('fetchRedisById')
         model.getlabelById(labelDetails, (error, data) => {
             if (error) {
                 return callback(error, null);
             }
-            redisConnection.setData('fetchRedisById',60,JSON.stringify(data))
+            redisConnection.setData('fetchRedisById', process.env.TIME, JSON.stringify(data))
             return callback(null, data);
         })
     }

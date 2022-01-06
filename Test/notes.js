@@ -9,7 +9,7 @@ const { string } = require('joi');
 chai.should();
 
 describe('create notes api', () => {
-    it('givenCreateNotes_inValidToken_With_Undifined_Data', (done) => {
+    it.only('givenCreateNotes_inValidToken_With_Undifined_Data', (done) => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
@@ -20,7 +20,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('givenNotes_InvalidToken_is Authentic Request', (done) => {
+    it.only('givenNotes_InvalidToken_is Authentic Request', (done) => {
         const token = noteDB.notes.invalidToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -39,7 +39,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('givenNotes_ValidToken_Schema is validated or not_shouldCreated', (done) => {
+    it.only('givenNotes_ValidToken_Schema is validated or not_shouldCreated', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: noteDB.notes.title,
@@ -55,7 +55,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('givenNotes_InValidToken_shouldNotCreated with Payload', (done) => {
+    it.only('givenNotes_InValidToken_shouldNotCreated with Payload', (done) => {
         const token = noteDB.notes.invalidToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -74,7 +74,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('givenNotes_ValidToken_shouldNotCreated with Payload', (done) => {
+    it.only('givenNotes_ValidToken_shouldNotCreated with Payload', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -90,7 +90,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('Should return true from CreateNoteApi Service Layer', (done) => {
+    it.only('Should return true from CreateNoteApi Service Layer', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -106,7 +106,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('Should return true from CreateNoteApi Model Layer ', (done) => {
+    it.only('Should return true from CreateNoteApi Model Layer ', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -122,7 +122,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('Should return true when note is created, return appropriate response', (done) => {
+    it.only('Should return true when note is created, return appropriate response', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),
@@ -138,7 +138,7 @@ describe('create notes api', () => {
                 done();
             });
     });
-    it('Should return true when note is save, in database', (done) => {
+    it.only('Should return true when note is save, in database', (done) => {
         const token = noteDB.notes.validToken;
         const createNotes = {
             title: faker.lorem.word(),

@@ -22,19 +22,18 @@ class Redis {
         console.log("Error while finding Data", error);
       })
   };
+
+  setData = (key, time, data) => {
+    client.setEx(key, time, data);
+  };
+
+  cacheClear = (key) => {
+    client.del(key)
+      .then(data => {
+        return true;
+      }).catch(error => {
+        return false;
+      })
+  }
 };
-
-setData = (key, time, data) => {
-  client.setEx(key, time, data);
-};
-
-clearCache = (key) => {
-  client.del(key)
-    .then(data => {
-      return true;
-    }).catch(err => {
-      return false;
-    })
-}
-
 module.exports = new Redis()
