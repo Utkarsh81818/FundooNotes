@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { logger } = require('../../logger/logger.js');
 require('dotenv').config();
 const Otp = require('../models/otp.js');
 
@@ -26,9 +27,9 @@ exports.sendEmail = (mailMessage) => {
   };
   transporter.sendMail(message, (err, info) => {
     if (err) {
-      console.log(err);
+      logger.error(err)
     } else {
-      console.log('email has been sent', info.response);
+      logger.info(info.response);
       return info.response;
     }
   });
@@ -55,8 +56,7 @@ exports.verifyMail = (token, data) => {
   // send mail with defined transport object
   const test = transporter.sendMail(info, (err, info) => {
     if (err) {
-      console.log("err", err)
-      console.log(err);
+      logger.error(err)
     } else {
       console.log("email has been sent", info.response);
       return info.response;

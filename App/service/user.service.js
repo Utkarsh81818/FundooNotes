@@ -21,7 +21,7 @@ class userService {
      * @method registerUser to save the user
      * @param callback callback for controller
      */
-   registerUser = (user, callback) => {
+  registerUser = (user, callback) => {
     userModel.registerUser(user, (err, data) => {
       if (err) {
         callback(err, null);
