@@ -7,6 +7,7 @@
 
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const nodeMailer = require("nodemailer");
 
 // Used Bycrypt for the password 
 class Helper {
@@ -53,6 +54,42 @@ class Helper {
       return res.status(500).send({ success: false, message: 'Something went wrong!' });
     }
   }
+
+  sendWelcomeMail = (data) => {
+    try {
+      const transporter = nodeMailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL, // generated ethereal user
+          pass: process.env.PASSWORD // generated ethereal password
+        }
+      });
+
+      // send mail with defined transport object
+      transporter.sendMail({
+        from: "\"Fundoo Notes\" <no-reply@fundoonotes.com>", // sender address
+        to: data.email, // list of receivers
+        subject: "Welcome - Fundoo notes account", // Subject line
+        text: `Hello ${data.firstName}.`, // plain text body
+        html: `<b>Hello ${data.firstName} <br> <h2> Welcome to Fundoo notes.</h2> <br>Your account Has been created successfully<br></b>` // html body
+      });
+    } catch { }
+  };
+
+  jwtTokenVerifyMail = (payload, secretkey, callback) => {
+    jwt.sign(
+      { email: payload.email },
+      secretkey,
+      { expiresIn: "500h" },
+      (err, token) => {
+        if (err) {
+          return callback("token not generated", null);
+        } else {
+          return callback(null, token);
+        }
+      }
+    );
+  };
 }
 
 module.exports = new Helper();

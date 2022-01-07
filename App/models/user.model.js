@@ -26,10 +26,15 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true,
+    },
+    googleLogin: { type: Boolean },
+    verified: {
+        type: Boolean,
+        default: false
     }
 },
     {
-        timestamps: true
+        timestamps: false
     })
 
 const user = mongoose.model('User', userSchema);
@@ -86,8 +91,12 @@ class userModel {
                 logger.error('Invalid User');
                 return callBack("Invalid Credential", null);
             } else {
-                logger.info('Email id found');
-                return callBack(null, data);
+                if (data.verified == true) {
+                    logger.info("data found in database");
+                    return callBack(null, data);
+                } else {
+                    return error;
+                }
             }
         });
     }
@@ -145,6 +154,25 @@ class userModel {
             }
         })
     }
+
+    confirmRegister = (data, callback) => {
+        logger.info(data.firstName);
+        user.findOneAndUpdate(
+            { email: data.email },
+            {
+                verified: true
+            },
+            (error, data) => {
+                if (error) {
+                    logger.error("data not found in database");
+                    return callback(error, null);
+                } else {
+                    logger.info("data found in database");
+                    return callback(null, data);
+                }
+            }
+        );
+    };
 }
 
 module.exports = new userModel();

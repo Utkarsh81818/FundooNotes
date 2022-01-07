@@ -1294,3 +1294,4 @@
 {"level":"error","message":"Invalid Credential","timestamp":"2022-01-06T02:52:48.647Z"}
 {"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-06T02:52:48.890Z"}
 {"level":"error","message":"Invalid password","timestamp":"2022-01-06T02:52:49.436Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-07T15:31:33.606Z"}

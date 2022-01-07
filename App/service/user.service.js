@@ -10,6 +10,9 @@ const utilities = require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
 const bcrypt = require('bcryptjs');
 const nodemailer = require('../utilities/nodeemailer.js');
+const jsonWebToken = require("jsonwebtoken");
+const rabbitMQ = require("../utilities/rabbitmq");
+require('dotenv').config();
 
 class userService {
 
@@ -18,16 +21,27 @@ class userService {
      * @method registerUser to save the user
      * @param callback callback for controller
      */
-  registerUser = (user, callback) => {
+   registerUser = (user, callback) => {
     userModel.registerUser(user, (err, data) => {
       if (err) {
         callback(err, null);
       } else {
-        callback(null, data);
+        // Send Welcome Mail to User on his Mail
+        utilities.sendWelcomeMail(user);
+        const secretkey = process.env.JWT_SECRET;
+        utilities.jwtTokenVerifyMail(data, secretkey, (err, token) => {
+          if (token) {
+            rabbitMQ.sender(data, data.email);
+            nodemailer.verifyMail(token, data);
+            return callback(null, token);
+          } else {
+            return callback(err, null);
+          }
+        });
+        return callback(null, data);
       }
     });
-  }
-
+  };
   /**
      * @description sends the data to loginApi in the controller
      * @method userLogin
@@ -86,6 +100,27 @@ class userService {
       }
     });
   }
+
+  confirmRegister = (data, callback) => {
+    logger.info(data.token);
+    const decode = jsonWebToken.verify(data.token, process.env.JWT_SECRET);
+    if (decode) {
+      rabbitMQ
+        .receiver(decode.email)
+        .then((val) => {
+          userModel.confirmRegister(JSON.parse(val), (error, data) => {
+            if (data) {
+              return callback(null, data);
+            } else {
+              return callback(error, null);
+            }
+          });
+        })
+        .catch((error) => {
+          logger.error(error);
+        });
+    }
+  };
 }
 
 module.exports = new userService();

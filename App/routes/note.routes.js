@@ -39,4 +39,6 @@ module.exports = (app) => {
   app.put('/updatelabel/:id', helperValidation.tokenValidation, label.updatelabelById);
   // api for DeleteLabel By Id
   app.delete('/deletelabel/:id', helperValidation.tokenValidation, label.deletelabelById);
+  // Rabbit MQ for verifying User
+  app.get("/confirmregister/:token", userController.confirmRegister);
 }
