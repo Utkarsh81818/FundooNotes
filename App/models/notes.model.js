@@ -1,19 +1,24 @@
-const { logger } = require('../../logger/logger');
+/* eslint-disable consistent-return */
+/* eslint-disable max-len */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-unused-vars */
 const mongoose = require('mongoose');
+const { logger } = require('../../logger/logger');
+
 const noteSchema = mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   title: {
     type: String,
     required: true,
-    minlength: 2
+    minlength: 2,
   },
   description: {
     type: String,
     required: true,
-    minlength: 2
-  }
+    minlength: 2,
+  },
 }, {
-  timestamps: true
+  timestamps: true,
 });
 
 const NoteRegister = mongoose.model('NoteRegister', noteSchema);
@@ -27,16 +32,15 @@ class NoteModel {
     const note = new NoteRegister({
       userId: info.userId,
       title: info.title,
-      description: info.description
+      description: info.description,
     });
     note.save((error, data) => {
       if (error) {
         return callback(error, null);
-      } else {
-        return callback(null, data);
       }
+      return callback(null, data);
     });
-  }
+  };
 
   /**
   * @description this function is written to trigger or call the models function
@@ -46,12 +50,11 @@ class NoteModel {
     NoteRegister.find({ userId: id.id }, (error, data) => {
       if (data) {
         callback(null, data);
-      }
-      else {
+      } else {
         callback(error, null);
       }
     });
-  }
+  };
 
   /**
   * @description this function is written to trigger or call the models function
@@ -60,10 +63,10 @@ class NoteModel {
   getNoteById = (id, callback) => {
     NoteRegister.find({ $and: [{ _id: id.noteId }, { userId: id.userId }] })
       .then((data) => {
-        callback(null, data)
+        callback(null, data);
       }).catch((err) => {
-        callback(err, null)
-      })
+        callback(err, null);
+      });
   };
 
   /**
@@ -75,9 +78,8 @@ class NoteModel {
       NoteRegister.findByIdAndUpdate(updatedNote.id, { title: updatedNote.title, description: updatedNote.description }, { new: true }, (err, data) => {
         if (err) {
           return callback(err, null);
-        } else {
-          return callback(null, data);
         }
+        return callback(null, data);
       });
     } catch (err) {
       return callback(err, null);
@@ -94,11 +96,11 @@ class NoteModel {
         return callback(null, data);
       }
       return callback(error, null);
-    })
-  }
+    });
+  };
 }
 
 module.exports = {
-  NoteModel : new NoteModel(),
-  NoteRegister : NoteRegister
+  NoteModel: new NoteModel(),
+  NoteRegister,
 };

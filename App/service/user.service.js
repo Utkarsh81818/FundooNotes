@@ -1,3 +1,8 @@
+/* eslint-disable new-cap */
+/* eslint-disable no-shadow */
+/* eslint-disable consistent-return */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable import/extensions */
 /**
  * @module       Service
  * @file         user.service.js
@@ -5,17 +10,16 @@
  * @author       Utkarsh Mishra
  */
 
-const userModel = require('../models/user.model.js')
+const bcrypt = require('bcryptjs');
+const jsonWebToken = require('jsonwebtoken');
+const userModel = require('../models/user.model.js');
 const utilities = require('../utilities/helper.js');
 const { logger } = require('../../logger/logger');
-const bcrypt = require('bcryptjs');
 const nodemailer = require('../utilities/nodeemailer.js');
-const jsonWebToken = require("jsonwebtoken");
-const rabbitMQ = require("../utilities/rabbitmq");
+const rabbitMQ = require('../utilities/rabbitmq');
 require('dotenv').config();
 
 class userService {
-
   /**
      * @description Create and save user then send response to controller
      * @method registerUser to save the user
@@ -34,39 +38,35 @@ class userService {
             rabbitMQ.sender(data, data.email);
             nodemailer.verifyMail(token, data);
             return callback(null, token);
-          } else {
-            return callback(err, null);
           }
+          return callback(err, null);
         });
         return callback(null, data);
       }
     });
   };
+
   /**
      * @description sends the data to loginApi in the controller
      * @method userLogin
      * @param callback callback for controller
      */
-   userLogin = (InfoLogin, callback) => {
+  userLogin = (InfoLogin, callback) => {
     userModel.loginModel(InfoLogin, (error, data) => {
       if (data) {
         const passwordResult = bcrypt.compare(InfoLogin.password, data.password);
         if (!passwordResult) {
-          logger.error("Error occured......");
-          // eslint-disable-next-line node/no-callback-literal
-          return callback("Error occured......", null);
-        } else {
-          logger.info(data);
-          const token = utilities.token(data);
-          return callback(null, token);
+          logger.error('Error occured......');
+          return callback('Error occured......', null);
         }
-      } else {
-        logger.error(error);
-        return callback(error, null);
+        logger.info(data);
+        const token = utilities.token(data);
+        return callback(null, token);
       }
+      logger.error(error);
+      return callback(error, null);
     });
-  }
-
+  };
 
   /**
     * @description sends the code to forgotPasswordAPI in the controller
@@ -78,12 +78,10 @@ class userService {
       if (error) {
         logger.error(error);
         return callback(error, null);
-      } else {
-        return callback(null, nodemailer.sendEmail(data));
       }
+      return callback(null, nodemailer.sendEmail(data));
     });
   };
-
 
   /**
    * @description it acts as a middleware between controller and model for reset password
@@ -91,16 +89,13 @@ class userService {
    * @param {*} callback
    * @returns
    */
-  resetPassword = (userData, callback) => {
-    userModel.resetPassword(userData, (error, data) => {
-      if (error) {
-        logger.error(error);
-        return callback(error, null);
-      } else {
-        return callback(null, data);
-      }
-    });
-  }
+  resetpassword = async (user) => {
+    const success = await userModel.resetpassword(user);
+    if (!success) {
+      return false;
+    }
+    return success;
+  };
 
   confirmRegister = (data, callback) => {
     logger.info(data.token);
@@ -112,9 +107,8 @@ class userService {
           userModel.confirmRegister(JSON.parse(val), (error, data) => {
             if (data) {
               return callback(null, data);
-            } else {
-              return callback(error, null);
             }
+            return callback(error, null);
           });
         })
         .catch((error) => {

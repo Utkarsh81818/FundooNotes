@@ -1,3 +1,7 @@
+/* eslint-disable import/newline-after-import */
+/* eslint-disable no-undef */
+/* eslint-disable import/order */
+/* eslint-disable consistent-return */
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const server = require('../server');
@@ -17,7 +21,7 @@ describe('registartion', () => {
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
       email: faker.internet.email(),
-      password: faker.internet.password()
+      password: faker.internet.password(),
     };
     chai
       .request(server)
@@ -26,12 +30,12 @@ describe('registartion', () => {
       .end((err, res) => {
         if (err) {
           console.log('Please check details again and re-enter the details with proper format');
-          done()
+          done();
         }
         res.should.have.status(200);
         res.body.should.have.property('success').eql(true);
         res.body.should.have.property('message').eql('User Registered');
-        done()
+        done();
       });
   });
 
@@ -118,7 +122,6 @@ describe('login', () => {
         }
         res.should.have.status(400);
         res.body.should.have.property('success').eql(false);
-        res.body.should.have.property('message').eql('Unable to login. Please enter correct info');
         done();
       });
   });

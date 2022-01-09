@@ -6,15 +6,19 @@ module.exports.logger = winston.createLogger({
       level: 'info',
       filename: 'info.log',
       json: true,
-      format: winston.format.combine(winston.format.timestamp(),
-        winston.format.json())
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json(),
+      ),
     }),
     new winston.transports.File({
-      level: 'error', 
+      level: 'error',
       filename: 'error.log',
       json: true,
-      format: winston.format.combine(winston.format.timestamp(),
-        winston.format.json())
-    })
-  ]
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.json(),
+      ),
+    }),
+  ],
 });

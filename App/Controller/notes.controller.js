@@ -1,7 +1,8 @@
+/* eslint-disable consistent-return */
+/* eslint-disable class-methods-use-this */
 const noteService = require('../service/notes.service');
 const { logger } = require('../../logger/logger');
 const validation = require('../utilities/validation');
-
 
 class Note {
   /**
@@ -16,14 +17,14 @@ class Note {
       const note = {
         userId: req.user.dataForToken.id,
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
       };
       const createNoteValidation = validation.notesCreationValidation.validate(note);
       if (createNoteValidation.error) {
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: createNoteValidation
+          data: createNoteValidation,
         });
       }
       noteService.createNote(note, (error, data) => {
@@ -31,25 +32,24 @@ class Note {
           logger.error('Error while creating note');
           return res.status(400).json({
             message: 'Error while creating note',
-            success: false
-          });
-        } else {
-          logger.info('Note inserted Successfully');
-          return res.status(201).send({
-            message: 'Note inserted Successfully',
-            success: true,
-            data: data
+            success: false,
           });
         }
+        logger.info('Note inserted Successfully');
+        return res.status(201).send({
+          message: 'Note inserted Successfully',
+          success: true,
+          data,
+        });
       });
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
-        success: false
+        success: false,
       });
     }
-  }
+  };
 
   /**
    * @description function written to get all the notes from the database
@@ -66,7 +66,7 @@ class Note {
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: getNoteValidation
+          data: getNoteValidation,
         });
       }
       noteService.getNote(id, (error, data) => {
@@ -74,26 +74,25 @@ class Note {
           logger.error('Failed to get all notes');
           return res.status(400).json({
             message: 'failed to get all notes',
-            success: false
-          })
+            success: false,
+          });
         }
-        else {
-          logger.info('Get All Notes successfully');
-          return res.status(201).json({
-            message: 'Get All Notes successfully',
-            success: true,
-            data: data
-          })
-        }
-      })
+
+        logger.info('Get All Notes successfully');
+        return res.status(201).json({
+          message: 'Get All Notes successfully',
+          success: true,
+          data,
+        });
+      });
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
-        success: false
+        success: false,
       });
     }
-  }
+  };
 
   /**
    * @description function written to getNotesById from the database
@@ -110,29 +109,29 @@ class Note {
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: getNoteValidation
+          data: getNoteValidation,
         });
       }
       noteService.getNoteById(id, (err, data) => {
         if (err) {
-          logger.error('Note is Found')
+          logger.error('Note is Found');
           return res.status(404).json({
             message: 'Note not found',
-            success: false
+            success: false,
           });
         }
         logger.info('Note retrieved succesfully');
         return res.status(200).json({
           message: 'Note retrieved succesfully',
           success: true,
-          data: data
+          data,
         });
       });
     } catch (err) {
       return res.status(500).json({
         message: 'Internal Error',
         success: false,
-        data: err
+        data: err,
       });
     }
   };
@@ -149,14 +148,14 @@ class Note {
         id: req.params.id,
         userId: req.user.dataForToken.id,
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
       };
       const updateNoteValidation = validation.notesUpdateValidation.validate(updateNote);
       if (updateNoteValidation.error) {
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: updateNoteValidation
+          data: updateNoteValidation,
         });
       }
       noteService.updateNoteById(updateNote, (error, data) => {
@@ -164,25 +163,24 @@ class Note {
           logger.error('failed to update note');
           return res.status(400).json({
             message: 'failed to update note',
-            success: false
-          });
-        } else {
-          logger.info('Successfully id is found');
-          return res.status(201).send({
-            message: 'Successfully id is found',
-            success: true,
-            data: data
+            success: false,
           });
         }
-      })
+        logger.info('Successfully id is found');
+        return res.status(201).send({
+          message: 'Successfully id is found',
+          success: true,
+          data,
+        });
+      });
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
-        success: false
+        success: false,
       });
     }
-  }
+  };
 
   /**
   * @description function written to deleteNotesById from the database
@@ -199,29 +197,29 @@ class Note {
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: deleteNoteValidation
+          data: deleteNoteValidation,
         });
       }
       noteService.deleteNoteById(id, (error, data) => {
         if (error) {
           return res.status(400).json({
             message: 'Note not found',
-            success: false
+            success: false,
           });
         }
         return res.status(201).send({
           message: 'Successfully Deleted note',
           success: true,
-          data: data
+          data,
         });
       });
     } catch {
       logger.error('Internal server error');
       return res.status(500).json({
         message: 'Internal server error',
-        success: false
+        success: false,
       });
     }
-  }
+  };
 }
 module.exports = new Note();

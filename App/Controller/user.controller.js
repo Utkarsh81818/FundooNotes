@@ -1,13 +1,18 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-empty */
+/* eslint-disable no-unused-vars */
+/* eslint-disable consistent-return */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable import/extensions */
 /**
  * @description   : Taking the request from the client and gives the response
  * @author        : Utkarsh Mishra
 */
-
-const userService = require('../service/user.service.js')
+const userService = require('../service/user.service.js');
 const validation = require('../utilities/validation');
-const { logger } = require('../../logger/logger')
-class Controller {
+const { logger } = require('../../logger/logger');
 
+class Controller {
   /**
   * @description Create and save user and sending response to service
   * @method register to save the user
@@ -19,16 +24,16 @@ class Controller {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
       };
 
-      const registerValidation = validation.registerValidation.validate(user)
+      const registerValidation = validation.registerValidation.validate(user);
       if (registerValidation.error) {
         logger.error('Wrong Input Validations');
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: registerValidation
+          data: registerValidation,
         });
       }
 
@@ -38,28 +43,28 @@ class Controller {
             success: false,
             message: 'User already exist',
           });
-        } else {
-          logger.info('User registered');
-          return res.status(200).json({
-            success: true,
-            message: "User Registered",
-            data: {
-              verified: data.verified,
-              firstName: data.firstName,
-              lastName: data.lastName,
-              email: data.email
-            }
-          });
         }
+        logger.info('User registered');
+        return res.status(200).json({
+          success: true,
+          message: 'User Registered',
+          data: {
+            verified: data.verified,
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+          },
+        });
       });
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).json({
-        success: false, message: "Error While Registering",
+        success: false,
+        message: 'Error While Registering',
         data: null,
       });
     }
-  }
+  };
 
   /**
      * @description retrieving login info from user by email and password
@@ -70,7 +75,7 @@ class Controller {
     try {
       const userLoginInfo = {
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
       };
 
       const loginValidation = validation.authLogin.validate(userLoginInfo);
@@ -78,7 +83,7 @@ class Controller {
         logger.error('Wrong Input Validations');
         res.status(400).send({
           success: false,
-          message: 'Wrong Input Validations'
+          message: 'Wrong Input Validations',
         });
       }
 
@@ -86,24 +91,24 @@ class Controller {
         if (error) {
           return res.status(400).json({
             success: false,
-            message: "Invalid Information! Please enter valid information",
-            error
+            message: 'Invalid Information! Please enter valid information',
+            error,
           });
         }
         logger.info('User logged in successfully');
         return res.status(200).json({
           success: true,
           message: 'User logged in successfully',
-          data: data
+          data,
         });
       });
-    }
-    catch (error) {
-      console.log("In Catch", error);
+    } catch (error) {
+      console.log('In Catch', error);
       return res.status(500).json({
         success: false,
-        message: 'Error while Login', error,
-        data: null
+        message: 'Error while Login',
+        error,
+        data: null,
       });
     }
   };
@@ -117,17 +122,16 @@ class Controller {
   forgotPassword = (req, res) => {
     try {
       const userCredential = {
-        email: req.body.email
+        email: req.body.email,
       };
 
-      const validationforgotPassword =
-        validation.authenticateLogin.validate(userCredential);
+      const validationforgotPassword = validation.authenticateLogin.validate(userCredential);
       if (validationforgotPassword.error) {
         logger.error('Wrong Input Validations');
         return res.status(400).send({
           success: false,
           message: 'Wrong Input Validations',
-          data: validationforgotPassword
+          data: validationforgotPassword,
         });
       }
 
@@ -135,21 +139,20 @@ class Controller {
         if (error) {
           return res.status(400).send({
             success: false,
-            message: 'failed to send email'
-          });
-        } else {
-          return res.status(200).send({
-            success: true,
-            message: 'Email sent successfully'
+            message: 'failed to send email',
           });
         }
+        return res.status(200).send({
+          success: true,
+          message: 'Email sent successfully',
+        });
       });
     } catch (error) {
       logger.error('Internal server error');
       return res.status(500).send({
         success: false,
         message: 'Internal server error',
-        result: null
+        result: null,
       });
     }
   };
@@ -160,67 +163,61 @@ class Controller {
    * @param {*} res
    * @returns
    */
-  resetPassword = (req, res) => {
+  resetPassword = async (req, res) => {
     try {
-      const userData = {
+      const userResetPasswordInfo = {
         email: req.body.email,
         password: req.body.password,
-        code: req.body.code
+        code: req.body.code,
       };
-
-      const resetVlaidation = validation.validateReset.validate(userData);
-      if (resetVlaidation.error) {
-        logger.error('Invalid password');
+      const resetValidation = validation.validateReset.validate(userResetPasswordInfo);
+      if (resetValidation.error) {
+        logger.error(resetValidation.error);
         res.status(400).send({
           success: false,
-          message: 'Invalid password'
+          message: resetValidation.error.message,
         });
-        return;
       }
 
-      userService.resetPassword(userData, (error, userData) => {
-        if (error) {
-          logger.error(error);
-          return res.status(400).send({
-            message: error,
-            success: false
-          });
-        } else {
-          logger.info('Password reset succesfully');
-          return res.status(200).json({
-            success: true,
-            message: 'Password reset succesfully',
-            data: userData
-          });
-        }
+      const isReset = await userService.resetpassword(userResetPasswordInfo);
+      if (!isReset) {
+        return res.status(401).json({
+          success: false,
+          message: 'Unable to reset password. Please enter correct info',
+        });
+      }
+      return res.status(200).json({
+        success: true,
+        message: 'password reset successfull',
+        data: isReset,
       });
     } catch (error) {
+      console.log('11', error);
       logger.error('Internal server error');
       return res.status(500).send({
         success: false,
         message: 'Internal server error',
-        data: null
+        result: null,
       });
     }
-  }
+  };
 
   confirmRegister = (req, res) => {
     try {
       const data = {
-        token: req.params.token
+        token: req.params.token,
       };
       userService.confirmRegister(data, (error, data) => {
         if (error) {
           return res.status(404).json({
             success: false,
-            message: "error"
-          });
-        } else {
-          return res.status(200).json({
-            success: true,
-            message: "Email Successfully Verified"
+            message: 'error',
           });
         }
+        return res.status(200).json({
+          success: true,
+          message: 'Email Successfully Verified',
+        });
       });
     } catch { }
   };

@@ -1,4 +1,6 @@
-const redis = require("redis");
+/* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
+const redis = require('redis');
 
 let client;
 class Redis {
@@ -7,20 +9,18 @@ class Redis {
   }
 
   connect = () => {
-    client = redis.createClient(process.env.REDISPORT, "127.0.0.1");
+    client = redis.createClient(process.env.REDISPORT, '127.0.0.1');
     client.connect();
-    client.on("connect", function () {
-      console.log("Redis server connected sucessfully!");
+    client.on('connect', () => {
+      console.log('Redis server connected sucessfully!');
     });
   };
 
   fetchData = (key) => {
-    client.get(key + "fetchRedisById")
-      .then(data => {
-        return JSON.parse(data);
-      }).catch(error => {
-        console.log("Error while finding Data", error);
-      })
+    client.get(`${key}fetchRedisById`)
+      .then((data) => JSON.parse(data)).catch((error) => {
+        console.log('Error while finding Data', error);
+      });
   };
 
   setData = (key, time, data) => {
@@ -29,11 +29,7 @@ class Redis {
 
   cacheClear = (key) => {
     client.del(key)
-      .then(data => {
-        return true;
-      }).catch(error => {
-        return false;
-      })
-  }
-};
-module.exports = new Redis()
+      .then((data) => true).catch((error) => false);
+  };
+}
+module.exports = new Redis();
