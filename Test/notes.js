@@ -13,7 +13,7 @@ describe('create notes api', () => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
@@ -28,7 +28,7 @@ describe('create notes api', () => {
         };
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -47,7 +47,7 @@ describe('create notes api', () => {
         };
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -63,7 +63,7 @@ describe('create notes api', () => {
         };
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -82,7 +82,7 @@ describe('create notes api', () => {
         }
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -98,7 +98,7 @@ describe('create notes api', () => {
         }
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -114,7 +114,7 @@ describe('create notes api', () => {
         }
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -130,7 +130,7 @@ describe('create notes api', () => {
         }
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -146,7 +146,7 @@ describe('create notes api', () => {
         }
         chai
             .request(server)
-            .post('/createnotes')
+            .post('/note')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -161,7 +161,7 @@ describe('get note api', () => {
         const token = noteDB.notes.invalidToken
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .send({})
             .end((err, res) => {
@@ -173,7 +173,7 @@ describe('get note api', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -184,7 +184,7 @@ describe('get note api', () => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
@@ -195,7 +195,7 @@ describe('get note api', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 if (err) {
@@ -209,7 +209,7 @@ describe('get note api', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -220,7 +220,7 @@ describe('get note api', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -231,7 +231,7 @@ describe('get note api', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes')
+            .get('/note')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -245,7 +245,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes/:id')
+            .get('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -256,7 +256,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
-            .get('/getnotes/:id')
+            .get('/note/:id')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
@@ -267,7 +267,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes/61d88e166aabfb3579a5c561')
+            .get('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -278,7 +278,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes/61d88e166aabfb3579a5c561')
+            .get('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -289,7 +289,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes/61d88e166aabfb3579a5c561')
+            .get('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -300,7 +300,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes/61d88e166aabfb3579a5c561')
+            .get('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -311,7 +311,7 @@ describe('Get Note By Id API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .get('/getnotes/61d88e166aabfb3579a5c561')
+            .get('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(200);
@@ -324,7 +324,7 @@ describe('Update notes API', () => {
     it('UpdateNotesById_by_checking_server_error', (done) => {
         chai
             .request(server)
-            .put('/updatenotes/:id')
+            .put('/note/:id')
             .end((err, res) => {
                 res.should.have.status(500);
                 done();
@@ -334,7 +334,7 @@ describe('Update notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .put('/updatenotes/:id')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .send({})
             .end((err, res) => {
@@ -346,7 +346,7 @@ describe('Update notes API', () => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
-            .put('/updatenotes/:id')
+            .put('/note/:id')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
@@ -357,7 +357,7 @@ describe('Update notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .put('/updatenotes/61d88e166aabfb3579a5c561')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -372,7 +372,7 @@ describe('Update notes API', () => {
         };
         chai
             .request(server)
-            .put('/updatenotes/61d88e166aabfb3579a5c561')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -388,7 +388,7 @@ describe('Update notes API', () => {
         };
         chai
             .request(server)
-            .put('/updatenotes/61d88e166aabfb3579a5c561')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -404,7 +404,7 @@ describe('Update notes API', () => {
         };
         chai
             .request(server)
-            .put('/updatenotes/61d88e166aabfb3579a5c561')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -420,7 +420,7 @@ describe('Update notes API', () => {
         };
         chai
             .request(server)
-            .put('/updatenotes/61d88e166aabfb3579a5c561')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -436,7 +436,7 @@ describe('Update notes API', () => {
         };
         chai
             .request(server)
-            .put('/updatenotes/61d88e166aabfb3579a5c561')
+            .put('/note/61d88e166aabfb3579a5c561')
             .set({ authorization: token })
             .send(createNotes)
             .end((err, res) => {
@@ -450,7 +450,7 @@ describe('Delete notes API', () => {
     it('DeleteNotesById_by_checking_server_error', (done) => {
         chai
             .request(server)
-            .delete('/deletenotes/:id')
+            .delete('/note/:id')
             .end((err, res) => {
                 res.should.have.status(500);
                 done();
@@ -460,7 +460,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .delete('/deletenotes/:id')
+            .delete('/note/61d88de86aabfb3579a5c55f')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -471,7 +471,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.invalidToken;
         chai
             .request(server)
-            .delete('/deletenotes/:id')
+            .delete('/note/:id')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(400);
@@ -482,7 +482,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .delete('/deletenotes/61d88de86aabfb3579a5c55f')
+            .delete('/note/61d88de86aabfb3579a5c55f')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -493,7 +493,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .delete('/deletenotes/61d88de86aabfb3579a5c55f')
+            .delete('/note/61d88de86aabfb3579a5c55f')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -504,7 +504,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .delete('/deletenotes/61d88de86aabfb3579a5c55f')
+            .delete('/note/61d88de86aabfb3579a5c55f')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -515,7 +515,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .delete('/deletenotes/61d88de86aabfb3579a5c55f')
+            .delete('/note/61d88de86aabfb3579a5c55f')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);
@@ -526,7 +526,7 @@ describe('Delete notes API', () => {
         const token = noteDB.notes.validToken;
         chai
             .request(server)
-            .delete('/deletenotes/61d88de86aabfb3579a5c55f')
+            .delete('/note/61d88de86aabfb3579a5c55f')
             .set({ authorization: token })
             .end((err, res) => {
                 res.should.have.status(201);

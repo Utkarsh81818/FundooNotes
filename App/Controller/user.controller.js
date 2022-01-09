@@ -43,7 +43,12 @@ class Controller {
           return res.status(200).json({
             success: true,
             message: "User Registered",
-            data: data
+            data: {
+              verified: data.verified,
+              firstName: data.firstName,
+              lastName: data.lastName,
+              email: data.email
+            }
           });
         }
       });
@@ -81,7 +86,8 @@ class Controller {
         if (error) {
           return res.status(400).json({
             success: false,
-            message: 'Unable to login. Please enter correct info',
+            message: "Invalid Information! Please enter valid information",
+            error
           });
         }
         logger.info('User logged in successfully');

@@ -200,14 +200,14 @@ class Label {
                         message: 'Error in deleting '
                     })
                 }
-                else if (!data) {
-                    return res.status(401).json({
-                        error: error.message,
-                        data: data,
-                        message: 'Invalid Deletion'
-                    })
-                }
-                return res.status(201).json({
+                // else if (!data) {
+                //     return res.status(401).json({
+                //         error: error.message,
+                //         data: data,
+                //         message: 'Invalid Deletion'
+                //     })
+                // }
+                return res.status(200).json({
                     message: 'Label deleted Successfully',
                     data: data
                 });

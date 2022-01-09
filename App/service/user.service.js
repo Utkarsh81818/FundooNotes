@@ -47,25 +47,26 @@ class userService {
      * @method userLogin
      * @param callback callback for controller
      */
-  userLogin = (InfoLogin, callback) => {
-    userModel.loginUser(InfoLogin, (error, data) => {
+   userLogin = (InfoLogin, callback) => {
+    userModel.loginModel(InfoLogin, (error, data) => {
       if (data) {
-        bcrypt.compare(InfoLogin.password, data.password, (error, validate) => {
-          if (!validate) {
-            logger.error(error);
-            return callback(error + 'Invalid Password', null);
-          } else {
-            logger.info(' token generated ');
-            const token = utilities.token(data);
-            return callback(null, token);
-          }
-        });
+        const passwordResult = bcrypt.compare(InfoLogin.password, data.password);
+        if (!passwordResult) {
+          logger.error("Error occured......");
+          // eslint-disable-next-line node/no-callback-literal
+          return callback("Error occured......", null);
+        } else {
+          logger.info(data);
+          const token = utilities.token(data);
+          return callback(null, token);
+        }
       } else {
         logger.error(error);
         return callback(error, null);
       }
     });
   }
+
 
   /**
     * @description sends the code to forgotPasswordAPI in the controller

@@ -144,7 +144,7 @@
                 }
             }
         },
-        "/createnotes": {
+        "/note": {
             "post": {
                 "tags": [
                     "Create Notes"
@@ -186,9 +186,7 @@
                         "description": "Internal server error"
                     }
                 }
-            }
-        },
-        "/getnotes": {
+            },
             "get": {
                 "tags": [
                     "Get Notes"
@@ -224,10 +222,10 @@
                 }
             }
         },
-        "/getnotes/{id}": {
+        "/note/{id}": {
             "get": {
                 "tags": [
-                    "Get Notes"
+                    "Get Notes BY ID"
                 ],
                 "description": "Get a note by ID for perticuler person id",
                 "parameters": [
@@ -266,9 +264,7 @@
                         "description": "Internal server error"
                     }
                 }
-            }
-        },
-        "/updatenotes/{id}": {
+            },
             "put": {
                 "tags": [
                     "update Notes"
@@ -315,9 +311,7 @@
                         "description": "Internal server error"
                     }
                 }
-            }
-        },
-        "/deletenotes/{id}": {
+            },
             "delete": {
                 "tags": [
                     "Delete Notes"
@@ -358,7 +352,40 @@
                 }
             }
         },
-        "/addlabel/{id}": {
+        "/label": {
+            "get": {
+                "tags": [
+                    "get labels"
+                ],
+                "description": "Gets all labels",
+                "parameters": [
+                    {
+                        "in": "header",
+                        "name": "authorization",
+                        "description": "Token for validation",
+                        "schema": {
+                            "type": "string",
+                            "required": true
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "labels retrieved"
+                    },
+                    "400": {
+                        "description": "Couldnt retrieve labels"
+                    },
+                    "500": {
+                        "description": "Some error Occured"
+                    }
+                }
+            }
+        },
+        "/label/{id}": {
             "post": {
                 "tags": [
                     "Add label"
@@ -406,42 +433,7 @@
                         "description": "Invalid Token"
                     }
                 }
-            }
-        },
-        "/getlabel": {
-            "get": {
-                "tags": [
-                    "get labels"
-                ],
-                "description": "Gets all labels",
-                "parameters": [
-                    {
-                        "in": "header",
-                        "name": "authorization",
-                        "description": "Token for validation",
-                        "schema": {
-                            "type": "string",
-                            "required": true
-                        }
-                    }
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "labels retrieved"
-                    },
-                    "400": {
-                        "description": "Couldnt retrieve labels"
-                    },
-                    "500": {
-                        "description": "Some error Occured"
-                    }
-                }
-            }
-        },
-        "/getlabel/{id}": {
+            },
             "get": {
                 "tags": [
                     "get label by id"
@@ -481,9 +473,7 @@
                         "description": "Invalid Token"
                     }
                 }
-            }
-        },
-        "/updatelabel/{id}": {
+            },
             "put": {
                 "tags": [
                     "Update Label"
@@ -531,9 +521,7 @@
                         "description": "Invalid Token"
                     }
                 }
-            }
-        },
-        "/deleteLabel/{id}": {
+            },
             "delete": {
                 "tags": [
                     "Delete Label"

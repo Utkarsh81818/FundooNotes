@@ -20,25 +20,25 @@ module.exports = (app) => {
   //api for reset-password
   app.put('/reset-Password', userController.resetPassword);
   // api for Create Note 
-  app.post('/createnotes', helperValidation.tokenValidation, noteController.createNote);
+  app.post('/note', helperValidation.tokenValidation, noteController.createNote);
   // api for getnote
-  app.get('/getnotes', helperValidation.tokenValidation, noteController.getNote);
+  app.get('/note', helperValidation.tokenValidation, noteController.getNote);
   // api for getnotes Id 
-  app.get('/getnotes/:id', helperValidation.tokenValidation, noteController.getNoteById);
+  app.get('/note/:id', helperValidation.tokenValidation, noteController.getNoteById);
   // api for updatenotes Id 
-  app.put('/updatenotes/:id', helperValidation.tokenValidation, noteController.updateNoteById);
+  app.put('/note/:id', helperValidation.tokenValidation, noteController.updateNoteById);
   // api for delete By Id 
-  app.delete('/deletenotes/:id', helperValidation.tokenValidation, noteController.deleteNoteById);
+  app.delete('/note/:id', helperValidation.tokenValidation, noteController.deleteNoteById);
   // api for addLabel By Id 
-  app.post('/addlabel/:id', helperValidation.tokenValidation, label.addLabelById);
+  app.post('/label/:id', helperValidation.tokenValidation, label.addLabelById);
   // api for getLabel 
-  app.get('/getlabel', helperValidation.tokenValidation, label.getLabel);
+  app.get('/label', helperValidation.tokenValidation, label.getLabel);
   // api for getLabel by id
-  app.get('/getlabel/:id', helperValidation.tokenValidation, label.getLabel);
+  app.get('/label/:id', helperValidation.tokenValidation, label.getLabel);
   // api for UpdateLabel By Id
-  app.put('/updatelabel/:id', helperValidation.tokenValidation, label.updatelabelById);
+  app.put('/label/:id', helperValidation.tokenValidation, label.updatelabelById);
   // api for DeleteLabel By Id
-  app.delete('/deletelabel/:id', helperValidation.tokenValidation, label.deletelabelById);
+  app.delete('/label/:id', helperValidation.tokenValidation, label.deletelabelById);
   // Rabbit MQ for verifying User
   app.get("/confirmregister/:token", userController.confirmRegister);
 }

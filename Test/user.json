@@ -22,8 +22,8 @@
             "password": "srinivas$123"
         },
         "login": {
-            "email": "utkarshkr94@gmail.com",
-            "password": "Bipin@123"
+            "email": "utkarshkr945@gmail.com",
+            "password": "Akash@123"
         },
         "loginWithImproperDetails": {
             "email": "ansh123@gmail.com",
@@ -35,14 +35,14 @@
         "ForgotPasswordNegNonRegistered": {
             "email": "akashgmail.com"
         },
-        "validDetails":{
-            "email":"utkarsh945@gmail.com",
-            "password":"Akash@1234",
-            "code":"6tyxabu96c"
+        "validDetails": {
+            "email": "utkarsh945@gmail.com",
+            "password": "Akash@1234",
+            "code": "6tyxabu96c"
         },
-        "invalidDetails":{
-            "email":"utkarsh9@gmailcom",
-            "password":"Akash76727"
-        } 
+        "invalidDetails": {
+            "email": "utkarsh9@gmailcom",
+            "password": "Akash76727"
+        }
     }
 }
