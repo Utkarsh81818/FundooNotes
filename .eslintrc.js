@@ -3,17 +3,22 @@ module.exports = {
     browser: true,
     commonjs: true,
     es2021: true,
+    allowElseIf: true,
   },
   extends: [
     'airbnb-base',
   ],
   parserOptions: {
     ecmaVersion: 13,
-
   },
+
   rules: {
-    'max-len': ['error', { code: 145 }],
-    treatUndefinedAsUnspecified: 0,
-    'linebreak-style': ['error', 'windows'],
+    'quotes': ['error', 'single'],
+    // we want to force semicolons
+    'semi': ['error', 'always'],
+    // we use 2 spaces to indent our code
+    'indent': ['error', 2],
+    // we want to avoid extraneous spaces
+    'no-multi-spaces': ['error']
   },
 };

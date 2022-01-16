@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/extensions */
 /* eslint-disable eqeqeq */
 /* eslint-disable consistent-return */
@@ -87,7 +88,7 @@ class userModel {
       * @param callback for service
       */
 
-  loginModel = (loginData, callBack) => {
+   loginModel = (loginData, callBack) => {
     // To find a user email in the database
     user.findOne({ email: loginData.email }, (error, data) => {
       if (error) {
@@ -104,7 +105,6 @@ class userModel {
       return callBack(error, null);
     });
   };
-
   /**
     * @description mongoose function for forgot password
     * @param {*} email

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-shadow */
 /* eslint-disable eqeqeq */
 /* eslint-disable consistent-return */

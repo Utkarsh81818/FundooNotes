@@ -1661,3 +1661,124 @@
 {"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T16:01:57.406Z"}
 {"_original":{"email":"utkarsh9@gmailcom","password":"Akash76727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T16:01:57.527Z"}
 {"level":"error","message":"Internal server error","timestamp":"2022-01-09T16:01:57.687Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T17:58:13.910Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T17:58:14.158Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T17:58:14.269Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T17:58:14.360Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T17:58:16.144Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T17:58:16.154Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T17:58:17.001Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash76727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T17:58:17.224Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T17:58:17.531Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:00:50.751Z"}
+{"_original":{"code":"6tyxabu96c","email":"","password":"Akash@1234"},"details":[{"context":{"key":"email","label":"email","value":""},"message":"\"email\" is not allowed to be empty","path":["email"],"type":"string.empty"}],"level":"error","timestamp":"2022-01-09T18:00:51.638Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:00:52.535Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash76727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:00:52.569Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:00:52.806Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:04:33.953Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:04:35.093Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:04:35.798Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:07:12.304Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:07:13.521Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:07:13.872Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:09:03.655Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:09:05.120Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:09:05.368Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:10:30.498Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:10:30.606Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:10:30.743Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T18:10:31.877Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T18:10:31.879Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:10:32.074Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:10:33.573Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:10:33.770Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:18:31.395Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:18:31.558Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:18:31.771Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T18:18:33.332Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T18:18:33.333Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:18:33.972Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:18:34.952Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:18:35.041Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:21:22.900Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:21:23.098Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:21:23.353Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T18:21:24.535Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T18:21:24.536Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:21:25.414Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:21:26.294Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:21:26.422Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:27:51.067Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:27:52.410Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:27:52.710Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T18:27:56.037Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T18:27:56.038Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:27:58.159Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:28:01.494Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:28:01.720Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:40:28.953Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:40:29.283Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:40:29.346Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T18:40:29.964Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T18:40:29.964Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:40:30.046Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:40:30.603Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:40:30.695Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:41:47.100Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:41:47.168Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:41:47.197Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T18:41:47.774Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T18:41:47.774Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T18:41:47.872Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T18:41:48.359Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T18:41:48.399Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:23:59.575Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:23:59.765Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:23:59.871Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T19:24:00.591Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T19:24:00.591Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:24:00.812Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T19:24:01.424Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T19:24:01.552Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:26:20.117Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:26:20.204Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:26:20.305Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T19:26:21.058Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T19:26:21.058Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:26:21.318Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T19:26:22.516Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T19:26:22.606Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:28:00.504Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:28:00.585Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:28:00.622Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-09T19:28:01.441Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-09T19:28:01.442Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-09T19:28:01.497Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-09T19:28:01.985Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-09T19:28:02.019Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T01:59:26.221Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T01:59:26.380Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T01:59:26.407Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-10T01:59:26.814Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-10T01:59:26.814Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T01:59:26.973Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-10T01:59:27.273Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T01:59:27.287Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T02:34:18.375Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T02:34:18.579Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T02:34:18.647Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-10T02:34:19.536Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-10T02:34:19.537Z"}
+{"level":"error","message":"Wrong Input Validations","timestamp":"2022-01-10T02:34:19.592Z"}
+{"_original":{"email":"utkarsh9@gmailcom","password":"Akash6727"},"details":[{"context":{"key":"email","label":"email","regex":{},"value":"utkarsh9@gmailcom"},"message":"\"email\" with value \"utkarsh9@gmailcom\" fails to match the required pattern: /^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?$/","path":["email"],"type":"string.pattern.base"}],"level":"error","timestamp":"2022-01-10T02:34:20.065Z"}
+{"level":"error","message":"Internal server error","timestamp":"2022-01-10T02:34:20.097Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-16T11:27:19.628Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-16T11:27:19.629Z"}
+{"level":"error","message":"Invalid User","timestamp":"2022-01-16T11:53:51.592Z"}
+{"level":"error","message":"Invalid Credential / invalid user","timestamp":"2022-01-16T11:53:51.593Z"}
+{"level":"error","message":"Error occured......","timestamp":"2022-01-16T13:35:57.219Z"}
+{"level":"error","message":"Error occured......","timestamp":"2022-01-16T13:52:19.959Z"}
+{"level":"error","message":"Error occured......","timestamp":"2022-01-16T13:54:13.556Z"}
+{"level":"error","message":"Error occured......","timestamp":"2022-01-16T14:00:47.972Z"}
+{"level":"error","message":"Error occured......","timestamp":"2022-01-16T14:01:52.982Z"}
+{"level":"error","message":"Error occured......","timestamp":"2022-01-16T15:30:59.309Z"}

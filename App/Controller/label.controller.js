@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 /* eslint-disable no-undef */
 /* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */

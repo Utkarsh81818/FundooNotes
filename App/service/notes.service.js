@@ -2,6 +2,7 @@
 /* eslint-disable class-methods-use-this */
 const { logger } = require('../../logger/logger');
 const noteModel = require('../models/notes.model').NoteModel;
+const redisConnection = require('../connection/redis.connection');
 
 class Service {
   /**
@@ -39,7 +40,6 @@ class Service {
     * @returns
     */
   getNoteById = (id, callback) => {
-    redisConnection.fetchData('fetchRedisById');
     noteModel.getNoteById(id, (err, data) => {
       if (data) {
         redisConnection.setData('fetchRedisById', process.env.TIME, JSON.stringify(data));

@@ -1,11 +1,11 @@
-/* eslint-disable import/newline-after-import */
 /* eslint-disable no-unused-vars */
-/* eslint-disable import/order */
 /* eslint-disable no-undef */
+/* eslint-disable import/order */
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const faker = require('faker');
 const server = require('../server');
+
 chai.use(chaiHttp);
 const labelDbs = require('./label.json');
 const { expect } = require('chai');
@@ -321,7 +321,7 @@ describe('Update labelById API ', () => {
     const token = labelDbs.label.validToken;
     chai
       .request(server)
-      .put('/label/61da8636385b8a72f229dd1f')
+      .put('/label/61da86b917c4536206fa35d2')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(201);
@@ -346,7 +346,7 @@ describe('Update labelById API ', () => {
     };
     chai
       .request(server)
-      .put('/label/61da8636385b8a72f229dd1f')
+      .put('/label/61da86b917c4536206fa35d2')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(201);
@@ -360,7 +360,7 @@ describe('Update labelById API ', () => {
     };
     chai
       .request(server)
-      .put('/label/61da8636385b8a72f229dd1f')
+      .put('/label/61da86b917c4536206fa35d2')
       .set({ authorization: token })
       .send(labelName)
       .end((err, res) => {
@@ -375,7 +375,7 @@ describe('Update labelById API ', () => {
     };
     chai
       .request(server)
-      .put('/label/61da8636385b8a72f229dd1f')
+      .put('/label/61da86b917c4536206fa35d2')
       .set({ authorization: token })
       .send(labelName)
       .end((err, res) => {
@@ -390,7 +390,7 @@ describe('Update labelById API ', () => {
     };
     chai
       .request(server)
-      .put('/label/61da8636385b8a72f229dd1f')
+      .put('/label/61da86b917c4536206fa35d2')
       .set({ authorization: token })
       .send(labelName)
       .end((err, res) => {
@@ -414,14 +414,13 @@ describe('Delete labelById API ', () => {
     const token = labelDbs.label.validToken;
     chai
       .request(server)
-      .delete('/label/61da867e17c4536206fa35c0')
+      .delete('/label/61da8636385b8a72f229dd1f')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          console.log('plz check your credential');
           return done();
         }
-        res.should.have.status(200);
+        res.should.have.status(400);
         return done();
       });
   });
@@ -429,7 +428,7 @@ describe('Delete labelById API ', () => {
     const token = labelDbs.label.invalidToken;
     chai
       .request(server)
-      .delete('/label/61da866017c4536206fa35ba')
+      .delete('/label/61da8636385b8a72f229dd1f')
       .set({ authorization: token })
       .end((err, res) => {
         res.should.have.status(400);
@@ -440,14 +439,13 @@ describe('Delete labelById API ', () => {
     const token = labelDbs.label.validToken;
     chai
       .request(server)
-      .delete('/label/61da866017c4536206fa35ba')
+      .delete('/label/61da8636385b8a72f229dd1f')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          console.log('plz check your credential');
           return done();
         }
-        res.should.have.status(200);
+        res.should.have.status(400);
         return done();
       });
   });
@@ -455,14 +453,13 @@ describe('Delete labelById API ', () => {
     const token = labelDbs.label.validToken;
     chai
       .request(server)
-      .delete('/label/61da866017c4536206fa35ba')
+      .delete('/label/61da8636385b8a72f229dd1f')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          console.log('plz check your credential');
           return done();
         }
-        res.should.have.status(200);
+        res.should.have.status(400);
         return done();
       });
   });
@@ -470,14 +467,13 @@ describe('Delete labelById API ', () => {
     const token = labelDbs.label.validToken;
     chai
       .request(server)
-      .delete('/label/61da866017c4536206fa35ba')
+      .delete('/label/61da8636385b8a72f229dd1f')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          console.log('plz check your credential');
           return done();
         }
-        res.should.have.status(200);
+        res.should.have.status(400);
         return done();
       });
   });
@@ -485,14 +481,13 @@ describe('Delete labelById API ', () => {
     const token = labelDbs.label.validToken;
     chai
       .request(server)
-      .delete('/label/61da866017c4536206fa35ba')
+      .delete('/label/61da8636385b8a72f229dd1f')
       .set({ authorization: token })
       .end((err, res) => {
         if (err) {
-          console.log('plz check your credential');
           return done();
         }
-        res.should.have.status(200);
+        res.should.have.status(400);
         return done();
       });
   });

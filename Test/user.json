@@ -36,13 +36,13 @@
             "email": "akashgmail.com"
         },
         "validDetails": {
-            "email": "utkarsh945@gmail.com",
+            "email": "utkarshkr945@gmail.com",
             "password": "Akash@1234",
-            "code": "6tyxabu96c"
+            "code": "qcwuf1cpdx"
         },
         "invalidDetails": {
             "email": "utkarsh9@gmailcom",
-            "password": "Akash76727"
+            "password": "Akash6727"
         }
     }
 }

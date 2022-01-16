@@ -1,5 +1,5 @@
-/* eslint-disable no-shadow */
 /* eslint-disable no-empty */
+/* eslint-disable no-shadow */
 /* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
@@ -102,8 +102,7 @@ class Controller {
           data,
         });
       });
-    } catch (error) {
-      console.log('In Catch', error);
+    } catch(error) {
       return res.status(500).json({
         success: false,
         message: 'Error while Login',
@@ -192,7 +191,6 @@ class Controller {
         data: isReset,
       });
     } catch (error) {
-      console.log('11', error);
       logger.error('Internal server error');
       return res.status(500).send({
         success: false,
@@ -219,7 +217,14 @@ class Controller {
           message: 'Email Successfully Verified',
         });
       });
-    } catch { }
+    } catch (error) {
+      logger.error('Internal server error');
+      return res.status(500).send({
+        success: false,
+        message: 'Internal server error',
+        result: null,
+      });
+    }
   };
 }
 module.exports = new Controller();

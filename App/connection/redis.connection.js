@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable class-methods-use-this */
 const redis = require('redis');
+const { logger } = require('../../logger/logger');
 
 let client;
 class Redis {
@@ -12,6 +13,7 @@ class Redis {
     client = redis.createClient(process.env.REDISPORT, '127.0.0.1');
     client.connect();
     client.on('connect', () => {
+      logger.info('Redis server connected sucessfully!');
       console.log('Redis server connected sucessfully!');
     });
   };
@@ -19,7 +21,7 @@ class Redis {
   fetchData = (key) => {
     client.get(`${key}fetchRedisById`)
       .then((data) => JSON.parse(data)).catch((error) => {
-        console.log('Error while finding Data', error);
+        logger.error('Error while finding Data', error);
       });
   };
 

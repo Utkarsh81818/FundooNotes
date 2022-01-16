@@ -9,7 +9,6 @@
  * @description  Service class holds the callback method for controller
  * @author       Utkarsh Mishra
  */
-
 const bcrypt = require('bcryptjs');
 const jsonWebToken = require('jsonwebtoken');
 const userModel = require('../models/user.model.js');
@@ -52,9 +51,9 @@ class userService {
      * @param callback callback for controller
      */
   userLogin = (InfoLogin, callback) => {
-    userModel.loginModel(InfoLogin, (error, data) => {
+    userModel.loginModel(InfoLogin, async (error, data) => {
       if (data) {
-        const passwordResult = bcrypt.compare(InfoLogin.password, data.password);
+        const passwordResult = await bcrypt.compare(InfoLogin.password, data.password);
         if (!passwordResult) {
           logger.error('Error occured......');
           return callback('Error occured......', null);
